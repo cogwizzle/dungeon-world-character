@@ -13,10 +13,13 @@
 }
 
 .heart::before {
-  content: '♥';
+  content: '❥';
+  font-family: 'Times New Roman', Times, serif;
+  font-family: monospace;
+  transform: rotate(90deg);
   position: absolute;
-  font-size: 100px;
-  right: 27px;
+  font-size: 110px;
+  right: 23px;
   top: -63px;
   text-shadow: -1px -1px 4px #64748b;
 }
