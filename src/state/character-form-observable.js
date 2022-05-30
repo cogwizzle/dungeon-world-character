@@ -50,6 +50,30 @@ class ChracterFormObservable extends Observable {
     }
     this.notify()
   }
+
+  set armor(value) {
+    this._state = {
+      ...this._state,
+      armor: value,
+    }
+    this.notify()
+  }
+
+  set hitPoints(value) {
+    this._state = {
+      ...this._state,
+      hitPoints: value,
+    }
+    this.notify()
+  }
+
+  set maxHitPoints(value) {
+    this._state = {
+      ...this._state,
+      maxHitPoints: value,
+    }
+    this.notify()
+  }
 }
 
 const SingletonCharacterFormObservable = new ChracterFormObservable()
