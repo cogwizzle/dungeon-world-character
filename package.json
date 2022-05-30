@@ -1,0 +1,26 @@
+{
+  "name": "dungeon-world-character",
+  "description": "Dungeon world character sheet.",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "devDependencies": {
+    "black-magic": "github:cogwizzle/black-magic",
+    "esbuild": "^0.14.42",
+    "spell-file": "github:cogwizzle/spell-file",
+    "tailwindcss": "^3.0.24"
+  },
+  "scripts": {
+    "build": "node ./scripts/build.js",
+    "start": "node ./scripts/dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cogwizzle/dungeon-world-character.git"
+  },
+  "author": "Cogwizzle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cogwizzle/dungeon-world-character/issues"
+  },
+  "homepage": "https://github.com/cogwizzle/dungeon-world-character#readme"
+}
