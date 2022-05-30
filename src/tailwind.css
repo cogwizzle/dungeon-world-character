@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .text-input {
+    @apply outline-none grow;
+  }
+
+  label {
+    @apply px-2;
+  }
+
+  body {
+    @apply bg-slate-100;
+  }
+}
