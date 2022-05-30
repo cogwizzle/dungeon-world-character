@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+.shield::before {
+  content: '☗';
+  position: absolute;
+  font-size: 100px;
+  transform: scale(-1);
+  right: 23px;
+  top: -50px;
+  text-shadow: -1px -1px 4px #64748b;
+}
+
+.heart::before {
+  content: '♥';
+  position: absolute;
+  font-size: 100px;
+  right: 27px;
+  top: -63px;
+  text-shadow: -1px -1px 4px #64748b;
+}
+
 @layer components {
   .text-input {
     @apply outline-none grow;
