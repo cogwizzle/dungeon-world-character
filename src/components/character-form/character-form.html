@@ -1,0 +1,21 @@
+<form id="character-form" class="container mx-auto px-4 py-4">
+  <div class="grid grid-cols-5">
+    <div class="flex flex-row col-span-3 bg-white">
+      <label for="character-name">NAME</label>
+      <input class="text-input" id="character-name" name="character-name" type="text" />
+    </div>
+    <div class="flex flex-row justify-end">
+      <label for="level">LEVEL</label>
+      <input class="text-input bg-white rounded-full pl-1.5 mr-1 w-7 h-7 grow-0" id="level" name="level" type="text" />
+    </div>
+    <div class="flex flex-row bg-white">
+      <label for="xp">XP</label>
+      <input class="text-input" id="xp" name="xp" type="number" />
+    </div>
+  </div>
+  <div class="grid grid-cols-3">
+    <div>
+      <dw-character-look></dw-character-look>
+    </div>
+  </div>
+</form>
