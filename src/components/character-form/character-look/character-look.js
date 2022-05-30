@@ -96,7 +96,7 @@ export class CharacterLook extends HTMLElement {
     bodyOther.value = bodyElements.every(
       (element) => element.value !== look.body
     )
-      ? look.body
+      ? look.body || ''
       : ''
     const eyesElements = [
       ...this.querySelectorAll('[name="eyes"][type="radio"]'),
@@ -108,7 +108,7 @@ export class CharacterLook extends HTMLElement {
     eyesOther.value = eyesElements.every(
       (element) => element.value !== look.eyes
     )
-      ? look.eyes
+      ? look.eyes || ''
       : ''
     const hairElements = [
       ...this.querySelectorAll('[name="hair"][type="radio"]'),
@@ -120,7 +120,7 @@ export class CharacterLook extends HTMLElement {
     hairOther.value = hairElements.every(
       (element) => element.value !== look.hair
     )
-      ? look.hair
+      ? look.hair || ''
       : ''
   }
 
