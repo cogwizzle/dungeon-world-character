@@ -74,6 +74,14 @@ class ChracterFormObservable extends Observable {
     }
     this.notify()
   }
+
+  set alignment(value) {
+    this._state = {
+      ...this._state,
+      alignment: value,
+    }
+    this.notify()
+  }
 }
 
 const SingletonCharacterFormObservable = new ChracterFormObservable()
