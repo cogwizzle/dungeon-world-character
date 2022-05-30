@@ -21,6 +21,15 @@
   text-shadow: -1px -1px 4px #64748b;
 }
 
+.damage-dice::before {
+  content: '⬢';
+  position: absolute;
+  font-size: 100px;
+  right: 20px;
+  top: -67px;
+  text-shadow: -1px -1px 4px #64748b;
+}
+
 @layer components {
   .text-input {
     @apply outline-none grow;

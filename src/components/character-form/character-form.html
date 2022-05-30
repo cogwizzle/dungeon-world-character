@@ -1,10 +1,10 @@
 <form id="character-form" class="container mx-auto px-4 py-4">
   <div class="grid grid-cols-2 lg:grid-cols-5 my-1">
-    <div class="flex flex-row col-span-2 lg:col-span-3 bg-white my-1 lg:my-0">
+    <div class="flex flex-row col-span-2 lg:col-span-3 bg-white my-1 lg:my-0 items-center">
       <label for="character-name">NAME</label>
       <input class="text-input" id="character-name" name="character-name" type="text" />
     </div>
-    <div class="flex flex-row my-2 col-span-2 md:col-span-1 lg:my-0 lg:justify-end">
+    <div class="flex flex-row my-2 col-span-2 md:col-span-1 lg:my-0 lg:justify-end items-center">
       <label for="level">LEVEL</label>
       <input class="text-input bg-white rounded-full pl-1.5 mr-1 w-7 h-7 grow-0" id="level" name="level" type="text" />
     </div>
@@ -24,13 +24,18 @@
           <input type="text" id="armor" name="armor" class="text-black bg-white w-6 z-10 mr-10 outline-none text-center" />
         </div>
       </label>
-      <div class="bg-black text-white flex flex-row relative mb-5 px-2">
+      <div class="bg-black text-white flex flex-row relative mb-16 px-2">
         HIT POINTS
         <div class="flex flex-1 grow justify-end heart">
           <input type="text" id="hit-points" name="hit-points" class="text-black bg-white w-6 z-10 outline-none text-center border-r-2 border-black" />
           <input type="text" id="max-hit-points" name="max-hit-points" class="text-black bg-white w-6 z-10 mr-7 outline-none text-center" />
         </div>
       </div>
+      <div class="bg-black text-white flex flex-row relative mb-16 px-2">
+        DAMAGE
+        <div class="flex flex-1 grow justify-end damage-dice">
+          <span class="z-10 mr-10 text-black">D10</span>
+        </div>
     </div>
   </div>
 </form>
