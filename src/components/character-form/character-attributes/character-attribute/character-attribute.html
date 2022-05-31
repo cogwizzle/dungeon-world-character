@@ -1,0 +1,115 @@
+<style>
+  .flex {
+    display: flex;
+  }
+  
+  .flex-row {
+    flex-direction: row;
+  }
+
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .mx-2 {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+
+  .border-2 {
+    border: 2px solid black;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  .bg-transparent {
+    background-color: transparent;
+  }
+
+  .bg-black {
+    background-color: black;
+  }
+
+  .bg-white {
+    background-color: white;
+  }
+
+  .rounded-full {
+    border-radius: 50%;
+  }
+
+  .text-white {
+    color: white;
+  }
+
+  .text-black {
+    color: black;
+  }
+
+  .border-none {
+    border: none;
+  }
+
+  .outline-none {
+    outline: none;
+  }
+
+  .justify-end {
+    justify-content: end;
+  }
+
+  .items-end {
+    align-items: end;
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+
+  .w {
+    width: 4rem;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+
+  .items-center {
+    align-items: center;
+  }
+
+</style>
+<div class="flex flex-col border-2">
+  <div class="flex flex-row py-2 px-2">
+    <label id="score-label">
+      <slot></slot>
+    </label>
+    <input type="number" name="score" class="w-full mx-2 bg-transparent outline-none border-none" />
+  </div>
+  <div class="flex flex-row bg-black text-white px-2 py-2">
+    <div class="flex flex-col bg-white rounded-full w text-black justify-center items-center">
+      <label id="modifier-label" for="modifier">
+        <slot name="abbreviation"></slot>
+      </label>
+      <div id="modifier"></div>
+    </div>
+    <div class="flex justify-end items-end w-full">
+      <label id="debuff-label" for="debuff">
+        <slot name="debuff"></slot>
+      </label>
+      <input type="checkbox" id="debuff" name="debuff" />
+    </div>
+  </div>
+</div>
