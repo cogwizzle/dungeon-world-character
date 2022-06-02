@@ -19,7 +19,7 @@ export class CharacterAttribute extends HTMLElement {
         this._id = newValue
         break
       case 'debuff':
-        this._debuff = !!eval(newValue)
+        this._debuff = newValue === 'true'
         const debuffElement = this.shadowRoot.querySelector('#debuff')
         debuffElement.checked = this._debuff
         break
