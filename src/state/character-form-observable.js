@@ -82,6 +82,54 @@ class ChracterFormObservable extends Observable {
     }
     this.notify()
   }
+
+  set strength(value) {
+    this._state = {
+      ...this._state,
+      strength: value,
+    }
+    this.notify()
+  }
+
+  set dexterity(value) {
+    this._state = {
+      ...this._state,
+      dexterity: value,
+    }
+    this.notify()
+  }
+
+  set constitution(value) {
+    this._state = {
+      ...this._state,
+      constitution: value,
+    }
+    this.notify()
+  }
+
+  set intelligence(value) {
+    this._state = {
+      ...this._state,
+      intelligence: value,
+    }
+    this.notify()
+  }
+
+  set wisdom(value) {
+    this._state = {
+      ...this._state,
+      wisdom: value,
+    }
+    this.notify()
+  }
+
+  set charisma(value) {
+    this._state = {
+      ...this._state,
+      charisma: value,
+    }
+    this.notify()
+  }
 }
 
 const SingletonCharacterFormObservable = new ChracterFormObservable()

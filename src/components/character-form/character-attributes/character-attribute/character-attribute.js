@@ -20,6 +20,8 @@ export class CharacterAttribute extends HTMLElement {
       case 'value':
       default:
         this._value = newValue
+        const scoreElement = this.shadowRoot.querySelector('[name="score"]')
+        scoreElement.value = newValue
         this.updateModifier()
         break
     }
