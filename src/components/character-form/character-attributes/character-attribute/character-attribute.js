@@ -10,7 +10,7 @@ export class CharacterAttribute extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['id', 'value']
+    return ['id', 'value', 'debuff']
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -19,7 +19,7 @@ export class CharacterAttribute extends HTMLElement {
         this._id = newValue
         break
       case 'debuff':
-        this._debuff = !!newValue
+        this._debuff = !!eval(newValue)
         const debuffElement = this.shadowRoot.querySelector('#debuff')
         debuffElement.checked = this._debuff
         break
@@ -69,8 +69,8 @@ export class CharacterAttribute extends HTMLElement {
     this.updateModifier()
   }
 
-  onDebuffClick = (event) => {
-    this._debuff = event.target.value
+  onDebuffClick = () => {
+    this._debuff = !this._debuff
     this.emitDebuffChange(this._debuff)
   }
 
@@ -89,7 +89,7 @@ export class CharacterAttribute extends HTMLElement {
     const scoreElement = this.shadowRoot.querySelector('[name="score"]')
     const debuffElement = this.shadowRoot.querySelector('#debuff')
     scoreElement.removeEventListener('change', this.onScoreChange)
-    debuffElement.removeEventListener('click', this.onDebuffClick)
+    debuffElement.removeEventListener('change', this.onDebuffClick)
   }
 
   render() {

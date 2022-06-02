@@ -91,10 +91,26 @@ class ChracterFormObservable extends Observable {
     this.notify()
   }
 
+  set weak(value) {
+    this._state = {
+      ...this._state,
+      weak: value,
+    }
+    this.notify()
+  }
+
   set dexterity(value) {
     this._state = {
       ...this._state,
       dexterity: value,
+    }
+    this.notify()
+  }
+
+  set shaky(value) {
+    this._state = {
+      ...this._state,
+      shaky: value,
     }
     this.notify()
   }
@@ -107,10 +123,26 @@ class ChracterFormObservable extends Observable {
     this.notify()
   }
 
+  set sick(value) {
+    this._state = {
+      ...this._state,
+      sick: value,
+    }
+    this.notify()
+  }
+
   set intelligence(value) {
     this._state = {
       ...this._state,
       intelligence: value,
+    }
+    this.notify()
+  }
+
+  set stunned(value) {
+    this._state = {
+      ...this._state,
+      stunned: value,
     }
     this.notify()
   }
@@ -123,10 +155,26 @@ class ChracterFormObservable extends Observable {
     this.notify()
   }
 
+  set confused(value) {
+    this._state = {
+      ...this._state,
+      confused: value,
+    }
+    this.notify()
+  }
+
   set charisma(value) {
     this._state = {
       ...this._state,
       charisma: value,
+    }
+    this.notify()
+  }
+
+  set scarred(value) {
+    this._state = {
+      ...this._state,
+      scarred: value,
     }
     this.notify()
   }
