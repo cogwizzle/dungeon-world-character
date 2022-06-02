@@ -16,6 +16,10 @@
     padding-bottom: 0.5rem;
   }
 
+  .mb-6 {
+    margin-bottom: 2rem;
+  }
+
   .px-2 {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -81,6 +85,10 @@
   .w {
     width: 4rem;
   }
+
+  .h {
+    height: 4rem;
+  }
   
   .justify-center {
     justify-content: center;
@@ -90,8 +98,16 @@
     align-items: center;
   }
 
+  .absolute {
+    position: absolute;
+  }
+
+  .shadow-2 {
+    box-shadow: 0 0 2px 2px black;
+  }
+
 </style>
-<div class="flex flex-col border-2">
+<div class="flex flex-col border-2 mb-6">
   <div class="flex flex-row py-2 px-2 bg-white">
     <label id="score-label">
       <slot></slot>
@@ -99,7 +115,7 @@
     <input type="number" name="score" class="w-full mx-2 bg-transparent outline-none border-none" />
   </div>
   <div class="flex flex-row bg-black text-white px-2 py-2">
-    <div class="flex flex-col bg-white rounded-full w text-black justify-center items-center">
+    <div class="flex flex-col bg-white rounded-full w h text-black justify-center items-center absolute shadow-2">
       <label id="modifier-label" for="modifier">
         <slot name="abbreviation"></slot>
       </label>

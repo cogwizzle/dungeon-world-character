@@ -2,6 +2,7 @@ import template from './character-form.html'
 import CharacterFormObservable from '../../state/character-form-observable'
 import './character-look/character-look'
 import './character-alignment/character-alignment'
+import './character-attributes/character-attributes'
 
 export class CharacterForm extends HTMLElement {
   constructor() {
