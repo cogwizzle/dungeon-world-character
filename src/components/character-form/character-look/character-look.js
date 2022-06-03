@@ -1,5 +1,6 @@
 import CharacterFormObservable from '../../../state/character-form-observable'
 import template from './character-look.html'
+import '../../section-header/section-header'
 
 export class CharacterLook extends HTMLElement {
   _body
