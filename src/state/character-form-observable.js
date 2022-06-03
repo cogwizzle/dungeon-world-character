@@ -178,6 +178,14 @@ class ChracterFormObservable extends Observable {
     }
     this.notify()
   }
+
+  set bonds(value) {
+    this._state = {
+      ...this._state,
+      bonds: value.filter((bond) => bond.trim() !== ''),
+    }
+    this.notify()
+  }
 }
 
 const SingletonCharacterFormObservable = new ChracterFormObservable()
