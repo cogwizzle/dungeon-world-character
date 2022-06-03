@@ -20,7 +20,6 @@ export class CharacterBonds extends HTMLElement {
     this._bonds = value
   }
 
-  // TODO fix page refresh swapping order of bonds.
   hydrate = (state) => {
     this._bonds = state.bonds || []
     this._bonds.forEach((bond, index) => {
@@ -35,7 +34,7 @@ export class CharacterBonds extends HTMLElement {
           'class',
           'bg-transparent border-b-2 border-b-black outline-none w-full'
         )
-        listElement.prepend(input)
+        listElement.insertBefore(input, document.querySelector('#new-bond'))
       } else {
         input.value = bond
       }
