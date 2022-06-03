@@ -2,6 +2,14 @@ import template from './character-bonds.html'
 import '../../section-header/section-header'
 import CharacterFormObservable from '../../../state/character-form-observable'
 
+const createNewInput = (value, index) => {
+  const templateElement = document.createElement('template')
+  const className =
+    'bg-transparent border-b-2 border-b-black outline-none w-full'
+  templateElement.innerHTML = `<input type="text" value="${value}" id="bond-${index}" class="${className}" />`
+  return templateElement.content.firstChild
+}
+
 export class CharacterBonds extends HTMLElement {
   _bonds = []
   constructor() {
@@ -26,14 +34,7 @@ export class CharacterBonds extends HTMLElement {
       let input = this.querySelector(`#bond-${index}`)
       if (!input) {
         const listElement = this.querySelector('#bonds-list')
-        input = document.createElement('input')
-        input.setAttribute('type', 'text')
-        input.setAttribute('value', bond)
-        input.setAttribute('id', `bond-${index}`)
-        input.setAttribute(
-          'class',
-          'bg-transparent border-b-2 border-b-black outline-none w-full'
-        )
+        input = createNewInput(bond, index)
         listElement.insertBefore(input, document.querySelector('#new-bond'))
       } else {
         input.value = bond
@@ -43,15 +44,9 @@ export class CharacterBonds extends HTMLElement {
 
   addBond = (event) => {
     this._bonds.push(event.target.value)
-    const newInput = document.createElement('input')
+
     const newIndex = this._bonds.length - 1
-    newInput.setAttribute('type', 'text')
-    newInput.setAttribute('id', `bond-${newIndex}`)
-    newInput.setAttribute('value', event.target.value)
-    newInput.setAttribute(
-      'class',
-      'bg-transparent border-b-2 border-b-black outline-none w-full'
-    )
+    const newInput = createNewInput(event.target.value, newIndex)
     event.target.parentElement.insertBefore(newInput, event.target)
     event.target.value = ''
     newInput.setSelectionRange(newInput.value.length, newInput.value.length)
@@ -124,7 +119,7 @@ export class CharacterBonds extends HTMLElement {
         'class',
         'bg-transparent border-b-2 border-b-black outline-none w-full'
       )
-      listElement.prepend(input)
+      listElement.insertBefore(input, this.querySelector('#new-bond'))
     })
   }
 
