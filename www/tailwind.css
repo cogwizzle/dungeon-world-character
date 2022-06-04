@@ -755,6 +755,11 @@ body {
   line-height: 1rem;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -825,6 +830,10 @@ body {
   .md\:col-span-2 {
     grid-column: span 2 / span 2;
   }
+
+  .md\:flex-col {
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -880,5 +889,19 @@ body {
   .lg\:py-0 {
     padding-top: 0px;
     padding-bottom: 0px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:ml-0 {
+    margin-left: 0px;
+  }
+
+  .xl\:flex-row {
+    flex-direction: row;
+  }
+
+  .xl\:items-center {
+    align-items: center;
   }
 }
