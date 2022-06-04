@@ -194,6 +194,14 @@ class ChracterFormObservable extends Observable {
     }
     this.notify()
   }
+
+  set coin(value) {
+    this._state = {
+      ...this._state,
+      coin: value,
+    }
+    this.notify()
+  }
 }
 
 const SingletonCharacterFormObservable = new ChracterFormObservable()
