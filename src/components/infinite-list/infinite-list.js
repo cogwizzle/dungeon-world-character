@@ -15,17 +15,6 @@ export class InfiniteList extends HTMLElement {
     this.attachShadow({ mode: 'open' })
   }
 
-  static get observedAttributes() {
-    return ['value']
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (name === 'value') {
-      this._value = value
-      this.renderList()
-    }
-  }
-
   get value() {
     return this._value
   }
