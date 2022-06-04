@@ -1,131 +1,40 @@
 import template from './character-bonds.html'
 import '../../section-header/section-header'
+import '../../infinite-list/infinite-list'
 import CharacterFormObservable from '../../../state/character-form-observable'
 
-const createNewInput = (value, index) => {
-  const templateElement = document.createElement('template')
-  const className =
-    'bg-transparent border-b-2 border-b-black outline-none w-full'
-  templateElement.innerHTML = `<input type="text" value="${value}" id="bond-${index}" class="${className}" />`
-  return templateElement.content.firstChild
-}
-
 export class CharacterBonds extends HTMLElement {
-  _bonds = []
   constructor() {
     super()
   }
 
-  static get observedAttributes() {
-    return ['bonds']
-  }
-
-  get bonds() {
-    return this._bonds
-  }
-
-  set bonds(value) {
-    this._bonds = value
-  }
-
   hydrate = (state) => {
-    this._bonds = state.bonds || []
-    this._bonds.forEach((bond, index) => {
-      let input = this.querySelector(`#bond-${index}`)
-      if (!input) {
-        const listElement = this.querySelector('#bonds-list')
-        input = createNewInput(bond, index)
-        listElement.insertBefore(input, document.querySelector('#new-bond'))
-      } else {
-        input.value = bond
-      }
-    })
+    this.querySelector('#bonds-list').value = state.bonds
   }
 
-  addBond = (event) => {
-    this._bonds.push(event.target.value)
-
-    const newIndex = this._bonds.length - 1
-    const newInput = createNewInput(event.target.value, newIndex)
-    event.target.parentElement.insertBefore(newInput, event.target)
-    event.target.value = ''
-    newInput.setSelectionRange(newInput.value.length, newInput.value.length)
-    newInput.focus()
-    newInput.addEventListener('keyup', (event) =>
-      this.updateBond(event.target.value, newIndex)
-    )
-
-    CharacterFormObservable.bonds = this._bonds
-  }
-
-  updateBond = (value, index) => {
-    this._bonds[index] = value
-    if (!value || value === '') {
-      this._bonds.forEach((bond, bondIndex) => {
-        const element = document.querySelector(`#bond-${bondIndex}`)
-        element.removeEventListener('keyup', (event) =>
-          this.updateBond(event.target.value, bondIndex)
-        )
-        element.remove()
-      })
-      this._bonds = this._bonds.filter((bond) => bond !== '')
-      this.renderListOfBonds()
-      this.addBondEventListeners()
-    }
-    CharacterFormObservable.bonds = this._bonds
-  }
-
-  addBondEventListeners() {
-    this._bonds.forEach((bond, index) => {
-      const input = document.querySelector(`#bond-${index}`)
-      input.addEventListener('keyup', (event) =>
-        this.updateBond(event.target.value, index)
-      )
-    })
-  }
-
-  removeBondEventListeners() {
-    this._bonds.forEach((bond, index) => {
-      const element = document.querySelector(`#bond-${index}`)
-      element.removeEventListener('keyup', (event) =>
-        this.updateBond(event.target.value, index)
-      )
-    })
+  onUpdate(event) {
+    CharacterFormObservable.bonds = event.detail
   }
 
   connectedCallback() {
     this.render()
     CharacterFormObservable.subscribe(this.hydrate)
-    const newInputElement = this.querySelector('#new-bond')
-    newInputElement.addEventListener('keyup', this.addBond)
-    this.addBondEventListeners()
+    this.querySelector('#bonds-list').addEventListener(
+      'dw-infinite-list-change',
+      this.onUpdate
+    )
   }
 
   disconnectedCallback() {
     CharacterFormObservable.unsubscribe(this.hydrate)
-    const newInputElement = this.querySelector('#new-bond')
-    newInputElement.removeEventListener('keyup', this.addBond)
-    this.removeBondEventListeners()
-  }
-
-  renderListOfBonds() {
-    const listElement = this.querySelector('#bonds-list')
-    this._bonds.forEach((bond, index) => {
-      const input = document.createElement('input')
-      input.setAttribute('type', 'text')
-      input.setAttribute('value', bond)
-      input.setAttribute('id', `bond-${index}`)
-      input.setAttribute(
-        'class',
-        'bg-transparent border-b-2 border-b-black outline-none w-full'
-      )
-      listElement.insertBefore(input, this.querySelector('#new-bond'))
-    })
+    this.querySelector('#bonds-list').removeEventListener(
+      'dw-infinite-list-change',
+      this.onUpdate
+    )
   }
 
   render() {
     this.innerHTML = template
-    this.renderListOfBonds()
   }
 }
 
