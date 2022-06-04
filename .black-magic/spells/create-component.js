@@ -18,7 +18,9 @@ export class ${componentName} extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {}
 
-  connectedCallback() {}
+  connectedCallback() {
+    this.render()
+  }
 
   disconnectedCallback() {}
 
