@@ -210,6 +210,22 @@ class ChracterFormObservable extends Observable {
     }
     this.notify()
   }
+
+  set load(value) {
+    this._state = {
+      ...this._state,
+      load: value,
+    }
+    this.notify()
+  }
+
+  set maxLoad(value) {
+    this._state = {
+      ...this._state,
+      maxLoad: value,
+    }
+    this.notify()
+  }
 }
 
 const SingletonCharacterFormObservable = new ChracterFormObservable()
