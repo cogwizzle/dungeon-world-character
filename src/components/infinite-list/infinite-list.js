@@ -42,9 +42,10 @@ export class InfiniteList extends HTMLElement {
         this.removeEventListener('keyup', (event) =>
           this.onUpdate(event, index)
         )
-        input.setAttribute('id', `item-${index - 1}`)
-        this.addEventListener('keyup', (event) =>
-          this.onUpdate(event, index - 1)
+        const newIndex = index - 1
+        input.setAttribute('id', `item-${newIndex}`)
+        input.addEventListener('keyup', (event) =>
+          this.onUpdate(event, newIndex)
         )
       } else if (index >= this._value.indexOf(element.value)) {
         element.removeEventListener('keyup', (event) =>
@@ -68,7 +69,7 @@ export class InfiniteList extends HTMLElement {
     })
   }
 
-  onUpdate = (event, index) => {
+  onUpdate = async (event, index) => {
     const newValue = event.target.value
     this._value[index] = newValue
     if (newValue === '') {
