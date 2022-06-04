@@ -20,41 +20,50 @@ export class InfiniteList extends HTMLElement {
   }
 
   set value(value) {
+    this.renderList(this._value, value)
     this._value = value
-    this.renderList()
   }
 
-  removeAndRenumber(element) {
-    this._value.forEach((value, index) => {
-      if (index > this._value.indexOf(element.value)) {
-        const input = this.shadowRoot.querySelector(`#item-${index}`)
-        this.removeEventListener('keyup', (event) =>
-          this.onUpdate(event, index)
-        )
-        const newIndex = index - 1
-        input.setAttribute('id', `item-${newIndex}`)
-        input.addEventListener('keyup', (event) =>
-          this.onUpdate(event, newIndex)
-        )
-      } else if (index >= this._value.indexOf(element.value)) {
+  diff(oldValue, newValue) {
+    const [added, modified] = newValue.reduce(
+      ([added, modified], value, index) => {
+        if (index < oldValue.length && oldValue[index] !== value)
+          modified.push(index)
+        if (index >= oldValue.length) added.push(value)
+        return [added, modified]
+      },
+      [[], []]
+    )
+    const removed = oldValue.reduce((removed, _, index) => {
+      if (!newValue[index]) removed.push(index)
+      return removed
+    }, [])
+    return { removed, added, modified }
+  }
+
+  renderList(oldValue = [], newValue = []) {
+    const { removed, added, modified } = this.diff(oldValue, newValue)
+    console.log({ removed, added, modified })
+    const listElement = this.shadowRoot.querySelector('#list')
+    removed.forEach((index) => {
+      const element = this.shadowRoot.querySelector(`#item-${index}`)
+      if (element) {
         element.removeEventListener('keyup', (event) =>
           this.onUpdate(event, index)
         )
         element.remove()
       }
     })
-  }
-
-  renderList() {
-    const listElement = this.shadowRoot.querySelector('#list')
-    this._value.forEach((value, index) => {
-      let input = this.shadowRoot.querySelector(`#item-${index}`)
-      if (input) return input.setAttribute('value', value)
-      input = createNewInput(value, index)
-      listElement.insertBefore(input, this.shadowRoot.querySelector('#new'))
-      input.addEventListener('keyup', (event) => {
-        this.onUpdate(event, index)
-      })
+    modified.forEach((index) => {
+      const element = this.shadowRoot.querySelector(`#item-${index}`)
+      if (element) {
+        element.value = newValue[index]
+      }
+    })
+    added.forEach((value, index) => {
+      const element = createNewInput(value, oldValue.length + index)
+      element.addEventListener('keyup', (event) => this.onUpdate(event, index))
+      listElement.insertBefore(element, this.shadowRoot.querySelector('#new'))
     })
   }
 
@@ -62,7 +71,9 @@ export class InfiniteList extends HTMLElement {
     const newValue = event.target.value
     this._value[index] = newValue
     if (newValue === '') {
-      this.removeAndRenumber(event.target)
+      const oldValue = this._value
+      this._value = this._value.filter((_, i) => i !== index)
+      this.renderList(oldValue, this._value)
     }
     this.dispatchEvent(
       new CustomEvent('dw-infinite-list-change', {
@@ -113,7 +124,7 @@ export class InfiniteList extends HTMLElement {
 
   render() {
     this.shadowRoot.innerHTML = template
-    this.renderList()
+    this.renderList([], this._value)
   }
 }
 
