@@ -43,7 +43,6 @@ export class InfiniteList extends HTMLElement {
 
   renderList(oldValue = [], newValue = []) {
     const { removed, added, modified } = this.diff(oldValue, newValue)
-    console.log({ removed, added, modified })
     const listElement = this.shadowRoot.querySelector('#list')
     removed.forEach((index) => {
       const element = this.shadowRoot.querySelector(`#item-${index}`)
