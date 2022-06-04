@@ -32,7 +32,7 @@ esbuild
       bundle: true,
       minify: true,
       sourcemap: true,
-      target: ['es2020', 'chrome58', 'firefox57', 'safari11', 'edge16'],
+      target: ['es2020'],
     }
   )
   .then((result) => {
