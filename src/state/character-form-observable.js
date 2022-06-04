@@ -202,6 +202,14 @@ class ChracterFormObservable extends Observable {
     }
     this.notify()
   }
+
+  set gear(value) {
+    this._state = {
+      ...this._state,
+      gear: value.filter((gear) => gear.trim() !== ''),
+    }
+    this.notify()
+  }
 }
 
 const SingletonCharacterFormObservable = new ChracterFormObservable()
