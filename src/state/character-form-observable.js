@@ -186,6 +186,14 @@ class ChracterFormObservable extends Observable {
     }
     this.notify()
   }
+
+  set race(value) {
+    this._state = {
+      ...this._state,
+      race: value,
+    }
+    this.notify()
+  }
 }
 
 const SingletonCharacterFormObservable = new ChracterFormObservable()

@@ -4,6 +4,7 @@ import './character-look/character-look'
 import './character-alignment/character-alignment'
 import './character-attributes/character-attributes'
 import './character-bonds/character-bonds'
+import './character-race/character-race'
 
 export class CharacterForm extends HTMLElement {
   constructor() {
