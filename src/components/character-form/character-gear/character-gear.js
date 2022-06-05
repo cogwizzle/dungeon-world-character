@@ -9,6 +9,8 @@ export class CharacterGear extends HTMLElement {
 
   hydrate = (state) => {
     this.querySelector('#gear-list').value = state.gear || []
+    this.querySelector('#load').value = state.load || 0
+    this.querySelector('#max-load').value = state.maxLoad || 0
   }
 
   onUpdate(event) {
@@ -22,6 +24,12 @@ export class CharacterGear extends HTMLElement {
       'dw-infinite-list-change',
       this.onUpdate
     )
+    this.querySelector('#load').addEventListener('change', (event) => {
+      CharacterFormObservable.load = event.target.value
+    })
+    this.querySelector('#max-load').addEventListener('change', (event) => {
+      CharacterFormObservable.maxLoad = event.target.value
+    })
   }
 
   disconnectedCallback() {
@@ -30,6 +38,12 @@ export class CharacterGear extends HTMLElement {
       'dw-infinite-list-change',
       this.onUpdate
     )
+    this.querySelector('#load').removeEventListener('change', (event) => {
+      CharacterFormObservable.load = event.target.value
+    })
+    this.querySelector('#max-load').removeEventListener('change', (event) => {
+      CharacterFormObservable.maxLoad = event.target.value
+    })
   }
 
   render() {
