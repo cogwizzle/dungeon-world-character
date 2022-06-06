@@ -226,6 +226,14 @@ class ChracterFormObservable extends Observable {
     }
     this.notify()
   }
+
+  set moves(value) {
+    this._state = {
+      ...this._state,
+      moves: value,
+    }
+    this.notify()
+  }
 }
 
 const SingletonCharacterFormObservable = new ChracterFormObservable()

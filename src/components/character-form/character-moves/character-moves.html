@@ -1,3 +1,252 @@
 <div>
   <dw-section-header>STARTING MOVES</dw-section-header>
+  <div class="grid grid-cols-2 gap-2">
+    <div class="grid grid-cols-2 col-span-2 gap-1">
+      <div class="flex flex-row col-span-2 lg:col-span-1">
+        <input
+          type="checkbox"
+          id="signature-weapon"
+          name="signature-weapon"
+          class="m-2"
+        />
+        <div class="flex flex-col">
+          <label for="signature-weapon">Signature Weapon</label>
+          <div>
+            This is your weapon. There are many like it, but this one is yours.
+            Your weapon is your best friend. It is your life. You master it as
+            you master your life. Your weapon, without you, is useless. Without
+            your weapon, you are useless. You must wield your weapon true.
+          </div>
+          <div class="text-sm italic">
+            Choose a base description, all are 2 weight:
+          </div>
+          <div class="grid grid-cols-2" id="signautre-weapon-type">
+            <div>
+              <input
+                type="checkbox"
+                id="signature-weapon-sword"
+                name="signature-weapon-sword"
+              />
+              <label for="signature-weapon-sword">Sword</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="signature-weapon-spear"
+                name="signature-weapon-spear"
+              />
+              <label for="signature-weapon-spear">Spear</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="signature-weapon-axe"
+                name="signature-weapon-axe"
+              />
+              <label for="signature-weapon-axe">Axe</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="signature-weapon-flail"
+                name="signature-weapon-flail"
+              />
+              <label for="signature-weapon-flail">Flail</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="signature-weapon-hammer"
+                name="signature-weapon-hammer"
+              />
+              <label for="signature-weapon-hammer">Hammer</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="signature-weapon-fists"
+                name="signature-weapon-fists"
+              />
+              <label for="signature-weapon-fists">Fists</label>
+            </div>
+          </div>
+          <div class="text-sm italic">
+            Choose a range that best fits your weapon:
+          </div>
+          <div class="grid grid-cols-2" id="signautre-weapon-range">
+            <div>
+              <input
+                type="checkbox"
+                id="signature-weapon-range-hand"
+                name="signature-weapon-range-hand"
+              />
+              <label for="signature-weapon-range-hand">Hand</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="signature-weapon-range-close"
+                name="signature-weapon-range-close"
+              />
+              <label for="signature-weapon-range-close">Close</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="signature-weapon-range-reach"
+                name="signature-weapon-range-reach"
+              />
+              <label for="signature-weapon-range-reach">Reach</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pl-8 lg:pl-0">
+        <div class="text-sm italic">Choose two enhancements:</div>
+        <div>
+          <input
+            type="checkbox"
+            id="signature-weapon-enhancement-hooks-and-spikes"
+            name="signature-weapon-enhancement-hooks-and-spikes"
+          />
+          <label for="signature-weapon-enhancement-hooks-and-spikes"
+            >Hooks and spikes. +1 damage, but +1 weight.</label
+          >
+        </div>
+        <div>
+          <input type="checkbox" id="signature-weapon-enhancement-sharp" />
+          <label for="signature-weapon-enhancement-sharp"
+            >Sharp, +2 piercing.</label
+          >
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="signature-weapon-enhancement-prefectly-weighted"
+            name="signature-weapon-enhancement-prefectly-weighted"
+          />
+          <label for="signature-weapon-enhancement-prefectly-weighted"
+            >Prefectly Weighted. Add precise.</label
+          >
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="signature-weapon-enhancement-serrated-edges"
+            name="signature-weapon-enhancement-serrated-edges"
+          />
+          <label for="signature-weapon-enhancement-serrated-edges"
+            >Serrated Edges. + 1 damage.</label
+          >
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="signature-weapon-enhancement-glows-in-the-dark"
+            name="signature-weapon-enhancement-glows-in-the-dark"
+          />
+          <label for="signature-weapon-enhancement-glows-in-the-dark"
+            >Glows in the presence of one type of creature, your choice.</label
+          >
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="signature-weapon-enhancement-huge"
+            name="signature-weapon-enhancement-huge"
+          />
+          <label for="signature-weapon-enhancement-huge"
+            >Huge. Add messy and forceful.</label
+          >
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="signature-weapon-enhancement-versatile"
+            name="signature-weapon-enhancement-versatile"
+          />
+          <label for="signature-weapon-enhancement-versatile"
+            >Versatile. Choose an additional range.</label
+          >
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="signature-weapon-enhancement-well-crafted"
+            name="signature-weapon-enhancement-well-crafted"
+          />
+          <label for="signature-weapon-enhancement-well-crafted"
+            >Well-crafted. -1 weight.</label
+          >
+        </div>
+        <div class="text-sm italic">Choose a look:</div>
+        <div class="grid grid-cols-2" id="signature-weapon-look">
+          <div>
+            <input
+              type="checkbox"
+              id="signature-weapon-look-ancient"
+              name="signature-weapon-look-ancient"
+            />
+            <label for="signature-weapon-look-ancient">Ancient</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="signature-weapon-look-blood-stained"
+              name="signature-weapon-look-blood-stained"
+            />
+            <label for="signature-weapon-look-blood-stained"
+              >Blood-stained</label
+            >
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="signature-weapon-look-unblemished"
+              name="signature-weapon-look-unblemished"
+            />
+            <label for="signature-weapon-look-unblemished">Unblemished</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="signature-weapon-look-sinister"
+              name="signature-weapon-look-sinister"
+            />
+            <label for="signature-weapon-look-sinister">Sinister</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="signature-weapon-look-ornate"
+              name="signature-weapon-look-ornate"
+            />
+            <label for="signature-weapon-look-ornate">Ornate</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-row col-span-2 lg:col-span-1">
+      <input
+        type="checkbox"
+        id="bend-bars-lift-gates"
+        name="bend-bars-lift-gates"
+        class="m-2"
+      />
+      <div class="flex flex-col">
+        <label for="bend-bars-lift-gates">Bend Bars, Lift Gates</label>
+        <div class="text-sm">
+          When you use pure strength to destroy an inanimate obstacle, roll+STR.
+          • On a 10+, choose 3. • On a 7-9 choose 2.
+        </div>
+        <ul class="list-disc ml-5 text-sm">
+          <li>It doesn't take very long</li>
+          <li>Nothing of value is damaged</li>
+          <li>It doesn't make an inordinate amount of noise</li>
+          <li>You can fix the thing again without a lot of effort</li>
+        </ul>
+      </div>
+    </div>
+    // Next skill here.
+  </div>
 </div>
