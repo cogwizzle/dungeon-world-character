@@ -25,7 +25,6 @@ esbuild
     },
     bundle: true,
     minify: true,
-    sourcemap: true,
     target: ['es2020'],
     watch: true,
   })
