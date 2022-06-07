@@ -698,7 +698,7 @@
           >
         </div>
         <div class="text-sm italic">Choose a look:</div>
-        <div class="grid grid-cols-2" id="signature-weapon-look">
+        <div class="grid grid-cols-1 lg:grid-cols-2" id="signature-weapon-look">
           <div>
             <input
               type="checkbox"
