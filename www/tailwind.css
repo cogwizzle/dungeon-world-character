@@ -646,6 +646,10 @@ body {
   width: 3.5rem;
 }
 
+.w-8 {
+  width: 2rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -881,6 +885,10 @@ body {
   right: 20px;
   top: -67px;
   text-shadow: -1px -1px 4px #64748b;
+}
+
+.disabled\:overflow-visible:disabled {
+  overflow: visible;
 }
 
 @media (min-width: 768px) {

@@ -34,48 +34,8 @@
   </div>
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-2">
     <div class="grid grid-cols-1 lg:grid-cols-2 col-span-2 gap-2 mt-5">
-      <div>
-        <dw-character-look></dw-character-look>
-      </div>
-      <div class="flex flex-col">
-        <label
-          for="armor"
-          class="bg-black text-white flex flex-row relative mb-16"
-        >
-          ARMOR
-          <div class="flex flex-1 grow justify-end shield">
-            <input
-              type="text"
-              id="armor"
-              name="armor"
-              class="text-black bg-white w-6 z-10 mr-10 outline-none text-center"
-            />
-          </div>
-        </label>
-        <div class="bg-black text-white flex flex-row relative mb-16 px-2">
-          HIT POINTS
-          <div class="flex flex-1 grow justify-end heart">
-            <input
-              type="text"
-              id="hit-points"
-              name="hit-points"
-              class="text-black bg-white w-6 z-10 outline-none text-center border-r-2 border-black"
-            />
-            <input
-              type="text"
-              id="max-hit-points"
-              name="max-hit-points"
-              class="text-black bg-white w-6 z-10 mr-7 outline-none text-center"
-            />
-          </div>
-        </div>
-        <div class="bg-black text-white flex flex-row relative mb-16 px-2">
-          DAMAGE
-          <div class="flex flex-1 grow justify-end damage-dice">
-            <span class="z-10 mr-10 text-black">D10</span>
-          </div>
-        </div>
-      </div>
+      <dw-character-look></dw-character-look>
+      <dw-character-armor-hp-damage></dw-character-armor-hp-damage>
       <div class="col-span-1 lg:col-span-2 gap-2">
         <dw-character-attributes
           class="md:col-span-2"
