@@ -1,100 +1,60 @@
-(()=>{var $=Object.defineProperty;var F=(c,a,e)=>a in c?$(c,a,{enumerable:!0,configurable:!0,writable:!0,value:e}):c[a]=e;var i=(c,a,e)=>(F(c,typeof a!="symbol"?a+"":a,e),e);var q=`<form id="character-form" class="container mx-auto px-4 py-4">\r
-  <div class="grid grid-cols-2 lg:grid-cols-5 my-1">\r
-    <div\r
-      class="flex flex-row col-span-2 lg:col-span-3 bg-white my-1 lg:my-0 items-center"\r
-    >\r
-      <label for="character-name">NAME</label>\r
-      <input\r
-        class="text-input"\r
-        id="character-name"\r
-        name="character-name"\r
-        type="text"\r
-      />\r
-    </div>\r
-    <div\r
-      class="flex flex-row my-2 col-span-2 md:col-span-1 lg:my-0 lg:justify-end items-center"\r
-    >\r
-      <label for="level">LEVEL</label>\r
-      <input\r
-        class="text-input bg-white rounded-full pl-1.5 mr-1 w-7 h-7 grow-0"\r
-        id="level"\r
-        name="level"\r
-        type="text"\r
-      />\r
-    </div>\r
-    <div class="flex flex-row bg-white my-2 col-span-2 md:col-span-1 lg:py-0">\r
-      <label for="xp">XP</label>\r
-      <input\r
-        class="text-input grow-0 lg:grow"\r
-        id="xp"\r
-        name="xp"\r
-        type="number"\r
-      />\r
-    </div>\r
-  </div>\r
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-2">\r
-    <div class="grid grid-cols-1 lg:grid-cols-2 col-span-2 gap-2 mt-5">\r
-      <div>\r
-        <dw-character-look></dw-character-look>\r
-      </div>\r
-      <div class="flex flex-col">\r
-        <label\r
-          for="armor"\r
-          class="bg-black text-white flex flex-row relative mb-16"\r
-        >\r
-          ARMOR\r
-          <div class="flex flex-1 grow justify-end shield">\r
-            <input\r
-              type="text"\r
-              id="armor"\r
-              name="armor"\r
-              class="text-black bg-white w-6 z-10 mr-10 outline-none text-center"\r
-            />\r
-          </div>\r
-        </label>\r
-        <div class="bg-black text-white flex flex-row relative mb-16 px-2">\r
-          HIT POINTS\r
-          <div class="flex flex-1 grow justify-end heart">\r
-            <input\r
-              type="text"\r
-              id="hit-points"\r
-              name="hit-points"\r
-              class="text-black bg-white w-6 z-10 outline-none text-center border-r-2 border-black"\r
-            />\r
-            <input\r
-              type="text"\r
-              id="max-hit-points"\r
-              name="max-hit-points"\r
-              class="text-black bg-white w-6 z-10 mr-7 outline-none text-center"\r
-            />\r
-          </div>\r
-        </div>\r
-        <div class="bg-black text-white flex flex-row relative mb-16 px-2">\r
-          DAMAGE\r
-          <div class="flex flex-1 grow justify-end damage-dice">\r
-            <span class="z-10 mr-10 text-black">D10</span>\r
-          </div>\r
-        </div>\r
-      </div>\r
-      <div class="col-span-1 lg:col-span-2 gap-2">\r
-        <dw-character-attributes\r
-          class="md:col-span-2"\r
-        ></dw-character-attributes>\r
-      </div>\r
-      <div class="col-span-1 lg:col-span-2 gap-2">\r
-        <dw-character-moves></dw-character-moves>\r
-      </div>\r
-    </div>\r
-    <div class="flex flex-col grid-cols-1 mt-5 gap-2">\r
-      <dw-character-alignment></dw-character-alignment>\r
-      <dw-character-bonds></dw-character-bonds>\r
-      <dw-character-race></dw-character-race>\r
-      <dw-character-coin></dw-character-coin>\r
-      <dw-character-gear></dw-character-gear>\r
-    </div>\r
-  </div>\r
-</form>\r
-`;var m=class{constructor(){i(this,"_observers");i(this,"_state");this._observers=[],this._state=void 0}subscribe(a){this._observers.push(a)}unsubscribe(a){this._observers=this._observers.filter(e=>e!==a)}notify(){this._observers.forEach(a=>a(this._state))}};var v=class extends m{constructor(){super();let a=JSON.parse(localStorage.getItem("character"))||{};this._state={...a}}notify(){super.notify(),localStorage.setItem("character",JSON.stringify(this._state))}subscribe(a){super.subscribe(a),a(this._state)}set characterName(a){this._state={...this._state,characterName:a},this.notify()}set level(a){this._state={...this._state,level:a},this.notify()}set xp(a){this._state={...this._state,xp:a},this.notify()}set look(a){this._state={...this._state,look:a},this.notify()}set armor(a){this._state={...this._state,armor:a},this.notify()}set hitPoints(a){this._state={...this._state,hitPoints:a},this.notify()}set maxHitPoints(a){this._state={...this._state,maxHitPoints:a},this.notify()}set alignment(a){this._state={...this._state,alignment:a},this.notify()}set strength(a){this._state={...this._state,strength:a},this.notify()}set weak(a){this._state={...this._state,weak:a},this.notify()}set dexterity(a){this._state={...this._state,dexterity:a},this.notify()}set shaky(a){this._state={...this._state,shaky:a},this.notify()}set constitution(a){this._state={...this._state,constitution:a},this.notify()}set sick(a){this._state={...this._state,sick:a},this.notify()}set intelligence(a){this._state={...this._state,intelligence:a},this.notify()}set stunned(a){this._state={...this._state,stunned:a},this.notify()}set wisdom(a){this._state={...this._state,wisdom:a},this.notify()}set confused(a){this._state={...this._state,confused:a},this.notify()}set charisma(a){this._state={...this._state,charisma:a},this.notify()}set scarred(a){this._state={...this._state,scarred:a},this.notify()}set bonds(a){this._state={...this._state,bonds:a.filter(e=>e.trim()!=="")},this.notify()}set race(a){this._state={...this._state,race:a},this.notify()}set coin(a){this._state={...this._state,coin:a},this.notify()}set gear(a){this._state={...this._state,gear:a.filter(e=>e.trim()!=="")},this.notify()}set load(a){this._state={...this._state,load:a},this.notify()}set maxLoad(a){this._state={...this._state,maxLoad:a},this.notify()}set moves(a){this._state={...this._state,moves:a},this.notify()}},Y=new v,s=Y;var H=`<div class="flex flex-col">\r
+(()=>{var j=Object.defineProperty;var z=(r,a,e)=>a in r?j(r,a,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[a]=e;var s=(r,a,e)=>(z(r,typeof a!="symbol"?a+"":a,e),e);var M=`<form id="character-form" class="container mx-auto px-4 py-4">
+  <div class="grid grid-cols-2 lg:grid-cols-5 my-1">
+    <div
+      class="flex flex-row col-span-2 lg:col-span-3 bg-white my-1 lg:my-0 items-center"
+    >
+      <label for="character-name">NAME</label>
+      <input
+        class="text-input"
+        id="character-name"
+        name="character-name"
+        type="text"
+      />
+    </div>
+    <div
+      class="flex flex-row my-2 col-span-2 md:col-span-1 lg:my-0 lg:justify-end items-center"
+    >
+      <label for="level">LEVEL</label>
+      <input
+        class="text-input bg-white rounded-full pl-1.5 mr-1 w-7 h-7 grow-0"
+        id="level"
+        name="level"
+        type="text"
+      />
+    </div>
+    <div class="flex flex-row bg-white my-2 col-span-2 md:col-span-1 lg:py-0">
+      <label for="xp">XP</label>
+      <input
+        class="text-input grow-0 lg:grow"
+        id="xp"
+        name="xp"
+        type="number"
+      />
+    </div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-2">
+    <div class="grid grid-cols-1 lg:grid-cols-2 col-span-2 gap-2 mt-5">
+      <dw-character-look></dw-character-look>
+      <dw-character-armor-hp-damage></dw-character-armor-hp-damage>
+      <div class="col-span-1 lg:col-span-2 gap-2">
+        <dw-character-attributes
+          class="md:col-span-2"
+        ></dw-character-attributes>
+      </div>
+      <div class="col-span-1 lg:col-span-2 gap-2">
+        <dw-character-moves></dw-character-moves>
+      </div>
+    </div>
+    <div class="flex flex-col grid-cols-1 mt-5 gap-2">
+      <dw-character-alignment></dw-character-alignment>
+      <dw-character-bonds></dw-character-bonds>
+      <dw-character-race></dw-character-race>
+      <dw-character-coin></dw-character-coin>
+      <dw-character-gear></dw-character-gear>
+    </div>
+  </div>
+</form>
+`;var m=class{constructor(){s(this,"_observers");s(this,"_state");this._observers=[],this._state=void 0}subscribe(a){this._observers.push(a)}unsubscribe(a){this._observers=this._observers.filter(e=>e!==a)}notify(){this._observers.forEach(a=>a(this._state))}};var p=class extends m{constructor(){super();let a=JSON.parse(localStorage.getItem("character"))||{};this._state={...a}}notify(){super.notify(),localStorage.setItem("character",JSON.stringify(this._state))}subscribe(a){super.subscribe(a),a(this._state)}set characterName(a){this._state={...this._state,characterName:a},this.notify()}set level(a){this._state={...this._state,level:a},this.notify()}set xp(a){this._state={...this._state,xp:a},this.notify()}set look(a){this._state={...this._state,look:a},this.notify()}set armor(a){this._state={...this._state,armor:a},this.notify()}set hitPoints(a){this._state={...this._state,hitPoints:a},this.notify()}set maxHitPoints(a){this._state={...this._state,maxHitPoints:a},this.notify()}set alignment(a){this._state={...this._state,alignment:a},this.notify()}set strength(a){this._state={...this._state,strength:a},this.notify()}set weak(a){this._state={...this._state,weak:a},this.notify()}set dexterity(a){this._state={...this._state,dexterity:a},this.notify()}set shaky(a){this._state={...this._state,shaky:a},this.notify()}set constitution(a){this._state={...this._state,constitution:a},this.notify()}set sick(a){this._state={...this._state,sick:a},this.notify()}set intelligence(a){this._state={...this._state,intelligence:a},this.notify()}set stunned(a){this._state={...this._state,stunned:a},this.notify()}set wisdom(a){this._state={...this._state,wisdom:a},this.notify()}set confused(a){this._state={...this._state,confused:a},this.notify()}set charisma(a){this._state={...this._state,charisma:a},this.notify()}set scarred(a){this._state={...this._state,scarred:a},this.notify()}set bonds(a){this._state={...this._state,bonds:a.filter(e=>e.trim()!=="")},this.notify()}set race(a){this._state={...this._state,race:a},this.notify()}set coin(a){this._state={...this._state,coin:a},this.notify()}set gear(a){this._state={...this._state,gear:a.filter(e=>e.trim()!=="")},this.notify()}set load(a){this._state={...this._state,load:a},this.notify()}set maxLoad(a){this._state={...this._state,maxLoad:a},this.notify()}set moves(a){this._state={...this._state,moves:a},this.notify()}},J=new p,i=J;var A=`<div class="flex flex-col">\r
   <dw-section-header>LOOK</dw-section-header>\r
   <div class="px-2 text-xs italic">Choose one for each, or write your own:</div>\r
   <div class="flex flex-col xl:flex-row xl:items-center">\r
@@ -175,10 +135,10 @@
     </div>\r
   </div>\r
 </div>\r
-`;var A=`<h1 class="bg-black text-white px-2">
+`;var W=`<h1 class="bg-black text-white px-2">
   <slot></slot>
 </h1>
-`;var p=class extends HTMLElement{constructor(){super()}connectedCallback(){this.render()}render(){let a=this.innerHTML;this.innerHTML=A,this.querySelector("slot").innerHTML=a}};customElements.define("dw-section-header",p);var f=class extends HTMLElement{constructor(){super();i(this,"_body");i(this,"_eyes");i(this,"_hair");i(this,"_skin");i(this,"emit",()=>{this.dispatchEvent(new CustomEvent("dw-change",{detail:{body:this._body,eyes:this._eyes,hair:this._hair}}))});i(this,"onBodyChange",e=>{this._body=e.target.value,s.look={body:this._body,eyes:this._eyes,hair:this._hair}});i(this,"onEyesChange",e=>{this._eyes=e.target.value,s.look={body:this._body,eyes:this._eyes,hair:this._hair}});i(this,"onHairChange",e=>{this._hair=e.target.value,s.look={body:this._body,eyes:this._eyes,hair:this._hair}});i(this,"hydrate",e=>{let t=e.look||{};this._body=t.body||"",this._eyes=t.eyes||"",this._hair=t.hair||"";let n=[...this.querySelectorAll('[name="body"][type="radio"]')];n.map(l=>l.checked=t.body===l.value);let o=this.querySelector("#body-other");o.value=n.every(l=>l.value!==t.body)&&t.body||"";let r=[...this.querySelectorAll('[name="eyes"][type="radio"]')];r.map(l=>l.checked=t.eyes===l.value);let u=this.querySelector("#eyes-other");u.value=r.every(l=>l.value!==t.eyes)&&t.eyes||"";let d=[...this.querySelectorAll('[name="hair"][type="radio"]')];d.map(l=>l.checked=t.hair===l.value);let h=this.querySelector("#hair-other");h.value=d.every(l=>l.value!==t.hair)&&t.hair||""})}get body(){return this._body}set body(e){this._body=e}get eyes(){return this._eyes}set eyes(e){this._eyes=e}get hair(){return this._hair}set hair(e){this._hair=e}get skin(){return this._skin}set skin(e){this._skin=e}connectedCallback(){this.render(),s.subscribe(this.hydrate);let e=[...this.querySelectorAll('[name="body"]')],t=[...this.querySelectorAll('[name="eyes"]')],n=[...this.querySelectorAll('[name="hair"]')];e.map(o=>o.addEventListener("change",this.onBodyChange)),t.map(o=>o.addEventListener("change",this.onEyesChange)),n.map(o=>o.addEventListener("change",this.onHairChange))}disconnectedCallback(){s.unsubscribe(this.hydrate);let e=[...this.querySelectorAll('[name="body"]')],t=[...this.querySelectorAll('[name="eyes"]')],n=[...this.querySelectorAll('[name="hair"]')];e.map(o=>o.removeEventListener("change",this.onBodyChange)),t.map(o=>o.removeEventListener("change",this.onEyesChange)),n.map(o=>o.removeEventListener("change",this.onHairChange))}render(){this.innerHTML=H}};customElements.define("dw-character-look",f);var M=`<div class="flex flex-col">\r
+`;var b=class extends HTMLElement{constructor(){super()}connectedCallback(){this.render()}render(){let a=this.innerHTML;this.innerHTML=W,this.querySelector("slot").innerHTML=a}};customElements.define("dw-section-header",b);var v=class extends HTMLElement{constructor(){super();s(this,"_body");s(this,"_eyes");s(this,"_hair");s(this,"_skin");s(this,"emit",()=>{this.dispatchEvent(new CustomEvent("dw-change",{detail:{body:this._body,eyes:this._eyes,hair:this._hair}}))});s(this,"onBodyChange",e=>{this._body=e.target.value,i.look={body:this._body,eyes:this._eyes,hair:this._hair}});s(this,"onEyesChange",e=>{this._eyes=e.target.value,i.look={body:this._body,eyes:this._eyes,hair:this._hair}});s(this,"onHairChange",e=>{this._hair=e.target.value,i.look={body:this._body,eyes:this._eyes,hair:this._hair}});s(this,"hydrate",e=>{let t=e.look||{};this._body=t.body||"",this._eyes=t.eyes||"",this._hair=t.hair||"";let n=[...this.querySelectorAll('[name="body"][type="radio"]')];n.map(l=>l.checked=t.body===l.value);let o=this.querySelector("#body-other");o.value=n.every(l=>l.value!==t.body)&&t.body||"";let d=[...this.querySelectorAll('[name="eyes"][type="radio"]')];d.map(l=>l.checked=t.eyes===l.value);let u=this.querySelector("#eyes-other");u.value=d.every(l=>l.value!==t.eyes)&&t.eyes||"";let h=[...this.querySelectorAll('[name="hair"][type="radio"]')];h.map(l=>l.checked=t.hair===l.value);let c=this.querySelector("#hair-other");c.value=h.every(l=>l.value!==t.hair)&&t.hair||""})}get body(){return this._body}set body(e){this._body=e}get eyes(){return this._eyes}set eyes(e){this._eyes=e}get hair(){return this._hair}set hair(e){this._hair=e}get skin(){return this._skin}set skin(e){this._skin=e}connectedCallback(){this.render(),i.subscribe(this.hydrate);let e=[...this.querySelectorAll('[name="body"]')],t=[...this.querySelectorAll('[name="eyes"]')],n=[...this.querySelectorAll('[name="hair"]')];e.map(o=>o.addEventListener("change",this.onBodyChange)),t.map(o=>o.addEventListener("change",this.onEyesChange)),n.map(o=>o.addEventListener("change",this.onHairChange))}disconnectedCallback(){i.unsubscribe(this.hydrate);let e=[...this.querySelectorAll('[name="body"]')],t=[...this.querySelectorAll('[name="eyes"]')],n=[...this.querySelectorAll('[name="hair"]')];e.map(o=>o.removeEventListener("change",this.onBodyChange)),t.map(o=>o.removeEventListener("change",this.onEyesChange)),n.map(o=>o.removeEventListener("change",this.onHairChange))}render(){this.innerHTML=A}};customElements.define("dw-character-look",v);var T=`<div class="flex flex-col">\r
   <label for="armor" class="bg-black text-white flex flex-row relative">\r
     ALIGNMENT\r
   </label>\r
@@ -206,7 +166,7 @@
   <div class="flex flex-row items-center">\r
     <input type="text" name="alignment" id="alignment-other" class="ml-9 bg-transparent outline-none border-b-2 border-black w-full" />\r
   </div>\r
-</div>`;var b=class extends HTMLElement{constructor(){super();i(this,"onAlignmentChange",e=>{s.alignment=e.target.value});i(this,"hydrate",e=>{let t=[...this.querySelectorAll('[name="alignment"][type="radio"]')],n=this.querySelector("#alignment-other");t.forEach(o=>{o.checked=o.value===e.alignment}),n.value=t.every(o=>o.value!==e.alignment)&&e.alignment||""})}connectedCallback(){this.render(),s.subscribe(this.hydrate),[...this.querySelectorAll('[name="alignment"]')].forEach(t=>{t.addEventListener("change",this.onAlignmentChange)})}disconnectedCallback(){s.unsubscribe(this.hydrate),[...this.querySelectorAll('[name="alignment"]')].forEach(t=>{t.removeEventListener("change",this.onAlignmentChange)})}render(){this.innerHTML=M}};customElements.define("dw-character-alignment",b);var W=`<div class="grid grid-cols-1 lg:grid-cols-3 gap-2">\r
+</div>`;var f=class extends HTMLElement{constructor(){super();s(this,"onAlignmentChange",e=>{i.alignment=e.target.value});s(this,"hydrate",e=>{let t=[...this.querySelectorAll('[name="alignment"][type="radio"]')],n=this.querySelector("#alignment-other");t.forEach(o=>{o.checked=o.value===e.alignment}),n.value=t.every(o=>o.value!==e.alignment)&&e.alignment||""})}connectedCallback(){this.render(),i.subscribe(this.hydrate),[...this.querySelectorAll('[name="alignment"]')].forEach(t=>{t.addEventListener("change",this.onAlignmentChange)})}disconnectedCallback(){i.unsubscribe(this.hydrate),[...this.querySelectorAll('[name="alignment"]')].forEach(t=>{t.removeEventListener("change",this.onAlignmentChange)})}render(){this.innerHTML=T}};customElements.define("dw-character-alignment",f);var R=`<div class="grid grid-cols-1 lg:grid-cols-3 gap-2">\r
   <dw-character-attribute id="strength">\r
     Strength\r
     <span slot="abbreviation">STR</span>\r
@@ -237,7 +197,7 @@
     <span slot="abbreviation">CHA</span>\r
     <span slot="debuff">Scarred -1</span>\r
   </dw-character-attribute>\r
-</div>`;var T=`<style>\r
+</div>`;var O=`<style>\r
   .flex {\r
     display: flex;\r
   }\r
@@ -367,13 +327,13 @@
       <input type="checkbox" id="debuff" name="debuff" />\r
     </div>\r
   </div>\r
-</div>`;var g=class extends HTMLElement{constructor(){super();i(this,"_id");i(this,"_value",0);i(this,"_debuff",!1);i(this,"emitAttributeChange",e=>this.dispatchEvent(new CustomEvent("dw-attribute-change",{detail:e})));i(this,"emitDebuffChange",e=>this.dispatchEvent(new CustomEvent("dw-debuff-change",{detail:e})));i(this,"onScoreChange",e=>{this._value=e.target.value,this.emitAttributeChange(e.target.value),this.updateModifier()});i(this,"onDebuffClick",()=>{this._debuff=!this._debuff,this.emitDebuffChange(this._debuff)});this.attachShadow({mode:"open"})}static get observedAttributes(){return["id","value","debuff"]}attributeChangedCallback(e,t,n){switch(e){case"id":this._id=n;break;case"debuff":this._debuff=n==="true";let o=this.shadowRoot.querySelector("#debuff");o.checked=this._debuff;break;case"value":default:this._value=n;let r=this.shadowRoot.querySelector('[name="score"]');r.value=n,this.updateModifier();break}}calculateModifier(){return this._value<=3?-3:this._value<=5?-2:this._value<=8?-1:this._value<=12?0:this._value<=15?1:this._value<=17?2:3}updateModifier(){let e=this.shadowRoot.querySelector("#modifier");e.innerHTML=this.calculateModifier()}connectedCallback(){this.render();let e=this.shadowRoot.querySelector('[name="score"]'),t=this.shadowRoot.querySelector("#score-label"),n=this.shadowRoot.querySelector("#debuff");e.setAttribute("id",`score-${this._id}`),t.setAttribute("for",`score-${this._id}`),e.addEventListener("change",this.onScoreChange),n.addEventListener("click",this.onDebuffClick)}disconnectedCallback(){let e=this.shadowRoot.querySelector('[name="score"]'),t=this.shadowRoot.querySelector("#debuff");e.removeEventListener("change",this.onScoreChange),t.removeEventListener("change",this.onDebuffClick)}render(){this.shadowRoot.innerHTML=T,this.updateModifier()}};customElements.define("dw-character-attribute",g);var y=["strength","dexterity","constitution","intelligence","wisdom","charisma"],x=class extends HTMLElement{constructor(){super();i(this,"onAttributeChangeHof",e=>t=>{switch(e){case"strength":s.strength=t.detail;break;case"dexterity":s.dexterity=t.detail;break;case"constitution":s.constitution=t.detail;break;case"intelligence":s.intelligence=t.detail;break;case"wisdom":s.wisdom=t.detail;break;case"charisma":s.charisma=t.detail;break;default:throw new Error(`Unknown attribute: ${e}`)}});i(this,"onDebuffChangeHof",e=>t=>{switch(e){case"strength":s.weak=t.detail;break;case"dexterity":s.shaky=t.detail;break;case"constitution":s.sick=t.detail;break;case"intelligence":s.stunned=t.detail;break;case"wisdom":s.confused=t.detail;break;case"charisma":s.scarred=t.detail;break;default:throw new Error(`Unknown attribute: ${e}`)}});i(this,"hydrate",e=>{y.forEach(t=>{let n=this.querySelector(`#${t}`),o,r;switch(t){case"strength":o=e.strength,r=e.weak;break;case"dexterity":o=e.dexterity,r=e.shaky;break;case"constitution":o=e.constitution,r=e.sick;break;case"intelligence":o=e.intelligence,r=e.stunned;break;case"wisdom":o=e.wisdom,r=e.confused;break;case"charisma":o=e.charisma,r=e.scarred;break;default:throw new Error(`Unknown attribute: ${t}`)}n.setAttribute("value",o||0),n.setAttribute("debuff",r||!1)})})}connectedCallback(){this.render(),s.subscribe(this.hydrate),y.forEach(e=>{let t=this.querySelector(`#${e}`);t.addEventListener("dw-attribute-change",this.onAttributeChangeHof(e)),t.addEventListener("dw-debuff-change",this.onDebuffChangeHof(e))})}disconnectedCallback(){y.forEach(e=>{let t=this.querySelector(`#${e}`);t.removeEventListener("change",this.onAttributeChangeHof(e)),t.removeEventListener("dw-debuff-change",this.onDebuffChangeHof(e))})}render(){this.innerHTML=W}};customElements.define("dw-character-attributes",x);var R=`<div id="bonds" class="flex flex-col">
+</div>`;var g=class extends HTMLElement{constructor(){super();s(this,"_id");s(this,"_value",0);s(this,"_debuff",!1);s(this,"emitAttributeChange",e=>this.dispatchEvent(new CustomEvent("dw-attribute-change",{detail:e})));s(this,"emitDebuffChange",e=>this.dispatchEvent(new CustomEvent("dw-debuff-change",{detail:e})));s(this,"onScoreChange",e=>{this._value=e.target.value,this.emitAttributeChange(e.target.value),this.updateModifier()});s(this,"onDebuffClick",()=>{this._debuff=!this._debuff,this.emitDebuffChange(this._debuff)});this.attachShadow({mode:"open"})}static get observedAttributes(){return["id","value","debuff"]}attributeChangedCallback(e,t,n){switch(e){case"id":this._id=n;break;case"debuff":this._debuff=n==="true";let o=this.shadowRoot.querySelector("#debuff");o.checked=this._debuff;break;case"value":default:this._value=n;let d=this.shadowRoot.querySelector('[name="score"]');d.value=n,this.updateModifier();break}}calculateModifier(){return this._value<=3?-3:this._value<=5?-2:this._value<=8?-1:this._value<=12?0:this._value<=15?1:this._value<=17?2:3}updateModifier(){let e=this.shadowRoot.querySelector("#modifier");e.innerHTML=this.calculateModifier()}connectedCallback(){this.render();let e=this.shadowRoot.querySelector('[name="score"]'),t=this.shadowRoot.querySelector("#score-label"),n=this.shadowRoot.querySelector("#debuff");e.setAttribute("id",`score-${this._id}`),t.setAttribute("for",`score-${this._id}`),e.addEventListener("change",this.onScoreChange),n.addEventListener("click",this.onDebuffClick)}disconnectedCallback(){let e=this.shadowRoot.querySelector('[name="score"]'),t=this.shadowRoot.querySelector("#debuff");e.removeEventListener("change",this.onScoreChange),t.removeEventListener("change",this.onDebuffClick)}render(){this.shadowRoot.innerHTML=O,this.updateModifier()}};customElements.define("dw-character-attribute",g);var y=["strength","dexterity","constitution","intelligence","wisdom","charisma"],w=class extends HTMLElement{constructor(){super();s(this,"onAttributeChangeHof",e=>t=>{switch(e){case"strength":i.strength=t.detail;break;case"dexterity":i.dexterity=t.detail;break;case"constitution":i.constitution=t.detail;break;case"intelligence":i.intelligence=t.detail;break;case"wisdom":i.wisdom=t.detail;break;case"charisma":i.charisma=t.detail;break;default:throw new Error(`Unknown attribute: ${e}`)}});s(this,"onDebuffChangeHof",e=>t=>{switch(e){case"strength":i.weak=t.detail;break;case"dexterity":i.shaky=t.detail;break;case"constitution":i.sick=t.detail;break;case"intelligence":i.stunned=t.detail;break;case"wisdom":i.confused=t.detail;break;case"charisma":i.scarred=t.detail;break;default:throw new Error(`Unknown attribute: ${e}`)}});s(this,"hydrate",e=>{y.forEach(t=>{let n=this.querySelector(`#${t}`),o,d;switch(t){case"strength":o=e.strength,d=e.weak;break;case"dexterity":o=e.dexterity,d=e.shaky;break;case"constitution":o=e.constitution,d=e.sick;break;case"intelligence":o=e.intelligence,d=e.stunned;break;case"wisdom":o=e.wisdom,d=e.confused;break;case"charisma":o=e.charisma,d=e.scarred;break;default:throw new Error(`Unknown attribute: ${t}`)}n.setAttribute("value",o||0),n.setAttribute("debuff",d||!1)})})}connectedCallback(){this.render(),i.subscribe(this.hydrate),y.forEach(e=>{let t=this.querySelector(`#${e}`);t.addEventListener("dw-attribute-change",this.onAttributeChangeHof(e)),t.addEventListener("dw-debuff-change",this.onDebuffChangeHof(e))})}disconnectedCallback(){y.forEach(e=>{let t=this.querySelector(`#${e}`);t.removeEventListener("change",this.onAttributeChangeHof(e)),t.removeEventListener("dw-debuff-change",this.onDebuffChangeHof(e))})}render(){this.innerHTML=R}};customElements.define("dw-character-attributes",w);var D=`<div id="bonds" class="flex flex-col">
   <dw-section-header>
     BONDS
   </dw-section-header>
   <dw-infinite-list id="bonds-list"></dw-infinite-list>
 </div>
-`;var O=`<style>
+`;var I=`<style>
 
   .outline-none {
     outline: none;
@@ -418,7 +378,7 @@
 <div id="list">
   <input id="new" type="text" class="outline-none bg-transparent border-b-2 border-b-black outline-none w-full" />
 </div>
-`;var D=(c,a)=>{let e=document.createElement("template"),t="bg-transparent border-b-2 border-b-black outline-none w-full";return e.innerHTML=`<input type="text" value="${c}" id="item-${a}" class="${t}" />`,e.content.firstChild},w=class extends HTMLElement{constructor(){super();i(this,"_value",[]);i(this,"onUpdate",async(e,t)=>{let n=e.target.value;if(this._value[t]=n,n===""){let o=this._value;this._value=this._value.filter((r,u)=>u!==t),this.renderList(o,this._value)}this.dispatchEvent(new CustomEvent("dw-infinite-list-change",{detail:this._value}))});i(this,"onAdd",e=>{let t=this._value.length;this._value=[...this._value,e],this.shadowRoot.querySelector("#new").value="";let n=D(e,t);n.setAttribute("value",e),this.shadowRoot.querySelector("#list").insertBefore(n,this.shadowRoot.querySelector("#new")),n.setSelectionRange(n.value.length,n.value.length),n.addEventListener("keyup",o=>{this.onUpdate(o,t)}),n.focus(),this.dispatchEvent(new CustomEvent("dw-infinite-list-change",{detail:this._value}))});this.attachShadow({mode:"open"})}get value(){return this._value}set value(e){this.renderList(this._value,e),this._value=e}diff(e,t){let[n,o]=t.reduce(([u,d],h,l)=>(l<e.length&&e[l]!==h&&d.push(l),l>=e.length&&u.push(h),[u,d]),[[],[]]);return{removed:e.reduce((u,d,h)=>(t[h]||u.push(h),u),[]),added:n,modified:o}}renderList(e=[],t=[]){let{removed:n,added:o,modified:r}=this.diff(e,t),u=this.shadowRoot.querySelector("#list");n.forEach(d=>{let h=this.shadowRoot.querySelector(`#item-${d}`);h&&(h.removeEventListener("keyup",l=>this.onUpdate(l,d)),h.remove())}),r.forEach(d=>{let h=this.shadowRoot.querySelector(`#item-${d}`);h&&(h.value=t[d])}),o.forEach((d,h)=>{let l=D(d,e.length+h);l.addEventListener("keyup",U=>this.onUpdate(U,h)),u.insertBefore(l,this.shadowRoot.querySelector("#new"))})}connectedCallback(){this.render(),this.shadowRoot.querySelector("#new").addEventListener("keyup",e=>this.onAdd(e.target.value))}disconnectedCallback(){this.shadowRoot.querySelector("#new").removeEventListener("keyup",e=>this.onAdd(e.target.value)),this._value.forEach((e,t)=>{document.querySelector(`#item-${t}`).removeEventListener("keyup",o=>this.onUpdate(o,t))})}render(){this.shadowRoot.innerHTML=O,this.renderList([],this._value)}};customElements.define("dw-infinite-list",w);var k=class extends HTMLElement{constructor(){super();i(this,"hydrate",e=>{this.querySelector("#bonds-list").value=e.bonds})}onUpdate(e){s.bonds=e.detail}connectedCallback(){this.render(),s.subscribe(this.hydrate),this.querySelector("#bonds-list").addEventListener("dw-infinite-list-change",this.onUpdate)}disconnectedCallback(){s.unsubscribe(this.hydrate),this.querySelector("#bonds-list").removeEventListener("dw-infinite-list-change",this.onUpdate)}render(){this.innerHTML=R}};customElements.define("dw-character-bonds",k);var P=`<div id="character-race" class="flex flex-col">
+`;var B=(r,a)=>{let e=document.createElement("template"),t="bg-transparent border-b-2 border-b-black outline-none w-full";return e.innerHTML=`<input type="text" value="${r}" id="item-${a}" class="${t}" />`,e.content.firstChild},x=class extends HTMLElement{constructor(){super();s(this,"_value",[]);s(this,"onUpdate",async(e,t)=>{let n=e.target.value;if(this._value[t]=n,n===""){let o=this._value;this._value=this._value.filter((d,u)=>u!==t),this.renderList(o,this._value)}this.dispatchEvent(new CustomEvent("dw-infinite-list-change",{detail:this._value}))});s(this,"onAdd",e=>{let t=this._value.length;this._value=[...this._value,e],this.shadowRoot.querySelector("#new").value="";let n=B(e,t);n.setAttribute("value",e),this.shadowRoot.querySelector("#list").insertBefore(n,this.shadowRoot.querySelector("#new")),n.setSelectionRange(n.value.length,n.value.length),n.addEventListener("keyup",o=>{this.onUpdate(o,t)}),n.focus(),this.dispatchEvent(new CustomEvent("dw-infinite-list-change",{detail:this._value}))});this.attachShadow({mode:"open"})}get value(){return this._value}set value(e){this.renderList(this._value,e),this._value=e}diff(e,t){let[n,o]=t.reduce(([u,h],c,l)=>(l<e.length&&e[l]!==c&&h.push(l),l>=e.length&&u.push(c),[u,h]),[[],[]]);return{removed:e.reduce((u,h,c)=>(t[c]||u.push(c),u),[]),added:n,modified:o}}renderList(e=[],t=[]){let{removed:n,added:o,modified:d}=this.diff(e,t),u=this.shadowRoot.querySelector("#list");n.forEach(h=>{let c=this.shadowRoot.querySelector(`#item-${h}`);c&&(c.removeEventListener("keyup",l=>this.onUpdate(l,h)),c.remove())}),d.forEach(h=>{let c=this.shadowRoot.querySelector(`#item-${h}`);c&&(c.value=t[h])}),o.forEach((h,c)=>{let l=B(h,e.length+c);l.addEventListener("keyup",Y=>this.onUpdate(Y,c)),u.insertBefore(l,this.shadowRoot.querySelector("#new"))})}connectedCallback(){this.render(),this.shadowRoot.querySelector("#new").addEventListener("keyup",e=>this.onAdd(e.target.value))}disconnectedCallback(){this.shadowRoot.querySelector("#new").removeEventListener("keyup",e=>this.onAdd(e.target.value)),this._value.forEach((e,t)=>{document.querySelector(`#item-${t}`).removeEventListener("keyup",o=>this.onUpdate(o,t))})}render(){this.shadowRoot.innerHTML=I,this.renderList([],this._value)}};customElements.define("dw-infinite-list",x);var k=class extends HTMLElement{constructor(){super();s(this,"hydrate",e=>{this.querySelector("#bonds-list").value=e.bonds})}onUpdate(e){i.bonds=e.detail}connectedCallback(){this.render(),i.subscribe(this.hydrate),this.querySelector("#bonds-list").addEventListener("dw-infinite-list-change",this.onUpdate)}disconnectedCallback(){i.unsubscribe(this.hydrate),this.querySelector("#bonds-list").removeEventListener("dw-infinite-list-change",this.onUpdate)}render(){this.innerHTML=D}};customElements.define("dw-character-bonds",k);var N=`<div id="character-race" class="flex flex-col">
   <dw-section-header>Race</dw-section-header>
   <div class="flex flex-row items-center">
     <input
@@ -478,7 +438,7 @@
     </label>
   </div>
 </div>
-`;var E=class extends HTMLElement{constructor(){super();i(this,"emit",e=>{s.race=e});i(this,"onChange",e=>{this.emit(e.target.value)});i(this,"hydrate",e=>{this.querySelectorAll('[name="race"]').forEach(t=>{t.checked=e.race===t.value})})}static get observedAttributes(){return[]}connectedCallback(){this.render(),s.subscribe(this.hydrate),this.querySelectorAll('[name="race"]').forEach(e=>e.addEventListener("change",this.onChange))}disconnectedCallback(){s.unsubscribe(this.hydrate),this.querySelectorAll('[name="race"]').forEach(e=>e.removeEventListener("change",this.onChange))}render(){this.innerHTML=P}};customElements.define("dw-character-race",E);var I=`<style>
+`;var E=class extends HTMLElement{constructor(){super();s(this,"emit",e=>{i.race=e});s(this,"onChange",e=>{this.emit(e.target.value)});s(this,"hydrate",e=>{this.querySelectorAll('[name="race"]').forEach(t=>{t.checked=e.race===t.value})})}static get observedAttributes(){return[]}connectedCallback(){this.render(),i.subscribe(this.hydrate),this.querySelectorAll('[name="race"]').forEach(e=>e.addEventListener("change",this.onChange))}disconnectedCallback(){i.unsubscribe(this.hydrate),this.querySelectorAll('[name="race"]').forEach(e=>e.removeEventListener("change",this.onChange))}render(){this.innerHTML=N}};customElements.define("dw-character-race",E);var P=`<style>
   .coin {
     top: -0.4rem;
   }
@@ -494,7 +454,7 @@
     <span class="pl-12">COIN</span>
   </dw-section-header>
 </div>
-`;var _=class extends HTMLElement{constructor(){super();i(this,"hydrate",e=>{let t=this.querySelector("#coin");t.value=e.coin||0})}static get observedAttributes(){return["value"]}attributeChangedCallback(e,t,n){e==="value"&&(this.querySelector("#coin").innerHTML=n)}connectedCallback(){this.render(),s.subscribe(this.hydrate),this.querySelector("#coin").addEventListener("change",t=>{s.coin=t.target.value})}disconnectedCallback(){s.unsubscribe(this.hydrate),this.querySelector("#coin").removeEventListener("change",t=>{s.coin=t.target.value})}render(){this.innerHTML=I}};customElements.define("dw-character-coin",_);var N=`<div>
+`;var _=class extends HTMLElement{constructor(){super();s(this,"hydrate",e=>{let t=this.querySelector("#coin");t.value=e.coin||0})}static get observedAttributes(){return["value"]}attributeChangedCallback(e,t,n){e==="value"&&(this.querySelector("#coin").innerHTML=n)}connectedCallback(){this.render(),i.subscribe(this.hydrate),this.querySelector("#coin").addEventListener("change",t=>{i.coin=t.target.value})}disconnectedCallback(){i.unsubscribe(this.hydrate),this.querySelector("#coin").removeEventListener("change",t=>{i.coin=t.target.value})}render(){this.innerHTML=P}};customElements.define("dw-character-coin",_);var $=`<div>
   <dw-section-header>
     <div class="flex flex-row">
       <span class="flex-1">GEAR</span>
@@ -516,7 +476,7 @@
   </dw-section-header>
   <dw-infinite-list id="gear-list"></dw-infinite-list>
 </div>
-`;var S=class extends HTMLElement{constructor(){super();i(this,"hydrate",e=>{this.querySelector("#gear-list").value=e.gear||[],this.querySelector("#load").value=e.load||0,this.querySelector("#max-load").value=e.maxLoad||0})}onUpdate(e){s.gear=e.detail}connectedCallback(){this.render(),s.subscribe(this.hydrate),this.querySelector("#gear-list").addEventListener("dw-infinite-list-change",this.onUpdate),this.querySelector("#load").addEventListener("change",e=>{s.load=e.target.value}),this.querySelector("#max-load").addEventListener("change",e=>{s.maxLoad=e.target.value})}disconnectedCallback(){s.unsubscribe(this.hydrate),this.querySelector("#gear-list").removeEventListener("dw-infinite-list-change",this.onUpdate),this.querySelector("#load").removeEventListener("change",e=>{s.load=e.target.value}),this.querySelector("#max-load").removeEventListener("change",e=>{s.maxLoad=e.target.value})}render(){this.innerHTML=N}};customElements.define("dw-character-gear",S);var B=`<div>
+`;var S=class extends HTMLElement{constructor(){super();s(this,"hydrate",e=>{this.querySelector("#gear-list").value=e.gear||[],this.querySelector("#load").value=e.load||0,this.querySelector("#max-load").value=e.maxLoad||0})}onUpdate(e){i.gear=e.detail}connectedCallback(){this.render(),i.subscribe(this.hydrate),this.querySelector("#gear-list").addEventListener("dw-infinite-list-change",this.onUpdate),this.querySelector("#load").addEventListener("change",e=>{i.load=e.target.value}),this.querySelector("#max-load").addEventListener("change",e=>{i.maxLoad=e.target.value})}disconnectedCallback(){i.unsubscribe(this.hydrate),this.querySelector("#gear-list").removeEventListener("dw-infinite-list-change",this.onUpdate),this.querySelector("#load").removeEventListener("change",e=>{i.load=e.target.value}),this.querySelector("#max-load").removeEventListener("change",e=>{i.maxLoad=e.target.value})}render(){this.innerHTML=$}};customElements.define("dw-character-gear",S);var U=`<div>
   <dw-section-header>STARTING MOVES</dw-section-header>
   <div class="grid grid-cols-2 gap-2">
     <div class="grid grid-cols-2 col-span-2 gap-1">
@@ -1050,4 +1010,48 @@
     </div>
   </div>
 </div>
-`;var C=class extends HTMLElement{constructor(){super();i(this,"_value",{});i(this,"_inputs",[["#signature-weapon","signatureWeapon"],["#signature-weapon-sword","signatureWeaponSword"],["#signature-weapon-spear","signatureWeaponSpear"],["#signature-weapon-axe","signatureWeaponAxe"],["#signature-weapon-flail","signatureWeaponFlail"],["#signature-weapon-hammer","signatureWeaponHammer"],["#signature-weapon-fists","signatureWeaponFists"],["#signature-weapon-range-hand","signatureWeaponRangeHand"],["#signature-weapon-range-close","signatureWeaponRangeClose"],["#signature-weapon-range-reach","signatureWeaponRangeReach"],["#signature-weapon-enhancement-hooks-and-spikes","signatureWeaponEnhancementHooksAndSpikes"],["#signature-weapon-enhancement-sharp","signatureWeaponEnhancementSharp"],["#signature-weapon-enhancement-prefectly-weighted","signatureWeaponEnhancementPrefectlyWeighted"],["#signature-weapon-enhancement-serrated-edges","signatureWeaponEnhancementSerratedEdges"],["#signature-weapon-enhancement-glows-in-the-dark","signatureWeaponEnhancementGlowsInTheDark"],["#signature-weapon-enhancement-huge","signatureWeaponEnhancementHuge"],["#signature-weapon-enhancement-versatile","signatureWeaponEnhancementVersatile"],["#signature-weapon-enhancement-well-crafted","signatureWeaponEnhancementWellCrafted"],["#signature-weapon-look-ancient","signatureWeaponLookAncient"],["#signature-weapon-look-blood-stained","signatureWeaponLookBloodStained"],["#signature-weapon-look-unblemished","signatureWeaponLookUnblemished"],["#signature-weapon-look-sinister","signatureWeaponLookSinister"],["#signature-weapon-look-ornate","signatureWeaponLookOrnate"],["#bend-bars-lift-gates","bendBarsLiftGates"],["#armored","armored"],["#merciless","merciless"],["#armor-mastery","armorMastery"],["#heirloom","heirloom"],["#seeing-red","seeingRed"],["#improved-weapon","improvedWeapon"],["#interrogator","interrogator"],["#blacksmith","blacksmith"],["#scent-of-blood","scentOfBlood"],["#iron-hide","ironHide"],["#multiclass-dabbler","multiclassDabbler"],["#bloodthirsty","bloodthirsty"],["#armored-perfection","armoredPerfection"],["#through-deaths-eyes","throughDeathsEyes"],["#evil-eye","evilEye"],["#eye-for-weaponry","eyeForWeaponry"],["#superior-warrior","superiorWarrior"],["#taste-of-blood","tasteOfBlood"],["#steel-hide","steelHide"],["#multiclass-initiate","multiclassInitiate"]]);i(this,"emit",()=>{this.dispatchEvent(new CustomEvent("dw-character-moves-change",{detail:this._value}))});i(this,"addEventListenerFacade",(e,t)=>{let n=this.querySelector(e);if(!n)throw new Error(`Element ${e} not found`);n.addEventListener("change",()=>{this._value[t]=!this._value[t],this.emit()})});i(this,"removeEventListenerFacade",(e,t)=>{let n=this.querySelector(e);if(!n)throw new Error(`Element ${e} not found`);n.removeEventListener("change",()=>{this._value[t]=!this._value[t],this.emit()})});i(this,"updateElement",(e,t)=>{let n=this.querySelector(e);if(!n)throw new Error(`Element ${e} not found`);n.checked=this._value[t]});i(this,"updateDom",()=>{this._inputs.forEach(([e,t])=>{this.updateElement(e,t)})})}get value(){return this._value}set value(e){this._value=e,this.updateDom()}connectedCallback(){this.render(),this._inputs.forEach(([e,t])=>this.addEventListenerFacade(e,t))}disconnectedCallback(){this._inputs.forEach(([e,t])=>this.removeEventListenerFacade(e,t))}render(){this.innerHTML=B,this.updateDom()}};customElements.define("dw-character-moves",C);var L=class extends HTMLElement{constructor(){super();i(this,"onCharacterNameChange",e=>{s.characterName=e.target.value});i(this,"onLevelChange",e=>{s.level=e.target.value});i(this,"onXpChange",e=>{s.xp=e.target.value});i(this,"onArmorChange",e=>{s.armor=e.target.value});i(this,"onHitPointsChange",e=>{s.hitPoints=e.target.value});i(this,"onMaxHitPointsChange",e=>{s.maxHitPoints=e.target.value});i(this,"onMovesChange",e=>{s.moves=e.detail});i(this,"hydrate",e=>{let t=this.querySelector("#character-name"),n=this.querySelector("#level"),o=this.querySelector("#xp"),r=this.querySelector("#armor"),u=this.querySelector("#hit-points"),d=this.querySelector("#max-hit-points"),h=this.querySelector("dw-character-moves");t.value=e.characterName||"",n.value=e.level||"",o.value=e.xp||0,r.value=e.armor||0,u.value=e.hitPoints||0,d.value=e.maxHitPoints||0,h.value=e.moves||{}})}connectedCallback(){this.render(),s.subscribe(this.hydrate);let e=this.querySelector("#character-name"),t=this.querySelector("#level"),n=this.querySelector("#xp"),o=this.querySelector("#armor"),r=this.querySelector("#hit-points"),u=this.querySelector("#max-hit-points"),d=this.querySelector("dw-character-moves");e.addEventListener("change",this.onCharacterNameChange),t.addEventListener("change",this.onLevelChange),n.addEventListener("change",this.onXpChange),o.addEventListener("change",this.onArmorChange),r.addEventListener("change",this.onHitPointsChange),u.addEventListener("change",this.onMaxHitPointsChange),d.addEventListener("dw-character-moves-change",this.onMovesChange)}disconnectedCallback(){s.unsubscribe(this.hydrate);let e=this.querySelector("#character-name"),t=this.querySelector("#level"),n=this.querySelector("#xp"),o=this.querySelector("#armor"),r=this.querySelector("#hit-points"),u=this.querySelector("#max-hit-points"),d=this.querySelector("dw-character-moves");e.removeEventListener("change",this.onCharacterNameChange),t.removeEventListener("change",this.onLevelChange),n.removeEventListener("change",this.onXpChange),o.removeEventListener("change",this.onArmorChange),r.removeEventListener("change",this.onHitPointsChange),u.removeEventListener("change",this.onMaxHitPointsChange),d.removeEventListener("dw-character-moves-change",this.onMovesChange)}render(){this.innerHTML=q}};customElements.define("dw-character-form",L);})();
+`;var C=class extends HTMLElement{constructor(){super();s(this,"_value",{});s(this,"_inputs",[["#signature-weapon","signatureWeapon"],["#signature-weapon-sword","signatureWeaponSword"],["#signature-weapon-spear","signatureWeaponSpear"],["#signature-weapon-axe","signatureWeaponAxe"],["#signature-weapon-flail","signatureWeaponFlail"],["#signature-weapon-hammer","signatureWeaponHammer"],["#signature-weapon-fists","signatureWeaponFists"],["#signature-weapon-range-hand","signatureWeaponRangeHand"],["#signature-weapon-range-close","signatureWeaponRangeClose"],["#signature-weapon-range-reach","signatureWeaponRangeReach"],["#signature-weapon-enhancement-hooks-and-spikes","signatureWeaponEnhancementHooksAndSpikes"],["#signature-weapon-enhancement-sharp","signatureWeaponEnhancementSharp"],["#signature-weapon-enhancement-prefectly-weighted","signatureWeaponEnhancementPrefectlyWeighted"],["#signature-weapon-enhancement-serrated-edges","signatureWeaponEnhancementSerratedEdges"],["#signature-weapon-enhancement-glows-in-the-dark","signatureWeaponEnhancementGlowsInTheDark"],["#signature-weapon-enhancement-huge","signatureWeaponEnhancementHuge"],["#signature-weapon-enhancement-versatile","signatureWeaponEnhancementVersatile"],["#signature-weapon-enhancement-well-crafted","signatureWeaponEnhancementWellCrafted"],["#signature-weapon-look-ancient","signatureWeaponLookAncient"],["#signature-weapon-look-blood-stained","signatureWeaponLookBloodStained"],["#signature-weapon-look-unblemished","signatureWeaponLookUnblemished"],["#signature-weapon-look-sinister","signatureWeaponLookSinister"],["#signature-weapon-look-ornate","signatureWeaponLookOrnate"],["#bend-bars-lift-gates","bendBarsLiftGates"],["#armored","armored"],["#merciless","merciless"],["#armor-mastery","armorMastery"],["#heirloom","heirloom"],["#seeing-red","seeingRed"],["#improved-weapon","improvedWeapon"],["#interrogator","interrogator"],["#blacksmith","blacksmith"],["#scent-of-blood","scentOfBlood"],["#iron-hide","ironHide"],["#multiclass-dabbler","multiclassDabbler"],["#bloodthirsty","bloodthirsty"],["#armored-perfection","armoredPerfection"],["#through-deaths-eyes","throughDeathsEyes"],["#evil-eye","evilEye"],["#eye-for-weaponry","eyeForWeaponry"],["#superior-warrior","superiorWarrior"],["#taste-of-blood","tasteOfBlood"],["#steel-hide","steelHide"],["#multiclass-initiate","multiclassInitiate"]]);s(this,"emit",()=>{this.dispatchEvent(new CustomEvent("dw-character-moves-change",{detail:this._value}))});s(this,"addEventListenerFacade",(e,t)=>{let n=this.querySelector(e);if(!n)throw new Error(`Element ${e} not found`);n.addEventListener("change",()=>{this._value[t]=!this._value[t],this.emit()})});s(this,"removeEventListenerFacade",(e,t)=>{let n=this.querySelector(e);if(!n)throw new Error(`Element ${e} not found`);n.removeEventListener("change",()=>{this._value[t]=!this._value[t],this.emit()})});s(this,"updateElement",(e,t)=>{let n=this.querySelector(e);if(!n)throw new Error(`Element ${e} not found`);n.checked=this._value[t]});s(this,"updateDom",()=>{this._inputs.forEach(([e,t])=>{this.updateElement(e,t)})})}get value(){return this._value}set value(e){this._value=e,this.updateDom()}connectedCallback(){this.render(),this._inputs.forEach(([e,t])=>this.addEventListenerFacade(e,t))}disconnectedCallback(){this._inputs.forEach(([e,t])=>this.removeEventListenerFacade(e,t))}render(){this.innerHTML=U,this.updateDom()}};customElements.define("dw-character-moves",C);var F=`<div class="flex flex-col">
+  <dw-labeled-decorated-input for="armor" icon-class="shield">
+    ARMOR
+    <input
+      slot="input"
+      type="text"
+      id="armor"
+      name="armor"
+      class="text-black bg-white w-7 z-10 mr-10 outline-none text-center disabled:overflow-visible"
+    />
+  </dw-labeled-decorated-input>
+  <dw-labeled-decorated-input for="hp" icon-class="heart">
+    HP
+    <span slot="input" class="z-10">
+      <input
+        type="text"
+        id="hit-points"
+        name="hit-points"
+        class="text-black bg-white w-6 outline-none text-center border-r-2 border-black"
+      />
+      <input
+        type="text"
+        id="max-hit-points"
+        name="max-hit-points"
+        class="text-black bg-white w-6 mr-7 outline-none text-center"
+      />
+    </span>
+  </dw-labeled-decorated-input>
+  <dw-labeled-decorated-input for="damage" icon-class="damage-dice">
+    DAMAGE
+    <span slot="input" class="z-10 mr-10 text-black">D10</span>
+  </dw-labeled-decorated-input>
+</div>
+`;var G=`<label
+  id="labeled-decorate-input__label"
+  for="labeled-decorate-input__input"
+  class="bg-black text-white flex flex-row relative mb-16"
+>
+  <slot></slot>
+  <div id="labeled-decorated-input__icon" class="flex flex-1 grow justify-end">
+    <slot name="input"></slot>
+  </div>
+</label>
+<link rel="stylesheet" href="tailwind.css" />
+`;var L=class extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}static get observedAttributes(){return["for","icon-class"]}attributeChangedCallback(a,e,t){let n=this.shadowRoot.querySelector("#labeled-decorate-input__input");switch(a){case"for":this.shadowRoot.querySelector("#labeled-decorate-input__label")?.setAttribute("for",t);break;case"icon-class":this.shadowRoot.querySelector("#labeled-decorated-input__icon")?.classList.add(t);break;default:break}}onMount(){let a=this.shadowRoot.querySelector("#labeled-decorated-input__icon"),e=this.shadowRoot.querySelector("#labeled-decorate-input__label");a.classList.add(this.getAttribute("icon-class")),e.setAttribute("for",this.getAttribute("for"))}connectedCallback(){this.render(),this.onMount()}render(){this.shadowRoot.innerHTML=G}};customElements.define("dw-labeled-decorated-input",L);var q=class extends HTMLElement{constructor(){super();s(this,"_inputs",[["armor","armor"],["hit-points","hitPoints"],["max-hit-points","maxHitPoints"]]);s(this,"onArmorChange",e=>{i.armor=e.target.value});s(this,"onHitPointsChange",e=>{i.hitPoints=e.target.value});s(this,"onMaxHitPointsChange",e=>{i.maxHitPoints=e.target.value});s(this,"onChange",e=>{let{name:t}=e.target;switch(t){case"armor":this.onArmorChange(e);break;case"hit-points":this.onHitPointsChange(e);break;case"max-hit-points":this.onMaxHitPointsChange(e);break;default:break}});s(this,"hydrate",e=>{this._inputs.forEach(([t,n])=>{let o=this.querySelector(`#${t}`);o.value=e[n]||0})});s(this,"onMount",()=>{i.subscribe(this.hydrate),this._inputs.forEach(([e])=>{this.querySelector(`#${e}`).addEventListener("change",this.onChange)})});s(this,"beforeUnmount",()=>{i.unsubscribe(this.hydrate),this._inputs.forEach(([e])=>{this.querySelector(`#${e}`).removeEventListener("dw-input-change",this.onChange)})})}connectedCallback(){this.render(),this.onMount()}disconnectedCallback(){this.beforeUnmount()}render(){this.innerHTML=F}};customElements.define("dw-character-armor-hp-damage",q);var H=class extends HTMLElement{constructor(){super();s(this,"onCharacterNameChange",e=>{i.characterName=e.target.value});s(this,"onLevelChange",e=>{i.level=e.target.value});s(this,"onXpChange",e=>{i.xp=e.target.value});s(this,"onMovesChange",e=>{i.moves=e.detail});s(this,"hydrate",e=>{let t=this.querySelector("#character-name"),n=this.querySelector("#level"),o=this.querySelector("#xp"),d=this.querySelector("dw-character-moves");t.value=e.characterName||"",n.value=e.level||"",o.value=e.xp||0,d.value=e.moves||{}})}connectedCallback(){this.render(),i.subscribe(this.hydrate);let e=this.querySelector("#character-name"),t=this.querySelector("#level"),n=this.querySelector("#xp"),o=this.querySelector("dw-character-moves");e.addEventListener("change",this.onCharacterNameChange),t.addEventListener("change",this.onLevelChange),n.addEventListener("change",this.onXpChange),o.addEventListener("dw-character-moves-change",this.onMovesChange)}disconnectedCallback(){i.unsubscribe(this.hydrate);let e=this.querySelector("#character-name"),t=this.querySelector("#level"),n=this.querySelector("dw-character-moves");e.removeEventListener("change",this.onCharacterNameChange),t.removeEventListener("change",this.onLevelChange),xpElement.removeEventListener("change",this.onXpChange),n.removeEventListener("dw-character-moves-change",this.onMovesChange)}render(){this.innerHTML=M}};customElements.define("dw-character-form",H);})();
