@@ -11,51 +11,6 @@ export class CharacterLook extends HTMLElement {
     super()
   }
 
-  emit = () => {
-    this.dispatchEvent(
-      new CustomEvent('dw-change', {
-        detail: {
-          body: this._body,
-          eyes: this._eyes,
-          hair: this._hair,
-          skin: this._skin,
-        },
-      })
-    )
-  }
-
-  get body() {
-    return this._body
-  }
-
-  set body(value) {
-    this._body = value
-  }
-
-  get eyes() {
-    return this._eyes
-  }
-
-  set eyes(value) {
-    this._eyes = value
-  }
-
-  get hair() {
-    return this._hair
-  }
-
-  set hair(value) {
-    this._hair = value
-  }
-
-  get skin() {
-    return this._skin
-  }
-
-  set skin(value) {
-    this._skin = value
-  }
-
   onBodyChange = (event) => {
     this._body = event.target.value
     CharacterFormObservable.look = {
