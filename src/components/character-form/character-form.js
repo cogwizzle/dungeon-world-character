@@ -8,6 +8,7 @@ import './character-race/character-race'
 import './character-coin/character-coin'
 import './character-gear/character-gear'
 import './character-moves/character-moves'
+import './character-armor-hp-damage/character-armor-hp-damage'
 
 export class CharacterForm extends HTMLElement {
   constructor() {
@@ -26,18 +27,6 @@ export class CharacterForm extends HTMLElement {
     CharacterFormObservable.xp = event.target.value
   }
 
-  onArmorChange = (event) => {
-    CharacterFormObservable.armor = event.target.value
-  }
-
-  onHitPointsChange = (event) => {
-    CharacterFormObservable.hitPoints = event.target.value
-  }
-
-  onMaxHitPointsChange = (event) => {
-    CharacterFormObservable.maxHitPoints = event.target.value
-  }
-
   onMovesChange = (event) => {
     CharacterFormObservable.moves = event.detail
   }
@@ -46,16 +35,10 @@ export class CharacterForm extends HTMLElement {
     const characterNameElement = this.querySelector('#character-name')
     const levelElement = this.querySelector('#level')
     const xpElement = this.querySelector('#xp')
-    const armorElement = this.querySelector('#armor')
-    const hitPointsElement = this.querySelector('#hit-points')
-    const maxHitPointsElement = this.querySelector('#max-hit-points')
     const characterMovesElement = this.querySelector('dw-character-moves')
     characterNameElement.value = state.characterName || ''
     levelElement.value = state.level || ''
     xpElement.value = state.xp || 0
-    armorElement.value = state.armor || 0
-    hitPointsElement.value = state.hitPoints || 0
-    maxHitPointsElement.value = state.maxHitPoints || 0
     characterMovesElement.value = state.moves || {}
   }
 
