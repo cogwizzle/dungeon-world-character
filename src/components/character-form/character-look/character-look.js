@@ -18,6 +18,7 @@ export class CharacterLook extends HTMLElement {
           body: this._body,
           eyes: this._eyes,
           hair: this._hair,
+          skin: this._skin,
         },
       })
     )
@@ -61,6 +62,7 @@ export class CharacterLook extends HTMLElement {
       body: this._body,
       eyes: this._eyes,
       hair: this._hair,
+      skin: this._skin,
     }
   }
 
@@ -70,6 +72,7 @@ export class CharacterLook extends HTMLElement {
       body: this._body,
       eyes: this._eyes,
       hair: this._hair,
+      skin: this._skin,
     }
   }
 
@@ -79,6 +82,17 @@ export class CharacterLook extends HTMLElement {
       body: this._body,
       eyes: this._eyes,
       hair: this._hair,
+      skin: this._skin,
+    }
+  }
+
+  onSkinChange = (event) => {
+    this._skin = event.target.value
+    CharacterFormObservable.look = {
+      body: this._body,
+      eyes: this._eyes,
+      hair: this._hair,
+      skin: this._skin,
     }
   }
 
@@ -87,6 +101,7 @@ export class CharacterLook extends HTMLElement {
     this._body = look.body || ''
     this._eyes = look.eyes || ''
     this._hair = look.hair || ''
+    this._skin = look.skin || ''
     const bodyElements = [
       ...this.querySelectorAll('[name="body"][type="radio"]'),
     ]
@@ -123,6 +138,18 @@ export class CharacterLook extends HTMLElement {
     )
       ? look.hair || ''
       : ''
+    const skinElements = [
+      ...this.querySelectorAll('[name="skin"][type="radio"]'),
+    ]
+    skinElements.map(
+      (element) => (element.checked = look.skin === element.value)
+    )
+    const skinOther = this.querySelector('#skin-other')
+    skinOther.value = skinElements.every(
+      (element) => element.value !== look.skin
+    )
+      ? look.skin || ''
+      : ''
   }
 
   connectedCallback() {
@@ -131,6 +158,7 @@ export class CharacterLook extends HTMLElement {
     const bodyElements = [...this.querySelectorAll('[name="body"]')]
     const eyesElements = [...this.querySelectorAll('[name="eyes"]')]
     const hairElements = [...this.querySelectorAll('[name="hair"]')]
+    const skinElements = [...this.querySelectorAll('[name="skin"]')]
     bodyElements.map((element) =>
       element.addEventListener('change', this.onBodyChange)
     )
@@ -140,6 +168,9 @@ export class CharacterLook extends HTMLElement {
     hairElements.map((element) =>
       element.addEventListener('change', this.onHairChange)
     )
+    skinElements.map((element) =>
+      element.addEventListener('change', this.onSkinChange)
+    )
   }
 
   disconnectedCallback() {
@@ -147,6 +178,7 @@ export class CharacterLook extends HTMLElement {
     const bodyElements = [...this.querySelectorAll('[name="body"]')]
     const eyesElements = [...this.querySelectorAll('[name="eyes"]')]
     const hairElements = [...this.querySelectorAll('[name="hair"]')]
+    const skinElements = [...this.querySelectorAll('[name="skin"]')]
     bodyElements.map((element) =>
       element.removeEventListener('change', this.onBodyChange)
     )
@@ -155,6 +187,9 @@ export class CharacterLook extends HTMLElement {
     )
     hairElements.map((element) =>
       element.removeEventListener('change', this.onHairChange)
+    )
+    skinElements.map((element) =>
+      element.removeEventListener('change', this.onSkinChange)
     )
   }
 
