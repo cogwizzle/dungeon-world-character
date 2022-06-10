@@ -3,149 +3,106 @@ import template from './character-look.html'
 import '../../section-header/section-header'
 
 export class CharacterLook extends HTMLElement {
-  _body
-  _eyes
-  _hair
-  _skin
+  _groups = ['body', 'eyes', 'hair', 'skin']
   constructor() {
     super()
   }
 
-  onBodyChange = (event) => {
-    this._body = event.target.value
+  emit() {
     CharacterFormObservable.look = {
       body: this._body,
       eyes: this._eyes,
       hair: this._hair,
       skin: this._skin,
     }
+  }
+
+  onBodyChange = (event) => {
+    this._body = event.target.value
+    this.emit()
   }
 
   onEyesChange = (event) => {
     this._eyes = event.target.value
-    CharacterFormObservable.look = {
-      body: this._body,
-      eyes: this._eyes,
-      hair: this._hair,
-      skin: this._skin,
-    }
+    this.emit()
   }
 
   onHairChange = (event) => {
     this._hair = event.target.value
-    CharacterFormObservable.look = {
-      body: this._body,
-      eyes: this._eyes,
-      hair: this._hair,
-      skin: this._skin,
-    }
+    this.emit()
   }
 
   onSkinChange = (event) => {
     this._skin = event.target.value
-    CharacterFormObservable.look = {
-      body: this._body,
-      eyes: this._eyes,
-      hair: this._hair,
-      skin: this._skin,
+    this.emit()
+  }
+
+  onChange = (event) => {
+    const { name } = event.target
+    switch (name) {
+      case 'body':
+        this.onBodyChange(event)
+        break
+      case 'eyes':
+        this.onEyesChange(event)
+        break
+      case 'hair':
+        this.onHairChange(event)
+        break
+      case 'skin':
+        this.onSkinChange(event)
+        break
+      default:
+        break
     }
   }
 
   hydrate = (state) => {
     const look = state.look || {}
-    this._body = look.body || ''
-    this._eyes = look.eyes || ''
-    this._hair = look.hair || ''
-    this._skin = look.skin || ''
-    const bodyElements = [
-      ...this.querySelectorAll('[name="body"][type="radio"]'),
-    ]
-    bodyElements.map(
-      (element) => (element.checked = look.body === element.value)
+    this._groups.forEach((group) => {
+      this[`_${group}`] = look[group] || ''
+      const radioElements = [
+        ...this.querySelectorAll(`[name="${group}"][type="radio"]`),
+      ]
+      radioElements.forEach((radioElement) => {
+        radioElement.checked = radioElement.value === look[group]
+      })
+      const otherElement = this.querySelector(`#${group}-other`)
+      otherElement.value = radioElements.every(
+        (radioElement) => radioElement.value !== look[group]
+      )
+        ? look[group]
+        : ''
+    })
+  }
+
+  onMount() {
+    CharacterFormObservable.subscribe(this.hydrate)
+    const elements = this._groups.reduce((acc, group) => {
+      return [...acc, ...this.querySelectorAll(`[name="${group}"]`)]
+    }, [])
+    elements.forEach((element) =>
+      element.addEventListener('change', this.onChange)
     )
-    const bodyOther = this.querySelector('#body-other')
-    bodyOther.value = bodyElements.every(
-      (element) => element.value !== look.body
+  }
+
+  beforeUnmount() {
+    CharacterFormObservable.unsubscribe(this.hydrate)
+    const elements = this._groups.reduce((acc, group) => {
+      return [...acc, ...this.querySelectorAll(`[name="${group}"]`)]
+    }, [])
+    elements.forEach((element) =>
+      element.removeEventListener('change', this.onChange)
     )
-      ? look.body || ''
-      : ''
-    const eyesElements = [
-      ...this.querySelectorAll('[name="eyes"][type="radio"]'),
-    ]
-    eyesElements.map(
-      (element) => (element.checked = look.eyes === element.value)
-    )
-    const eyesOther = this.querySelector('#eyes-other')
-    eyesOther.value = eyesElements.every(
-      (element) => element.value !== look.eyes
-    )
-      ? look.eyes || ''
-      : ''
-    const hairElements = [
-      ...this.querySelectorAll('[name="hair"][type="radio"]'),
-    ]
-    hairElements.map(
-      (element) => (element.checked = look.hair === element.value)
-    )
-    const hairOther = this.querySelector('#hair-other')
-    hairOther.value = hairElements.every(
-      (element) => element.value !== look.hair
-    )
-      ? look.hair || ''
-      : ''
-    const skinElements = [
-      ...this.querySelectorAll('[name="skin"][type="radio"]'),
-    ]
-    skinElements.map(
-      (element) => (element.checked = look.skin === element.value)
-    )
-    const skinOther = this.querySelector('#skin-other')
-    skinOther.value = skinElements.every(
-      (element) => element.value !== look.skin
-    )
-      ? look.skin || ''
-      : ''
   }
 
   connectedCallback() {
     this.render()
-    CharacterFormObservable.subscribe(this.hydrate)
-    const bodyElements = [...this.querySelectorAll('[name="body"]')]
-    const eyesElements = [...this.querySelectorAll('[name="eyes"]')]
-    const hairElements = [...this.querySelectorAll('[name="hair"]')]
-    const skinElements = [...this.querySelectorAll('[name="skin"]')]
-    bodyElements.map((element) =>
-      element.addEventListener('change', this.onBodyChange)
-    )
-    eyesElements.map((element) =>
-      element.addEventListener('change', this.onEyesChange)
-    )
-    hairElements.map((element) =>
-      element.addEventListener('change', this.onHairChange)
-    )
-    skinElements.map((element) =>
-      element.addEventListener('change', this.onSkinChange)
-    )
+    this.onMount()
   }
 
   disconnectedCallback() {
-    CharacterFormObservable.unsubscribe(this.hydrate)
-    const bodyElements = [...this.querySelectorAll('[name="body"]')]
-    const eyesElements = [...this.querySelectorAll('[name="eyes"]')]
-    const hairElements = [...this.querySelectorAll('[name="hair"]')]
-    const skinElements = [...this.querySelectorAll('[name="skin"]')]
-    bodyElements.map((element) =>
-      element.removeEventListener('change', this.onBodyChange)
-    )
-    eyesElements.map((element) =>
-      element.removeEventListener('change', this.onEyesChange)
-    )
-    hairElements.map((element) =>
-      element.removeEventListener('change', this.onHairChange)
-    )
-    skinElements.map((element) =>
-      element.removeEventListener('change', this.onSkinChange)
-    )
+    this.beforeUnmount()
   }
 
   render() {
