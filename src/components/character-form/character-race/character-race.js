@@ -2,7 +2,6 @@ import template from './character-race.html'
 import '../../section-header/section-header'
 import CharacterFormObservable from '../../../state/character-form-observable'
 
-// TODO Pick up here replacing this with vertical selection
 export class CharacterRace extends HTMLElement {
   _options = [
     {
