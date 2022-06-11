@@ -1,27 +1,37 @@
 import { initCap } from '../../utility/init-cap'
+import { html } from '../../utility/html-template'
 
-const template = ({ title, options }) => `<div class="flex flex-col">
-  <label for="${title}" class="bg-black text-white flex flex-row relative">
-    ${title.toUpperCase()}
-  </label>
-  ${options
-    .map(
-      (option) => `<div class="flex flex-row items-center">
-    <input type="radio" name="${title}" id="${title}-${
-        option.name
-      }" class="mx-2" value="${option.name}" />
-    <label for="${title}-${option.name}" class="flex flex-col">
-      <div>${initCap(option.name)}</div>
-      <div class="text-xs italic">${option.description}</div>
+const template = ({ title, options }) => html`<div class="flex flex-col">
+    <label for="${title}" class="bg-black text-white flex flex-row relative">
+      ${title.toUpperCase()}
     </label>
-  </div>`
-    )
-    .join('\n')}
-  <div class="flex flex-row items-center">
-    <input type="text" name="${title}" id="${title}-other" class="ml-9 bg-transparent outline-none border-b-2 border-black w-full" />
+    ${options
+      .map(
+        (option) => html`<div class="flex flex-row items-center">
+          <input
+            type="radio"
+            name="${title}"
+            id="${title}-${option.name}"
+            class="mx-2"
+            value="${option.name}"
+          />
+          <label for="${title}-${option.name}" class="flex flex-col">
+            <div>${initCap(option.name)}</div>
+            <div class="text-xs italic">${option.description}</div>
+          </label>
+        </div>`
+      )
+      .join('\n')}
+    <div class="flex flex-row items-center">
+      <input
+        type="text"
+        name="${title}"
+        id="${title}-other"
+        class="ml-9 bg-transparent outline-none border-b-2 border-black w-full"
+      />
+    </div>
   </div>
-</div>
-<link rel="stylesheet" href="tailwind.css" />`
+  <link rel="stylesheet" href="tailwind.css" />`
 
 export class VerticalSelection extends HTMLElement {
   _title = ''
