@@ -43,11 +43,11 @@ export class CharacterLookGroup extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     switch (name) {
       case 'options':
-        this._options = JSON.parse(newValue)
+        this._options = JSON.parse(newValue) || []
         this.render()
         break
       case 'title':
-        this._title = newValue
+        this._title = newValue || ''
         this.render()
         break
       default:
