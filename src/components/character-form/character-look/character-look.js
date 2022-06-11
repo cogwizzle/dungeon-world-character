@@ -45,9 +45,10 @@ export class CharacterLook extends HTMLElement {
 
   onMount() {
     CharacterFormObservable.subscribe(this.hydrate)
-    const elements = this._groups.reduce((acc, group) => {
-      return [...acc, ...this.querySelectorAll(`[name="${group}"]`)]
-    }, [])
+    const elements = this._groups.reduce(
+      (acc, group) => [...acc, ...this.querySelectorAll(`[name="${group}"]`)],
+      []
+    )
     elements.forEach((element) =>
       element.addEventListener('change', this.onChange)
     )
@@ -55,9 +56,10 @@ export class CharacterLook extends HTMLElement {
 
   beforeUnmount() {
     CharacterFormObservable.unsubscribe(this.hydrate)
-    const elements = this._groups.reduce((acc, group) => {
-      return [...acc, ...this.querySelectorAll(`[name="${group}"]`)]
-    }, [])
+    const elements = this._groups.reduce(
+      (acc, group) => [...acc, ...this.querySelectorAll(`[name="${group}"]`)],
+      []
+    )
     elements.forEach((element) =>
       element.removeEventListener('change', this.onChange)
     )
