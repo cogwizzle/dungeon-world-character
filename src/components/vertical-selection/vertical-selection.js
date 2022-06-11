@@ -80,7 +80,6 @@ export class VerticalSelection extends HTMLElement {
     const elements = [
       ...this.shadowRoot.querySelectorAll(`[name="${this._title}"]`),
     ]
-    console.log(elements)
     elements.forEach((element) => {
       element.addEventListener('change', this.onChange.bind(this))
     })
