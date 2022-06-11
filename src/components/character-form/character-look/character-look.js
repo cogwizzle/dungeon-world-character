@@ -1,6 +1,7 @@
 import CharacterFormObservable from '../../../state/character-form-observable'
 import template from './character-look.html'
 import '../../section-header/section-header'
+import './character-look-group/character-look-group'
 
 export class CharacterLook extends HTMLElement {
   _groups = ['body', 'eyes', 'hair', 'skin']
