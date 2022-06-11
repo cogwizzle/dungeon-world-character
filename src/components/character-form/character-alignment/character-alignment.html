@@ -1,29 +1,9 @@
-<div class="flex flex-col">
-  <label for="armor" class="bg-black text-white flex flex-row relative">
-    ALIGNMENT
-  </label>
-  <div class="flex flex-row items-center">
-    <input type="radio" name="alignment" id="alignment-good" class="mx-2" value="good" />
-    <label for="alignment-good" class="flex flex-col">
-      <div>Good</div>
-      <div class="text-xs italic">Defend those weaker than you.</div>
-    </label>
-  </div>
-  <div class="flex flex-row items-center">
-    <input type="radio" name="alignment" id="alignment-neutral" class="mx-2" value="neutral" />
-    <label for="alignment-neutral" class="flex flex-col">
-      <div>Neutral</div>
-      <div class="text-xs italic">Defeat a worthy opponent.</div>
-    </label>
-  </div>
-  <div class="flex flex-row items-center">
-    <input type="radio" name="alignment" id="alignment-evil" class="mx-2" value="evil" />
-    <label for="alignment-evil" class="flex flex-col">
-      <div>Evil</div>
-      <div class="text-xs italic">Kill a defenseless or surrendered enemy.</div>
-    </label>
-  </div>
-  <div class="flex flex-row items-center">
-    <input type="text" name="alignment" id="alignment-other" class="ml-9 bg-transparent outline-none border-b-2 border-black w-full" />
-  </div>
-</div>
+<dw-vertical-selection
+  id="alignment"
+  title="alignment"
+  options='[
+    {"name": "good", "description": "Defend those weaker than you."},
+    {"name": "neutral", "description": "Defeat a worthy opponent."},
+    {"name": "evil", "description": "Kill a defenseless or surrendered enemy."}
+  ]'
+></dw-vertical-selection>
