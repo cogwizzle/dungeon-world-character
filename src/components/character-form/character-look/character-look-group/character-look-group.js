@@ -1,7 +1,4 @@
-const initCap = (value) =>
-  value
-    .toLowerCase()
-    .replace(/(?:^|[^a-zØ-öø-ÿ])[a-zØ-öø-ÿ]/g, (m) => m.toUpperCase())
+import { initCap } from '../../../../utility/init-cap'
 
 const template = ({ title, options }) =>
   `<div class="flex flex-col xl:flex-row xl:items-center">
