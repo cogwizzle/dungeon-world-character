@@ -2,46 +2,59 @@ import template from './character-race.html'
 import '../../section-header/section-header'
 import CharacterFormObservable from '../../../state/character-form-observable'
 
+// TODO Pick up here replacing this with vertical selection
 export class CharacterRace extends HTMLElement {
+  _options = [
+    {
+      name: 'dwarf',
+      description:
+        'When you share a drink with someone, you may parley with them using CON instead of CHA.',
+    },
+    {
+      name: 'elf',
+      description:
+        'Choose one weapon-you can always treat weapons of that type as if they had the precise tag.',
+    },
+    {
+      name: 'halfling',
+      description:
+        'Choose one weapon-you can always treat weapons of that type as if they had the precise tag.',
+    },
+    {
+      name: 'human',
+      description:
+        "Once per battle you may reroll a single damage roll (yours or someone else's",
+    },
+  ]
   constructor() {
     super()
   }
 
-  static get observedAttributes() {
-    return []
-  }
-
-  emit = (value) => {
-    CharacterFormObservable.race = value
-  }
-
   onChange = (event) => {
-    this.emit(event.target.value)
+    CharacterFormObservable.race = event.detail.value
   }
 
   hydrate = (state) => {
-    this.querySelectorAll('[name="race"]').forEach((element) => {
-      element.checked = state.race === element.value
-    })
+    this.querySelector('#race').setAttribute('value', state.race)
   }
 
   connectedCallback() {
     this.render()
     CharacterFormObservable.subscribe(this.hydrate)
-    this.querySelectorAll('[name="race"]').forEach((element) =>
-      element.addEventListener('change', this.onChange)
-    )
+    this.querySelector('#race').addEventListener('dw-change', this.onChange)
   }
 
   disconnectedCallback() {
     CharacterFormObservable.unsubscribe(this.hydrate)
-    this.querySelectorAll('[name="race"]').forEach((element) =>
-      element.removeEventListener('change', this.onChange)
-    )
+    this.querySelector('#race').addEventListener('dw-change', this.onChange)
   }
 
   render() {
     this.innerHTML = template
+    this.querySelector('#race').setAttribute(
+      'options',
+      JSON.stringify(this._options)
+    )
   }
 }
 
