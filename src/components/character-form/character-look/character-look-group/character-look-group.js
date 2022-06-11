@@ -1,30 +1,35 @@
 import { initCap } from '../../../../utility/init-cap'
+import { html } from '../../../../utility/html-template'
 
 const template = ({ title, options }) =>
-  `<div class="flex flex-col xl:flex-row xl:items-center">
-<label for="body" class="font-bold">${title.toUpperCase()}</label>
-${options
-  .map(
-    (option) =>
-      `<div class="flex-row ml-2 xl:ml-0">
-      <input type="radio" name="${title}" id="${title}-${option}" value="${option}" />
-      <label class="text-sm" for="${title}-${option}">${initCap(option).replace(
-        '-',
-        ' '
-      )}</label>
-    </div>`
-  )
-  .join('\n')}
-<div class="flex-row ml-2 xl:ml-0">
-  <input
-    type="text"
-    name="body"
-    id="${title}-other"
-    value=""
-    class="bg-transparent border-b-2 border-b-black outline-none w-14"
-  />
-</div>
-</div>`
+  html`<div class="flex flex-col xl:flex-row xl:items-center">
+    <label for="body" class="font-bold">${title.toUpperCase()}</label>
+    ${options
+      .map(
+        (option) =>
+          html`<div class="flex-row ml-2 xl:ml-0">
+            <input
+              type="radio"
+              name="${title}"
+              id="${title}-${option}"
+              value="${option}"
+            />
+            <label class="text-sm" for="${title}-${option}"
+              >${initCap(option).replace('-', ' ')}</label
+            >
+          </div>`
+      )
+      .join('\n')}
+    <div class="flex-row ml-2 xl:ml-0">
+      <input
+        type="text"
+        name="body"
+        id="${title}-other"
+        value=""
+        class="bg-transparent border-b-2 border-b-black outline-none w-14"
+      />
+    </div>
+  </div>`
 
 export class CharacterLookGroup extends HTMLElement {
   _options = []
