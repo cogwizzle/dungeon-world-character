@@ -1,5 +1,6 @@
 import template from './character-alignment.html'
 import CharacterFormObservable from '../../../state/character-form-observable'
+import '../../vertical-selection/vertical-selection'
 
 export class CharacterAlignment extends HTMLElement {
   constructor() {
@@ -7,39 +8,28 @@ export class CharacterAlignment extends HTMLElement {
   }
 
   onAlignmentChange = (event) => {
-    CharacterFormObservable.alignment = event.target.value
+    CharacterFormObservable.alignment = event.detail.value
   }
 
   hydrate = (state) => {
-    const alignmentElements = [
-      ...this.querySelectorAll('[name="alignment"][type="radio"]'),
-    ]
-    const alignmentOther = this.querySelector('#alignment-other')
-    alignmentElements.forEach((element) => {
-      element.checked = element.value === state.alignment
-    })
-    alignmentOther.value = alignmentElements.every(
-      (element) => element.value !== state.alignment
-    )
-      ? state.alignment || ''
-      : ''
+    this.querySelector('#alignment').setAttribute('value', state.alignment)
   }
 
   connectedCallback() {
     this.render()
     CharacterFormObservable.subscribe(this.hydrate)
-    const alignmentElement = [...this.querySelectorAll('[name="alignment"]')]
-    alignmentElement.forEach((element) => {
-      element.addEventListener('change', this.onAlignmentChange)
-    })
+    this.querySelector('#alignment').addEventListener(
+      'dw-change',
+      this.onAlignmentChange
+    )
   }
 
   disconnectedCallback() {
     CharacterFormObservable.unsubscribe(this.hydrate)
-    const alignmentElement = [...this.querySelectorAll('[name="alignment"]')]
-    alignmentElement.forEach((element) => {
-      element.removeEventListener('change', this.onAlignmentChange)
-    })
+    this.querySelector('#alignment').removeEventListener(
+      'dw-change',
+      this.onAlignmentChange
+    )
   }
 
   render() {
