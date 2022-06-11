@@ -50,11 +50,11 @@ export class VerticalSelection extends HTMLElement {
     switch (name) {
       case 'options':
         this._options = JSON.parse(newValue) || []
-        this.render()
+        this.rerender()
         break
       case 'title':
         this._title = newValue || ''
-        this.render()
+        this.rerender()
         break
       case 'value':
         this._value = newValue || ''
@@ -80,6 +80,7 @@ export class VerticalSelection extends HTMLElement {
     const elements = [
       ...this.shadowRoot.querySelectorAll(`[name="${this._title}"]`),
     ]
+    console.log(elements)
     elements.forEach((element) => {
       element.addEventListener('change', this.onChange.bind(this))
     })
