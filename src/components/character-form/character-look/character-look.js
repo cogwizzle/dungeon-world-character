@@ -17,44 +17,10 @@ export class CharacterLook extends HTMLElement {
     }
   }
 
-  onBodyChange = (event) => {
-    this._body = event.target.value
-    this.emit()
-  }
-
-  onEyesChange = (event) => {
-    this._eyes = event.target.value
-    this.emit()
-  }
-
-  onHairChange = (event) => {
-    this._hair = event.target.value
-    this.emit()
-  }
-
-  onSkinChange = (event) => {
-    this._skin = event.target.value
-    this.emit()
-  }
-
   onChange = (event) => {
-    const { name } = event.target
-    switch (name) {
-      case 'body':
-        this.onBodyChange(event)
-        break
-      case 'eyes':
-        this.onEyesChange(event)
-        break
-      case 'hair':
-        this.onHairChange(event)
-        break
-      case 'skin':
-        this.onSkinChange(event)
-        break
-      default:
-        break
-    }
+    const { name, value } = event.target
+    this[`_${name}`] = value
+    this.emit()
   }
 
   hydrate = (state) => {
