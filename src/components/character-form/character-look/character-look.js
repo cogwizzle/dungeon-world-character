@@ -35,11 +35,12 @@ export class CharacterLook extends HTMLElement {
         radioElement.checked = radioElement.value === look[group]
       })
       const otherElement = this.querySelector(`#${group}-other`)
-      otherElement.value = radioElements.every(
-        (radioElement) => radioElement.value !== look[group]
-      )
-        ? look[group]
-        : ''
+      otherElement.value =
+        radioElements.every(
+          (radioElement) => radioElement.value !== look[group]
+        ) && look[group]
+          ? look[group]
+          : ''
     })
   }
 
