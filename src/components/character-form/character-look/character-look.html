@@ -1,81 +1,20 @@
 <div class="flex flex-col">
   <dw-section-header>LOOK</dw-section-header>
   <div class="px-2 text-xs italic">Choose one for each, or write your own:</div>
-  <div class="flex flex-col xl:flex-row xl:items-center">
-    <label for="body" class="font-bold">BODY</label>
-    <div class="flex-row ml-2 xl:ml-0">
-      <input type="radio" name="body" id="body-built" value="built" />
-      <label class="text-sm" for="body-built">Built</label>
-    </div>
-    <div class="flex-row ml-2 xl:ml-0">
-      <input type="radio" name="body" id="body-lithe" value="lithe" />
-      <label class="text-sm" for="body-thin">Lithe</label>
-    </div>
-    <div class="flex-row ml-2 xl:ml-0">
-      <input type="radio" name="body" id="body-ravaged" value="ravaged" />
-      <label class="text-sm" for="body-ravaged">Ravaged</label>
-    </div>
-    <div class="flex-row ml-2 xl:ml-0">
-      <input
-        type="text"
-        name="body"
-        id="body-other"
-        value=""
-        class="bg-transparent border-b-2 border-b-black outline-none w-14"
-      />
-    </div>
-  </div>
-  <div class="flex flex-col xl:flex-row xl:items-center">
-    <label for="eyes" class="font-bold">EYES</label>
-    <div class="flex-row ml-2 xl:ml-0">
-      <input type="radio" name="eyes" id="eyes-hard" value="hard" />
-      <label class="text-sm" for="eyes-hard">Hard</label>
-    </div>
-    <div class="flex-row ml-2 xl:ml-0">
-      <input type="radio" name="eyes" id="eyes-dead" value="dead" />
-      <label class="text-sm" for="eyes-dead">Dead</label>
-    </div>
-    <div class="flex-row ml-2 xl:ml-0">
-      <input type="radio" name="eyes" id="eyes-eager" value="eager" />
-      <label class="text-sm" for="eyes-dead">Eager</label>
-    </div>
-    <div class="flex-row ml-2 xl:ml-0">
-      <input
-        type="text"
-        name="eyes"
-        id="eyes-other"
-        value=""
-        class="bg-transparent border-b-2 border-b-black outline-none w-14"
-      />
-    </div>
-  </div>
-  <div class="flex flex-col xl:flex-row xl:items-center">
-    <label for="hair" class="font-bold">HAIR</label>
-    <div class="flex-row ml-2 xl:ml-0">
-      <input type="radio" name="hair" id="hair-wild" value="wild" />
-      <label class="text-sm" for="hair-wild">Wild</label>
-    </div>
-    <div class="flex-row ml-2 xl:ml-0">
-      <input type="radio" name="hair" id="hair-shorn" value="shorn" />
-      <label class="text-sm" for="hair-shorn">Shorn</label>
-    </div>
-    <div class="flex-row ml-2 xl:ml-0">
-      <input
-        type="radio"
-        name="hair"
-        id="battered-helm"
-        value="battered-helm"
-      />
-      <label class="text-sm" for="battered-helm">Battered Helm</label>
-    </div>
-    <div class="flex-row ml-2 xl:ml-0">
-      <input
-        type="text"
-        name="hair"
-        id="hair-other"
-        value=""
-        class="bg-transparent border-b-2 border-b-black outline-none w-14"
-      />
-    </div>
-  </div>
+  <dw-character-look-group
+    title="body"
+    options='["built", "lithe", "ravaged"]'
+  ></dw-character-look-group>
+  <dw-character-look-group
+    title="eyes"
+    options='["hard", "dead", "eager"]'
+  ></dw-character-look-group>
+  <dw-character-look-group
+    title="hair"
+    options='["wild", "shorn", "battered-helm"]'
+  ></dw-character-look-group>
+  <dw-character-look-group
+    title="skin"
+    options='["calloused", "tanned", "scarred"]'
+  ></dw-character-look-group>
 </div>
