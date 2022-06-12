@@ -248,6 +248,11 @@ class ChracterFormObservable extends Observable {
     this._state = {
       ...this._state,
       characterClass: value,
+      look: undefined,
+      moves: undefined,
+      race: undefined,
+      alignment: undefined,
+      // spells: undefined,
     }
     this.notify()
   }
