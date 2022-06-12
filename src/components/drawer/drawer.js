@@ -9,12 +9,6 @@ export class Drawer extends HTMLElement {
     this.attachShadow({ mode: 'open' })
   }
 
-  static get observedAttributes() {
-    return []
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {}
-
   onToggle = () => {
     const drawerElement = this.shadowRoot.querySelector('#drawer')
     const drawerToggleElement = this.shadowRoot.querySelector('#drawer__toggle')
