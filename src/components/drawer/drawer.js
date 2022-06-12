@@ -113,6 +113,9 @@ export class Drawer extends HTMLElement {
     this.shadowRoot
       .querySelector('#save')
       .removeEventListener('click', this.onSaveClick)
+    this.shadowRoot
+      .querySelector('#load-character-file')
+      .removeEventListener('change', this.onLoadFileChange)
   }
 
   hydrate = (state) => {
