@@ -11,6 +11,10 @@
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     transform: rotate(180deg);
   }
+
+  .banner #class-name {
+    transform: rotate(-90deg);
+  }
 </style>
 <div class="w-10 lg:w-36 shadow-lg lg:shadow-none h-full overflow-hidden">
   <div
@@ -28,11 +32,11 @@
       id="content"
       class="flex-1 flex flex-col relative invisible lg:visible"
     >
-      <label for="characterClass">Class</label>
+      <label for="character-class">Class</label>
       <input
         type="text"
         class="h-10 text-black outline-none border-none mx-2"
-        id="characterClass"
+        id="character-class"
       />
       <button type="button pionter" class="text-left mx-2">Save</button>
       <button type="button pointer" class="text-left mx-2">Load</button>
@@ -41,7 +45,12 @@
       class="banner hidden lg:flex flex-col lg:bg-slate-200 border-r-2 border-black lg:border-r-0"
     >
       <div class="arrow-down bg-black"></div>
-      <div class="lg:bg-slate-200 h-64"></div>
+      <div class="lg:bg-slate-200 h-64 relative pt-36">
+        <div
+          id="class-name"
+          class="text-6xl text-bold text-black justify-self-center self-center flex w-full"
+        ></div>
+      </div>
       <div class="arrow-up bg-black"></div>
     </div>
     <div

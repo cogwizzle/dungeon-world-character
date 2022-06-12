@@ -1,7 +1,9 @@
 import template from './drawer.html'
+import CharacterFormObservable from '../../state/character-form-observable'
 
 export class Drawer extends HTMLElement {
   _toggled = false
+  _characterClass = ''
   constructor() {
     super()
     this.attachShadow({ mode: 'open' })
@@ -46,16 +48,37 @@ export class Drawer extends HTMLElement {
     }
   }
 
+  onClassChange = (event) => {
+    this._characterClass = event.target.value
+    CharacterFormObservable.characterClass = this._characterClass
+  }
+
   onMount() {
+    CharacterFormObservable.subscribe(this.hydrate)
     this.shadowRoot
       .querySelector('#drawer__toggle')
       .addEventListener('click', this.onToggle)
+    this.shadowRoot
+      .querySelector('#character-class')
+      .addEventListener('change', this.onClassChange)
   }
 
   beforeUnmount() {
+    CharacterFormObservable.subscribe(this.hydrate)
     this.shadowRoot
       .querySelector('#drawer__toggle')
       .removeEventListener('click', this.onToggle)
+    this.shadowRoot
+      .querySelector('#character-class')
+      .removeEventListener('change', this.onClassChange)
+  }
+
+  hydrate = (state) => {
+    this._characterClass = state.characterClass
+    this.shadowRoot.querySelector('#character-class').value =
+      this._characterClass || ''
+    this.shadowRoot.querySelector('#class-name').innerHTML =
+      this._characterClass || ''
   }
 
   connectedCallback() {
