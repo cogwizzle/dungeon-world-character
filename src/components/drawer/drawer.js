@@ -45,8 +45,19 @@ export class Drawer extends HTMLElement {
   }
 
   onClassChange = (event) => {
-    this._characterClass = event.target.value
-    CharacterFormObservable.characterClass = this._characterClass
+    const originalValue = this._characterClass
+    if (
+      !originalValue ||
+      originalValue === '' ||
+      confirm(
+        'Are you sure you want to change your class? This will reset some values on this form.'
+      )
+    ) {
+      this._characterClass = event.target.value
+      CharacterFormObservable.characterClass = this._characterClass
+    } else {
+      CharacterFormObservable.characterClass = originalValue
+    }
   }
 
   onLoadClick = () => {
