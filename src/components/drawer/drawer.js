@@ -1,6 +1,9 @@
 import template from './drawer.html'
 import CharacterFormObservable from '../../state/character-form-observable'
 import saveFile from '../../utility/save-file'
+import { supportedClasses } from '../../data/supported-classes'
+
+const generateClassOption = (className) => `<option value="${className}" />`
 
 export class Drawer extends HTMLElement {
   _toggled = false
@@ -149,6 +152,11 @@ export class Drawer extends HTMLElement {
 
   render() {
     this.shadowRoot.innerHTML = template
+    this.shadowRoot.querySelector('#class-list').innerHTML = Object.values(
+      supportedClasses
+    )
+      .map(generateClassOption)
+      .join('')
   }
 }
 
