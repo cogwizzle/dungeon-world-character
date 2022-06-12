@@ -1,9 +1,11 @@
 import template from './drawer.html'
 import CharacterFormObservable from '../../state/character-form-observable'
+import saveFile from '../../utility/save-file'
 
 export class Drawer extends HTMLElement {
   _toggled = false
   _characterClass = ''
+  _characterName = ''
   constructor() {
     super()
     this.attachShadow({ mode: 'open' })
@@ -47,6 +49,37 @@ export class Drawer extends HTMLElement {
     CharacterFormObservable.characterClass = this._characterClass
   }
 
+  onLoadClick = () => {
+    this.shadowRoot.querySelector('#load-character-file').click()
+  }
+
+  onSaveClick = () =>
+    saveFile(
+      JSON.stringify(CharacterFormObservable.save()),
+      `${this._characterName.toLocaleLowerCase()}.json`,
+      'text/plain'
+    )
+
+  onLoadFileChange = (event) => {
+    //Retrieve the first (and only!) File from the FileList object
+    const file = event.currentTarget.files?.[0]
+
+    if (file) {
+      var fileReader = new FileReader()
+      fileReader.onload = (onLoadEvent) => {
+        const contents = onLoadEvent.target?.result
+        if (!contents || typeof contents !== 'string')
+          throw new Error('No file contents or multiple files detected.')
+        const loadedCharacter = JSON.parse(contents)
+        CharacterFormObservable.loadCharacter(loadedCharacter)
+      }
+      fileReader.readAsText(file)
+      event.currentTarget.value = ''
+    } else {
+      alert('Failed to load file!')
+    }
+  }
+
   onMount() {
     CharacterFormObservable.subscribe(this.hydrate)
     this.shadowRoot
@@ -55,6 +88,15 @@ export class Drawer extends HTMLElement {
     this.shadowRoot
       .querySelector('#character-class')
       .addEventListener('change', this.onClassChange)
+    this.shadowRoot
+      .querySelector('#load')
+      .addEventListener('click', this.onLoadClick)
+    this.shadowRoot
+      .querySelector('#save')
+      .addEventListener('click', this.onSaveClick)
+    this.shadowRoot
+      .querySelector('#load-character-file')
+      .addEventListener('change', this.onLoadFileChange)
   }
 
   beforeUnmount() {
@@ -65,10 +107,17 @@ export class Drawer extends HTMLElement {
     this.shadowRoot
       .querySelector('#character-class')
       .removeEventListener('change', this.onClassChange)
+    this.shadowRoot
+      .querySelector('#load')
+      .removeEventListener('click', this.onLoadClick)
+    this.shadowRoot
+      .querySelector('#save')
+      .removeEventListener('click', this.onSaveClick)
   }
 
   hydrate = (state) => {
     this._characterClass = state.characterClass
+    this._characterName = state.characterName
     this.shadowRoot.querySelector('#character-class').value =
       this._characterClass || ''
     this.shadowRoot.querySelector('#class-name').innerHTML =
