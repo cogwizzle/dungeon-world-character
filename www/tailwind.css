@@ -989,6 +989,10 @@ body {
   padding-top: 10rem;
 }
 
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1226,6 +1230,10 @@ body {
 
   .lg\:pl-0 {
     padding-left: 0px;
+  }
+
+  .lg\:pl-2 {
+    padding-left: 0.5rem;
   }
 
   .lg\:shadow-none {
