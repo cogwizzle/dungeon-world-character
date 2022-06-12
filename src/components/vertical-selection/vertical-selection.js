@@ -57,7 +57,7 @@ export class VerticalSelection extends HTMLElement {
         this.rerender()
         break
       case 'value':
-        this._value = newValue || ''
+        this._value = newValue && newValue !== 'undefined' ? newValue : ''
         this.updateValues()
         break
       default:
