@@ -610,6 +610,14 @@ body {
   display: grid;
 }
 
+.contents {
+  display: contents;
+}
+
+.\!contents {
+  display: contents !important;
+}
+
 .hidden {
   display: none;
 }

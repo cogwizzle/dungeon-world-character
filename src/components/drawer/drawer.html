@@ -40,8 +40,18 @@
         class="h-10 text-black outline-none border-none mx-2"
         id="character-class"
       />
-      <button type="button pionter" class="text-left mx-2">Save</button>
-      <button type="button pointer" class="text-left mx-2">Load</button>
+      <button id="save" type="button pionter" class="text-left mx-2">
+        Save
+      </button>
+      <button id="load" type="button pointer" class="text-left mx-2">
+        Load
+      </button>
+      <input
+        id="load-character-file"
+        type="file"
+        class="hidden"
+        accept="application/JSON"
+      />
     </div>
     <div
       class="banner hidden lg:flex flex-col lg:bg-slate-200 border-r-2 border-black lg:border-r-0"

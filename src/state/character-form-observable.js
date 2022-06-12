@@ -9,6 +9,15 @@ class ChracterFormObservable extends Observable {
     }
   }
 
+  save() {
+    return this._state
+  }
+
+  loadCharacter(state) {
+    this._state = state
+    this.notify()
+  }
+
   notify() {
     super.notify()
     localStorage.setItem('character', JSON.stringify(this._state))
