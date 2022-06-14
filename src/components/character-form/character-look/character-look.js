@@ -1,20 +1,44 @@
+import { supportedClasses } from '../../../data/supported-classes'
 import CharacterFormObservable from '../../../state/character-form-observable'
-import template from './character-look.html'
 import '../../section-header/section-header'
 import './character-look-group/character-look-group'
 
 export class CharacterLook extends HTMLElement {
-  _groups = ['body', 'eyes', 'hair', 'skin']
+  _characterClass
   constructor() {
     super()
   }
 
+  get groups() {
+    switch (this._characterClass) {
+      case supportedClasses.Fighter:
+        return ['body', 'eyes', 'hair', 'skin']
+      case supportedClasses.Ranger:
+        return ['body', 'eyes', 'hair', 'clothes']
+      default:
+        return []
+    }
+  }
+
   emit() {
-    CharacterFormObservable.look = {
-      body: this._body,
-      eyes: this._eyes,
-      hair: this._hair,
-      skin: this._skin,
+    switch (this._characterClass) {
+      case supportedClasses.Fighter:
+        CharacterFormObservable.look = {
+          body: this._body,
+          eyes: this._eyes,
+          hair: this._hair,
+          skin: this._skin,
+        }
+        break
+      case supportedClasses.Ranger:
+        CharacterFormObservable.look = {
+          body: this._body,
+          eyes: this._eyes,
+          hair: this._hair,
+          clothes: this._clothes,
+        }
+      default:
+        break
     }
   }
 
@@ -24,9 +48,18 @@ export class CharacterLook extends HTMLElement {
     this.emit()
   }
 
-  hydrate = (state) => {
+  hydrate = async (state) => {
     const look = state.look || {}
-    this._groups.forEach((group) => {
+    const isPreviousClassDifferent =
+      this._characterClass !== state.characterClass
+
+    if (isPreviousClassDifferent) {
+      this.beforeUnmount()
+      this._characterClass = state.characterClass
+      await this.render()
+      this.onMount()
+    }
+    this.groups.forEach((group) => {
       this[`_${group}`] = look[group] || ''
       const radioElements = [
         ...this.querySelectorAll(`[name="${group}"][type="radio"]`),
@@ -46,7 +79,7 @@ export class CharacterLook extends HTMLElement {
 
   onMount() {
     CharacterFormObservable.subscribe(this.hydrate)
-    const elements = this._groups.reduce(
+    const elements = this.groups.reduce(
       (acc, group) => [...acc, ...this.querySelectorAll(`[name="${group}"]`)],
       []
     )
@@ -57,7 +90,7 @@ export class CharacterLook extends HTMLElement {
 
   beforeUnmount() {
     CharacterFormObservable.unsubscribe(this.hydrate)
-    const elements = this._groups.reduce(
+    const elements = this.groups.reduce(
       (acc, group) => [...acc, ...this.querySelectorAll(`[name="${group}"]`)],
       []
     )
@@ -75,8 +108,19 @@ export class CharacterLook extends HTMLElement {
     this.beforeUnmount()
   }
 
-  render() {
-    this.innerHTML = template
+  async render() {
+    switch (this._characterClass) {
+      case supportedClasses.Fighter:
+        const fighterTemplate = await import('./fighter-look.html')
+        this.innerHTML = fighterTemplate.default
+        break
+      case supportedClasses.Ranger:
+        const rangerTemplate = await import('./ranger-look.html')
+        this.innerHTML = rangerTemplate.default
+        break
+      default:
+        break
+    }
   }
 }
 
