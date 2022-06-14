@@ -13,7 +13,6 @@ export class CharacterAlignment extends HTMLElement {
   }
 
   hydrate = async (state) => {
-    console.log(this)
     const isPreviousClassDifferent =
       this._characterClass !== state.characterClass
     if (isPreviousClassDifferent) {
