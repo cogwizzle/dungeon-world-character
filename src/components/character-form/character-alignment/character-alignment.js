@@ -1,8 +1,9 @@
-import template from './character-alignment.html'
 import CharacterFormObservable from '../../../state/character-form-observable'
 import '../../vertical-selection/vertical-selection'
+import { supportedClasses } from '../../../data/supported-classes'
 
 export class CharacterAlignment extends HTMLElement {
+  _characterClass
   constructor() {
     super()
   }
@@ -11,29 +12,55 @@ export class CharacterAlignment extends HTMLElement {
     CharacterFormObservable.alignment = event.detail.value
   }
 
-  hydrate = (state) => {
-    this.querySelector('#alignment').setAttribute('value', state.alignment)
+  hydrate = async (state) => {
+    const isPreviousClassDifferent =
+      this._characterClass !== state.characterClass
+    if (isPreviousClassDifferent) {
+      this.beforeUnmount()
+      this._characterClass = state.characterClass
+      await this.render()
+      this.onMount()
+    }
+    this.querySelector('#alignment')?.setAttribute('value', state.alignment)
+  }
+
+  onMount() {
+    CharacterFormObservable.subscribe(this.hydrate)
+    this.querySelector('#alignment')?.addEventListener(
+      'dw-change',
+      this.onAlignmentChange
+    )
+  }
+
+  beforeUnmount() {
+    CharacterFormObservable.unsubscribe(this.hydrate)
+    this.querySelector('#alignment')?.removeEventListener(
+      'dw-change',
+      this.onAlignmentChange
+    )
   }
 
   connectedCallback() {
-    this.render()
-    CharacterFormObservable.subscribe(this.hydrate)
-    this.querySelector('#alignment').addEventListener(
-      'dw-change',
-      this.onAlignmentChange
-    )
+    this.render().then(() => this.onMount())
   }
 
   disconnectedCallback() {
-    CharacterFormObservable.unsubscribe(this.hydrate)
-    this.querySelector('#alignment').removeEventListener(
-      'dw-change',
-      this.onAlignmentChange
-    )
+    this.beforeUnmount()
   }
 
-  render() {
-    this.innerHTML = template
+  async render() {
+    switch (this._characterClass) {
+      case supportedClasses.Fighter:
+        const fighterTemplate = await import('./fighter-alignment.html')
+        this.innerHTML = fighterTemplate.default
+        break
+      case supportedClasses.Ranger:
+        const rangerTemplate = await import('./ranger-alignment.html')
+        this.innerHTML = rangerTemplate.default
+        break
+      default:
+        break
+    }
   }
 }
 

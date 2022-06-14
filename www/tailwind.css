@@ -529,10 +529,6 @@ body {
   z-index: 10;
 }
 
-.z-30 {
-  z-index: 30;
-}
-
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
@@ -664,10 +660,6 @@ body {
 
 .w-14 {
   width: 3.5rem;
-}
-
-.w-36 {
-  width: 9rem;
 }
 
 .flex-1 {
