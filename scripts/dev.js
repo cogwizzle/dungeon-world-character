@@ -25,7 +25,7 @@ esbuild
     },
     {
       entryPoints: ['src/index.js'],
-      outfile: 'www/index.js',
+      format: 'esm',
       loader: {
         '.html': 'text',
       },
@@ -33,6 +33,8 @@ esbuild
       minify: true,
       sourcemap: true,
       target: ['es2020'],
+      splitting: true,
+      outdir: 'www',
     }
   )
   .then((result) => {
