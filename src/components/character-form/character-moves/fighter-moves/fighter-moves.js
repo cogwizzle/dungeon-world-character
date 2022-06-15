@@ -1,7 +1,7 @@
 import template from './character-moves.html'
 import '../../section-header/section-header'
 
-export class CharacterMoves extends HTMLElement {
+export class FighterMoves extends HTMLElement {
   _value = {}
   _inputs = [
     ['#signature-weapon', 'signatureWeapon'],
@@ -133,4 +133,4 @@ export class CharacterMoves extends HTMLElement {
   }
 }
 
-customElements.define('dw-character-moves', CharacterMoves)
+customElements.define('dw-fighter-moves', FighterMoves)
