@@ -3,8 +3,24 @@ import CharacterFormObservable from '../../../state/character-form-observable'
 
 export class CharacterMoves extends HTMLElement {
   _characterClass
-  super() {
+  _value = {}
+  constructor() {
     super()
+  }
+
+  get value() {
+    return this._value
+  }
+
+  set value(value) {
+    this._value = value
+    this.updateDom()
+  }
+
+  updateDom() {
+    const firstChild = this.firstChild
+    if (!firstChild) return
+    firstChild.value = this._value
   }
 
   async hydrate(state) {
@@ -15,11 +31,11 @@ export class CharacterMoves extends HTMLElement {
 
   connectedCallback() {
     this.render()
-    CharacterFormObservable.subscribe(this.hydrate)
+    CharacterFormObservable.subscribe(this.hydrate.bind(this))
   }
 
   disconnectedCallback() {
-    CharacterFormObservable.unsubscribe(this.hydrate)
+    CharacterFormObservable.unsubscribe(this.hydrate.bind(this))
   }
 
   async render() {
@@ -29,13 +45,14 @@ export class CharacterMoves extends HTMLElement {
         this.innerHTML = '<dw-fighter-moves></dw-fighter-moves>'
         break
       case supportedClasses.Ranger:
-        await import('./ranger-moves/ranger-moves')
-        this.innerHTML = '<dw-ranger-moves></dw-ranger-moves>'
-        break
+      // await import('./ranger-moves/ranger-moves')
+      // this.innerHTML = '<dw-ranger-moves></dw-ranger-moves>'
+      // break
       default:
         this.innerHTML = ''
         break
     }
+    this.updateDom()
   }
 }
 
