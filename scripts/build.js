@@ -19,7 +19,7 @@ exec(
 esbuild
   .build({
     entryPoints: ['src/index.js'],
-    outfile: 'www/index.js',
+    format: 'esm',
     loader: {
       '.html': 'text',
     },
@@ -27,5 +27,7 @@ esbuild
     minify: true,
     target: ['es2020'],
     watch: true,
+    splitting: true,
+    outdir: 'www',
   })
   .catch(() => process.exit(1))
