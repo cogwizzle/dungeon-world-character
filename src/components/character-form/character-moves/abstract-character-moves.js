@@ -27,19 +27,43 @@ export class AbstractCharacterMoves extends HTMLElement {
   addEventListenerFacade = (id, key) => {
     const element = this.querySelector(id)
     if (!element) throw new Error(`Element ${id} not found`)
-    element.addEventListener('change', () => {
-      this._value[key] = !this._value[key]
-      this.emit()
-    })
+    switch (element.type) {
+      case 'checkbox':
+        element.addEventListener('change', () => {
+          this._value[key] = !this._value[key]
+          this.emit()
+        })
+        break
+      case 'text':
+        element.addEventListener('change', () => {
+          this._value[key] = element.value
+          this.emit()
+        })
+        break
+      default:
+        throw new Error(`Unknown element type ${element.type}`)
+    }
   }
 
   removeEventListenerFacade = (id, key) => {
     const element = this.querySelector(id)
     if (!element) throw new Error(`Element ${id} not found`)
-    element.removeEventListener('change', () => {
-      this._value[key] = !this._value[key]
-      this.emit()
-    })
+    switch (element.type) {
+      case 'checkbox':
+        element.removeEventListener('change', () => {
+          this._value[key] = !this._value[key]
+          this.emit()
+        })
+        break
+      case 'text':
+        element.removeEventListener('change', () => {
+          this._value[key] = element.value
+          this.emit()
+        })
+        break
+      default:
+        throw new Error(`Unknown element type ${element.type}`)
+    }
   }
 
   updateElement = (id, key) => {
