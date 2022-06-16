@@ -69,7 +69,16 @@ export class AbstractCharacterMoves extends HTMLElement {
   updateElement = (id, key) => {
     const element = this.querySelector(id)
     if (!element) throw new Error(`Element ${id} not found`)
-    element.checked = this._value[key]
+    switch (element.type) {
+      case 'checkbox':
+        element.checked = this._value[key]
+        break
+      case 'text':
+        element.value = this._value[key]
+        break
+      default:
+        throw new Error(`Unknown element type ${element.type}`)
+    }
   }
 
   updateDom = () => {
