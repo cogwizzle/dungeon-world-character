@@ -590,16 +590,16 @@ body {
   margin-right: 1.75rem;
 }
 
-.ml-5 {
-  margin-left: 1.25rem;
-}
-
 .mb-16 {
   margin-bottom: 4rem;
 }
 
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.ml-5 {
+  margin-left: 1.25rem;
 }
 
 .flex {
@@ -940,6 +940,10 @@ body {
 
   .md\:col-span-2 {
     grid-column: span 2 / span 2;
+  }
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
