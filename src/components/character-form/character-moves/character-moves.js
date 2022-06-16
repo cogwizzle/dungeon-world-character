@@ -45,9 +45,9 @@ export class CharacterMoves extends HTMLElement {
         this.innerHTML = '<dw-fighter-moves></dw-fighter-moves>'
         break
       case supportedClasses.Ranger:
-      // await import('./ranger-moves/ranger-moves')
-      // this.innerHTML = '<dw-ranger-moves></dw-ranger-moves>'
-      // break
+        await import('./ranger-moves/ranger-moves')
+        this.innerHTML = '<dw-ranger-moves></dw-ranger-moves>'
+        break
       default:
         this.innerHTML = ''
         break
