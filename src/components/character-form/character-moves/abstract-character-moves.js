@@ -74,7 +74,10 @@ export class AbstractCharacterMoves extends HTMLElement {
         element.checked = this._value[key]
         break
       case 'text':
-        element.value = this._value[key]
+        element.value =
+          this._value[key] && this._value[key] !== 'undefined'
+            ? this._value[key]
+            : ''
         break
       default:
         throw new Error(`Unknown element type ${element.type}`)
