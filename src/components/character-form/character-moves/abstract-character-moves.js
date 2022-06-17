@@ -36,7 +36,7 @@ export class AbstractCharacterMoves extends HTMLElement {
         break
       case 'text':
         element.addEventListener('change', () => {
-          this._value[key] = element.value
+          this._value[key] = element.value || ''
           this.emit()
         })
         break
