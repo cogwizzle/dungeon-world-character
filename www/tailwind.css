@@ -484,6 +484,14 @@ body {
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
+hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom-width: 2px;
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(100 116 139 / var(--tw-border-opacity));
+}
+
 .visible {
   visibility: visible;
 }
@@ -590,10 +598,6 @@ body {
   margin-right: 1.75rem;
 }
 
-.ml-5 {
-  margin-left: 1.25rem;
-}
-
 .mb-16 {
   margin-bottom: 4rem;
 }
@@ -602,12 +606,8 @@ body {
   margin-bottom: 2rem;
 }
 
-.ml-6 {
-  margin-left: 1.5rem;
-}
-
-.ml-8 {
-  margin-left: 2rem;
+.ml-5 {
+  margin-left: 1.25rem;
 }
 
 .ml-7 {
@@ -684,14 +684,6 @@ body {
 
 .w-14 {
   width: 3.5rem;
-}
-
-.w-16 {
-  width: 4rem;
-}
-
-.w-12 {
-  width: 3rem;
 }
 
 .flex-1 {
@@ -1027,10 +1019,6 @@ body {
 
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
   .lg\:justify-end {

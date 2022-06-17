@@ -50,6 +50,9 @@ const inputs = [
   ['#animal-companion-stubborn', 'animalCompanionStubborn'],
   ['#animal-companion-lame', 'animalCompanionLame'],
   ['#animal-companion-other-weakness', 'animalCompanionOtherWeakness'],
+  ['#animal-companion-hunt-and-track', 'animalCompanionHuntAndTrack'],
+  ['#animal-companion-called-shot', 'animalCompanionCalledShot'],
+  ['#animal-companion-command', 'animalCompanionCommand'],
 ]
 
 export class RangerMoves extends AbstractCharacterMoves {

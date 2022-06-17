@@ -45,4 +45,8 @@
   body {
     @apply bg-slate-200;
   }
+
+  hr {
+    @apply border-b-2 border-b-slate-500 my-2;
+  }
 }
