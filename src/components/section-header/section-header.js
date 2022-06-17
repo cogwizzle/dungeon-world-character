@@ -1,4 +1,6 @@
-import template from './section-header.html'
+import templateText from './section-header.html'
+const template = document.createElement('template')
+template.innerHTML = templateText
 
 export class SectionHeader extends HTMLElement {
   constructor() {
@@ -11,7 +13,8 @@ export class SectionHeader extends HTMLElement {
 
   render() {
     const originalContent = this.innerHTML
-    this.innerHTML = template
+    this.innerHTML = ''
+    this.appendChild(template.content.cloneNode(true))
     this.querySelector('slot').innerHTML = originalContent
   }
 }
