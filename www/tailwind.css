@@ -598,6 +598,10 @@ hr {
   margin-right: 1.75rem;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
 .mb-16 {
   margin-bottom: 4rem;
 }
@@ -612,10 +616,6 @@ hr {
 
 .ml-7 {
   margin-left: 1.75rem;
-}
-
-.mb-1 {
-  margin-bottom: 0.25rem;
 }
 
 .flex {

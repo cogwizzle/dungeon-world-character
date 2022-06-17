@@ -2,6 +2,8 @@ import CharacterFormObservable from '../../../state/character-form-observable'
 import '../../vertical-selection/vertical-selection'
 import { supportedClasses } from '../../../data/supported-classes'
 
+const templates = {}
+
 export class CharacterAlignment extends HTMLElement {
   _characterClass
   constructor() {
@@ -48,19 +50,33 @@ export class CharacterAlignment extends HTMLElement {
     this.beforeUnmount()
   }
 
-  async render() {
+  async getTemplate() {
+    let template
     switch (this._characterClass) {
       case supportedClasses.Fighter:
+        if (templates[this._characterClass])
+          return templates[this._characterClass]
+        template = document.createElement('template')
         const fighterTemplate = await import('./fighter-alignment.html')
-        this.innerHTML = fighterTemplate.default
-        break
+        template.innerHTML = fighterTemplate.default
+        templates[this._characterClass] = template
+        return template
       case supportedClasses.Ranger:
+        if (templates[this._characterClass])
+          return templates[this._characterClass]
+        template = document.createElement('template')
         const rangerTemplate = await import('./ranger-alignment.html')
-        this.innerHTML = rangerTemplate.default
-        break
+        template.innerHTML = rangerTemplate.default
+        templates[this._characterClass] = template
+        return template
       default:
-        break
+        return document.createElement('template')
     }
+  }
+
+  async render() {
+    const template = await this.getTemplate()
+    this.innerHTML = template.cloneNode(true).innerHTML
   }
 }
 
