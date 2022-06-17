@@ -5,6 +5,7 @@ const inputs = [
   ['#animal-companion', 'animalCompanion'],
   ['#animal-companion-name', 'animalCompanionName'],
   ['#animal-companion-wolf', 'animalCompanionWolf'],
+  ['#animal-companion-cougar', 'animalCompanionCougar'],
   ['#animal-companion-bear', 'animalCompanionBear'],
   ['#animal-companion-eagle', 'animalCompanionEagle'],
   ['#animal-companion-dog', 'animalCompanionDog'],
