@@ -32,6 +32,15 @@ const inputs = [
   ['#animal-companion-intimidating', 'animalCompanionIntimidating'],
   ['#animal-companion-keen-senses', 'animalCompanionKeenSenses'],
   ['#animal-companion-stealthy', 'animalCompanionStealthy'],
+  ['#animal-companion-hunt', 'animalCompanionHunt'],
+  ['#animal-companion-search', 'animalCompanionSearch'],
+  ['#animal-companion-scout', 'animalCompanionScout'],
+  ['#animal-companion-guard', 'animalCompanionGuard'],
+  ['#animal-companion-labor', 'animalCompanionLabor'],
+  ['#animal-companion-travel', 'animalCompanionTravel'],
+  ['#animal-companion-fight-monsters', 'animalCompanionFightMonsters'],
+  ['#animal-companion-perform', 'animalCompanionPerform'],
+  ['#animal-companion-other-training', 'animalCompanionOtherTraining'],
 ]
 
 export class RangerMoves extends AbstractCharacterMoves {
