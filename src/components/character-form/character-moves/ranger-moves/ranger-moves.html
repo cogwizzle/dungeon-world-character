@@ -430,13 +430,9 @@
     </div>
     <hr class="col-span-2" />
     <div class="flex flex-col">
-      <div class="flex flex-row">
-        <input
-          type="checkbox"
-          id="animal-companion-hunt-and-track"
-          name="animal-companion-hunt-and-track"
-        />
-        <label for="animal-companion-hunt-and-track">Hunt & Track (WIS)</label>
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="hunt-and-track" name="hunt-and-track" />
+        <label for="hunt-and-track">Hunt & Track (WIS)</label>
       </div>
       <div>
         When you follow a trail of clues left behind by passing creatures,
@@ -453,13 +449,9 @@
       </ul>
     </div>
     <div class="flex flex-col">
-      <div class="flex flex-row">
-        <input
-          type="checkbox"
-          id="animal-companion-called-shot"
-          name="animal-companion-called-shot"
-        />
-        <label for="animal-companion-called-shot">Called Shot</label>
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="called-shot" name="called-shot" />
+        <label for="called-shot">Called Shot</label>
       </div>
       <div>
         When you attack a defenseless or surprised enemy at range, you can
@@ -481,13 +473,9 @@
       </ul>
     </div>
     <div class="flex flex-col">
-      <div class="flex flex-row">
-        <input
-          type="checkbox"
-          id="animal-companion-command"
-          name="animal-companion-command"
-        />
-        <label for="animal-companion-command">Command</label>
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="command" name="command" />
+        <label for="command">Command</label>
       </div>
       <div>
         When you work with your animal companion on something it's trained in...
@@ -500,6 +488,225 @@
         <li>and you Parley, add its cunning to your roll</li>
         <li>and someone Interferes with you, add its instinct to their roll</li>
       </ul>
+    </div>
+  </div>
+  <dw-section-header>ADVANCED MOVES</dw-section-header>
+  <div class="text-sm italic">
+    When you gain a level from 2-10, you may choose from these moves.
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="half-elven" name="half-elven" />
+        <label for="half-elven">Half-Elven</label>
+      </div>
+      <div>
+        Somewhere in your lineage lies mixed blood and it begins to show its
+        presence. You gain the elf starting move if you took the human one at
+        character creation or vice versa. You may take this move only if it is
+        your first advancement.
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="blot-out-the-sun" name="blot-out-the-sun" />
+        <label for="blot-out-the-sun">Blot Out the Sun</label>
+      </div>
+      <div>
+        When you Volley you may spend extra ammo before rolling. For each point
+        of ammo spent you may choose an extra target. Roll once and apply damage
+        to all targets.
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="wild-empathy" name="wild-empathy" />
+        <label for="wild-empathy">Wild Empathy</label>
+      </div>
+      <div>You can speak with and understand animals.</div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="well-trained" name="well-trained" />
+        <label for="well-trained">Well-Trained</label>
+      </div>
+      <div>Choose another training for your animal companion.</div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="familiar-prey" name="familiar-prey" />
+        <label for="familiar-prey">Familiar Prey</label>
+      </div>
+      <div>When you Spout Lore about a monster you use WIS instead of INT.</div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input
+          type="checkbox"
+          id="god-amidst-the-wastes"
+          name="god-amidst-the-wastes"
+        />
+        <label for="god-amidst-the-wastes">God-Amidst the Wastes</label>
+      </div>
+      <div>
+        Dedicate yourself to a deity (name a new one or choose one that's
+        already been established). You gain the commune and cast a spell cleric
+        moves. When you select this move, treat yourself as a cleric of level 1
+        for using spells. Every time you gain a level thereafter, increase your
+        effective cleric level by 1.
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="vipers-strike" name="vipers-strike" />
+        <label for="vipers-strike">Viper's Strike</label>
+      </div>
+      <div>
+        When you strike an enemy with two weapons at once, add an extra 1d4
+        damage for your off-hand strike.
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="camouflage" name="camouflage" />
+        <label for="camouflage">Camouflage</label>
+      </div>
+      <div>
+        When you keep still in natural surroundings, enemies never spot you
+        until you make a movement.
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="follow-me" name="follow-me" />
+        <label for="follow-me">Follow Me</label>
+      </div>
+      <div>
+        When you Undertake A Perilous Journey you can take two roles. You make a
+        separate roll for each.
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="mans-best-friend" name="mans-best-friend" />
+        <label for="mans-best-friend">Man's Best Friend</label>
+      </div>
+      <div>
+        When you allow your animal companion to take a blow that was meant for
+        you, the damage is negated and your animal companion's ferocity becomes
+        0. If its ferocity is already 0 you can't use this ability. When you
+        have a few hours of rest with your animal companion its ferocity returns
+        to normal.
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="a-safe-place" name="a-safe-place" />
+        <label for="a-safe-place">A Safe Place</label>
+      </div>
+      <div>
+        When you set the watch for the night, everyone takes +1 to Take Watch.
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="text-sm italic">
+    When you gain a level from 6-10, you may choose from these moves.
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="wild-speech" name="wild-speech" />
+        <label for="wild-speech">Wild Speech</label>
+      </div>
+      <div class="text-sm italic">Replaces: Wild Empathy</div>
+      <div>
+        You can speak with and understand any non-magical, non-planar creature.
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="a-safer-place" name="a-safer-place" />
+        <label for="a-safer-place">A Safer Place</label>
+      </div>
+      <div class="text-sm italic">Replaces: A Safe Place</div>
+      <div>
+        When you set the watch for the night, everyone takes +1 to Take Watch.
+        After a night in camp when you set the watch everyone takes +1 forward.
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="hunters-prey" name="hunters-prey" />
+        <label for="hunters-prey">Hunter's Prey</label>
+      </div>
+      <div class="text-sm italic">Replaces: Familiar Prey</div>
+      <div>
+        When you Spout Lore about a monster you use WIS instead of INT. On a
+        12+, in addition to the normal effects, you get to ask the GM any one
+        question about the subject.
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="observant" name="observant" />
+        <label for="observant">Observant</label>
+      </div>
+      <div>
+        When you hunt and track, on a hit you may also ask one question about
+        the creature you are tracking from the Discern Realities list for free.
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="vipers-fangs" name="vipers-fangs" />
+        <label for="vipers-fangs">Viper's Fangs</label>
+      </div>
+      <div class="text-sm italic">Replaces: Viper's Strike</div>
+      <div>
+        When you strike an enemy with two weapons at once, add an extra 1d8
+        damage for your off-hand strike.
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="special-trick" name="special-trick" />
+        <label for="special-trick">Special Trick</label>
+      </div>
+      <div>
+        Choose a move from another class. So long as you are working with your
+        animal companion you have access to that move.
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="smaugs-belly" name="smaugs-belly" />
+        <label for="smaugs-belly">Smaug's Belly</label>
+      </div>
+      <div>
+        When you know your target's weakest point your arrows have 2 piercing.
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="unnatural-ally" name="unnatural-ally" />
+        <label for="unnatural-ally">Unnatural Ally</label>
+      </div>
+      <div>
+        Your animal companion is a monster, not an animal. Describe it. Give it
+        +2 ferocity and +1 instinct, plus a new training.
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row items-center">
+        <input type="checkbox" id="strider" name="strider" />
+        <label for="strider">Strider</label>
+      </div>
+      <div class="text-sm italic">Replaces: Follow Me</div>
+      <div>
+        When you Undertake A Perilous Journey you can take two roles. Roll twice
+        and use the better result for both roles.
+      </div>
     </div>
   </div>
 </div>
