@@ -1,6 +1,9 @@
-import template from './fighter-moves.html'
+import templateText from './fighter-moves.html'
 import '../../../section-header/section-header'
 import { AbstractCharacterMoves } from '../abstract-character-moves'
+
+const template = document.createElement('template')
+template.innerHTML = templateText
 
 export class FighterMoves extends AbstractCharacterMoves {
   _template = template

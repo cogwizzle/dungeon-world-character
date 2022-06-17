@@ -100,7 +100,8 @@ export class AbstractCharacterMoves extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = this._template
+    this.innerHTML = ''
+    this.appendChild(this._template.content.cloneNode(true))
     this.updateDom()
   }
 }
