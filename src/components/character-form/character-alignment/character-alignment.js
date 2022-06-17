@@ -76,7 +76,8 @@ export class CharacterAlignment extends HTMLElement {
 
   async render() {
     const template = await this.getTemplate()
-    this.innerHTML = template.cloneNode(true).innerHTML
+    this.innerHTML = ''
+    this.appendChild(template.content.cloneNode(true))
   }
 }
 
