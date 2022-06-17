@@ -1,4 +1,7 @@
-import template from './character-attribute.html'
+import templateText from './character-attribute.html'
+
+const template = document.createElement('template')
+template.innerHTML = templateText
 
 export class CharacterAttribute extends HTMLElement {
   _id
@@ -93,7 +96,7 @@ export class CharacterAttribute extends HTMLElement {
   }
 
   render() {
-    this.shadowRoot.innerHTML = template
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
     this.updateModifier()
   }
 }
