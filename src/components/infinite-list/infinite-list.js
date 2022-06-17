@@ -1,4 +1,6 @@
-import template from './infinite-list.html'
+import templateText from './infinite-list.html'
+const template = document.createElement('template')
+template.innerHTML = templateText
 
 const createNewInput = (value, index) => {
   const templateElement = document.createElement('template')
@@ -122,7 +124,8 @@ export class InfiniteList extends HTMLElement {
   }
 
   render() {
-    this.shadowRoot.innerHTML = template
+    this.shadowRoot.innerHTML = ''
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
     this.renderList([], this._value)
   }
 }
