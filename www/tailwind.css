@@ -638,6 +638,18 @@ body {
   height: 16rem;
 }
 
+.min-h-\[33rem\] {
+  min-height: 33rem;
+}
+
+.min-h-\[10\.625rem\] {
+  min-height: 10.625rem;
+}
+
+.min-h-\[10\.125rem\] {
+  min-height: 10.125rem;
+}
+
 .w-7 {
   width: 1.75rem;
 }
@@ -1033,6 +1045,10 @@ body {
 @media (min-width: 1280px) {
   .xl\:ml-0 {
     margin-left: 0px;
+  }
+
+  .xl\:min-h-\[16\.5rem\] {
+    min-height: 16.5rem;
   }
 
   .xl\:grid-cols-5 {
