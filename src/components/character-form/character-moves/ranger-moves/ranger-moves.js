@@ -19,6 +19,18 @@ const inputs = [
   ['#animal-companion-base-2', 'animalCompanionBase2'],
   ['#animal-companion-base-3', 'animalCompanionBase3'],
   ['#animal-companion-base-4', 'animalCompanionBase4'],
+  ['#animal-companion-fast', 'animalCompanionFast'],
+  ['#animal-companion-burly', 'animalCompanionBurly'],
+  ['#animal-companion-huge', 'animalCompanionHuge'],
+  ['#animal-companion-calm', 'animalCompanionCalm'],
+  ['#animal-companion-adaptable', 'animalCompanionAdaptable'],
+  ['#animal-companion-tireless', 'animalCompanionTireless'],
+  ['#animal-companion-quick-reflexes', 'animalCompanionQuickReflexes'],
+  ['#animal-companion-camouflage', 'animalCompanionCamouflage'],
+  ['#animal-companion-ferocious', 'animalCompanionFerocious'],
+  ['#animal-companion-intimidating', 'animalCompanionIntimidating'],
+  ['#animal-companion-keen-senses', 'animalCompanionKeenSenses'],
+  ['#animal-companion-stealthy', 'animalCompanionStealthy'],
 ]
 
 export class RangerMoves extends AbstractCharacterMoves {
