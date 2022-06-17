@@ -41,6 +41,15 @@ const inputs = [
   ['#animal-companion-fight-monsters', 'animalCompanionFightMonsters'],
   ['#animal-companion-perform', 'animalCompanionPerform'],
   ['#animal-companion-other-training', 'animalCompanionOtherTraining'],
+  ['#animal-companion-flighty', 'animalCompanionFlighty'],
+  ['#animal-companion-savage', 'animalCompanionSavage'],
+  ['#animal-companion-slow', 'animalCompanionSlow'],
+  ['#animal-companion-broken', 'animalCompanionBroken'],
+  ['#animal-companion-frightening', 'animalCompanionFrightening'],
+  ['#animal-companion-forgetful', 'animalCompanionForgetful'],
+  ['#animal-companion-stubborn', 'animalCompanionStubborn'],
+  ['#animal-companion-lame', 'animalCompanionLame'],
+  ['#animal-companion-other-weakness', 'animalCompanionOtherWeakness'],
 ]
 
 export class RangerMoves extends AbstractCharacterMoves {
