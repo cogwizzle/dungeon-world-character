@@ -1,8 +1,10 @@
 import template from './character-armor-hp-damage.html'
 import CharacterFormObservable from '../../../state/character-form-observable'
+import { supportedClasses } from '../../../data/supported-classes'
 import './labeled-decorated-input/labeled-decorated-input'
 
 export class CharacterArmorHpDamage extends HTMLElement {
+  _characterClass
   _inputs = [
     ['armor', 'armor'],
     ['hit-points', 'hitPoints'],
@@ -41,7 +43,23 @@ export class CharacterArmorHpDamage extends HTMLElement {
     }
   }
 
+  getDiceAmount() {
+    switch (this._characterClass) {
+      case supportedClasses.Fighter:
+        return 'D10'
+      case supportedClasses.Ranger:
+        return 'D8'
+      default:
+        return 'D?'
+    }
+  }
+
   hydrate = (state) => {
+    if (this._characterClass !== state.characterClass) {
+      this._characterClass = state.characterClass
+      const element = this.querySelector('#damage-input')
+      if (element) element.innerHTML = this.getDiceAmount()
+    }
     this._inputs.forEach(([id, propName]) => {
       const element = this.querySelector(`#${id}`)
       element.value = state[propName] || 0
@@ -75,6 +93,8 @@ export class CharacterArmorHpDamage extends HTMLElement {
 
   render() {
     this.innerHTML = template
+    const element = this.querySelector('#damage-input')
+    if (element) element.innerHTML = this.getDiceAmount()
   }
 }
 
