@@ -3,6 +3,8 @@ import CharacterFormObservable from '../../../state/character-form-observable'
 import '../../section-header/section-header'
 import './character-look-group/character-look-group'
 
+const templates = {}
+
 export class CharacterLook extends HTMLElement {
   _characterClass
   constructor() {
@@ -108,19 +110,33 @@ export class CharacterLook extends HTMLElement {
     this.beforeUnmount()
   }
 
-  async render() {
+  async getTemplate() {
+    let template
     switch (this._characterClass) {
       case supportedClasses.Fighter:
+        if (templates[this._characterClass])
+          return templates[this._characterClass]
+        template = document.createElement('template')
         const fighterTemplate = await import('./fighter-look.html')
-        this.innerHTML = fighterTemplate.default
-        break
+        template.innerHTML = fighterTemplate.default
+        templates[this._characterClass] = template
+        return template
       case supportedClasses.Ranger:
+        if (templates[this._characterClass])
+          return templates[this._characterClass]
+        template = document.createElement('template')
         const rangerTemplate = await import('./ranger-look.html')
-        this.innerHTML = rangerTemplate.default
-        break
+        template.innerHTML = rangerTemplate.default
+        templates[this._characterClass] = template
+        return template
       default:
-        break
+        return document.createElement('template')
     }
+  }
+
+  async render() {
+    const template = await this.getTemplate()
+    this.innerHTML = template.cloneNode(true).innerHTML
   }
 }
 
