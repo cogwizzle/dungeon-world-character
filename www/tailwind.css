@@ -590,16 +590,16 @@ body {
   margin-right: 1.75rem;
 }
 
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
 .mb-16 {
   margin-bottom: 4rem;
 }
 
 .mb-8 {
   margin-bottom: 2rem;
-}
-
-.ml-5 {
-  margin-left: 1.25rem;
 }
 
 .flex {
@@ -638,32 +638,16 @@ body {
   height: 16rem;
 }
 
-.h-96 {
-  height: 24rem;
-}
-
-.h-\[33rem\] {
-  height: 33rem;
-}
-
-.h-\[10\.625rem\] {
-  height: 10.625rem;
-}
-
-.h-\[10\.125rem\] {
-  height: 10.125rem;
-}
-
-.min-h-\[10\.125rem\] {
-  min-height: 10.125rem;
+.min-h-\[33rem\] {
+  min-height: 33rem;
 }
 
 .min-h-\[10\.625rem\] {
   min-height: 10.625rem;
 }
 
-.min-h-\[33rem\] {
-  min-height: 33rem;
+.min-h-\[10\.125rem\] {
+  min-height: 10.125rem;
 }
 
 .w-7 {
@@ -1065,14 +1049,6 @@ body {
 @media (min-width: 1280px) {
   .xl\:ml-0 {
     margin-left: 0px;
-  }
-
-  .xl\:h-auto {
-    height: auto;
-  }
-
-  .xl\:h-\[16\.5rem\] {
-    height: 16.5rem;
   }
 
   .xl\:min-h-\[16\.5rem\] {

@@ -15,6 +15,10 @@ const inputs = [
   ['#animal-companion-pigeon', 'animalCompanionPigeon'],
   ['#animal-companion-rat', 'animalCompanionRat'],
   ['#animal-companion-mule', 'animalCompanionMule'],
+  ['#animal-companion-base-1', 'animalCompanionBase1'],
+  ['#animal-companion-base-2', 'animalCompanionBase2'],
+  ['#animal-companion-base-3', 'animalCompanionBase3'],
+  ['#animal-companion-base-4', 'animalCompanionBase4'],
 ]
 
 export class RangerMoves extends AbstractCharacterMoves {
