@@ -674,6 +674,14 @@ body {
   width: 3.5rem;
 }
 
+.w-16 {
+  width: 4rem;
+}
+
+.w-12 {
+  width: 3rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
