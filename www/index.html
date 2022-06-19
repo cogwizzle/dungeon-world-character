@@ -11,7 +11,10 @@
   <body>
     <div class="flex flex-row gap-x-1 gap-y-0 lg:gap-x-2 h-screen">
       <dw-drawer></dw-drawer>
-      <dw-character-form></dw-character-form>
+      <div class="flex flex-col mx-4 sticky lg:relative">
+        <dw-character-form></dw-character-form>
+        <dw-player-moves></dw-player-moves>
+      </div>
     </div>
   </body>
 </html>
