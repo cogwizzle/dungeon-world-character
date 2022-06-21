@@ -139,6 +139,11 @@ export class Drawer extends HTMLElement {
       this._characterClass || ''
     this.shadowRoot.querySelector('#class-name').innerHTML =
       this._characterClass || ''
+    const playerMovesLink = this.shadowRoot.querySelector('#player-moves-link')
+    if (this._characterClass && this._characterClass !== '')
+      playerMovesLink?.classList.remove('hidden')
+    else if (!playerMovesLink.classList.contains('hidden'))
+      playerMovesLink?.classList.add('hidden')
   }
 
   connectedCallback() {
