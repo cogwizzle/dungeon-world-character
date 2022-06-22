@@ -14,6 +14,7 @@ export class CharacterLook extends HTMLElement {
       case supportedClasses.Fighter:
         return ['body', 'eyes', 'hair', 'skin']
       case supportedClasses.Ranger:
+      case supportedClasses.Bard:
         return ['body', 'eyes', 'hair', 'clothes']
       default:
         return []
@@ -31,6 +32,7 @@ export class CharacterLook extends HTMLElement {
         }
         break
       case supportedClasses.Ranger:
+      case supportedClasses.Bard:
         CharacterFormObservable.look = {
           body: this._body,
           eyes: this._eyes,
@@ -118,6 +120,9 @@ export class CharacterLook extends HTMLElement {
         const rangerTemplate = await import('./ranger-look.html')
         this.innerHTML = rangerTemplate.default
         break
+      case supportedClasses.Bard:
+        const bardTemplate = await import('./bard-look.html')
+        this.innerHTML = bardTemplate.default
       default:
         break
     }
