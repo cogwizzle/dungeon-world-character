@@ -58,6 +58,9 @@ export class CharacterAlignment extends HTMLElement {
         const rangerTemplate = await import('./ranger-alignment.html')
         this.innerHTML = rangerTemplate.default
         break
+      case supportedClasses.Bard:
+        const bardTemplate = await import('./bard-alignment.html')
+        this.innerHTML = bardTemplate.default
       default:
         break
     }
