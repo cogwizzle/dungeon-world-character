@@ -46,6 +46,17 @@ export class CharacterRace extends HTMLElement {
             "When you Make Camp in a dungeon or city, you don't need to consume a ration."
           ),
         ]
+      case supportedClasses.Bard:
+        return [
+          createOption(
+            'elf',
+            'When you enter an important location (your call) you can ask the GM for one fact from the history of that location.'
+          ),
+          createOption(
+            'human',
+            'When you first enter a civilized settlement someone who respects the custom of hospitality to minstrels will take you in as their guest.'
+          ),
+        ]
       default:
         return []
     }
