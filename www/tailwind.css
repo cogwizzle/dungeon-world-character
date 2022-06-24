@@ -1035,6 +1035,10 @@ hr {
     margin-bottom: 0px;
   }
 
+  .lg\:ml-7 {
+    margin-left: 1.75rem;
+  }
+
   .lg\:flex {
     display: flex;
   }
