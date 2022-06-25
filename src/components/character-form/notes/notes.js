@@ -4,7 +4,7 @@ export class Notes extends HTMLElement {
   _value = ''
   constructor() {
     super()
-    this.shadowRoot = this.attachShadow({ mode: 'open' })
+    this.attachShadow({ mode: 'open' })
   }
 
   static get observedAttributes() {
@@ -14,7 +14,8 @@ export class Notes extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === 'value' && oldValue !== newValue) {
       this._value = newValue
-      this.shadowRoot.querySelector('#notes')?.innerHTML = newValue
+      const notesElement = this.shadowRoot.querySelector('#notes')
+      if (notesElement) notesElement.innerHTML = newValue
     }
   }
 
@@ -38,6 +39,7 @@ export class Notes extends HTMLElement {
   }
 
   connectedCallback() {
+    this._value = this.getAttribute('value') || ''
     this.render()
     this.onMount()
   }
@@ -48,7 +50,8 @@ export class Notes extends HTMLElement {
 
   render() {
     this.shadowRoot.innerHTML = template
-    this.shadowRoot.querySelector('#notes')?.innerHTML = this._value
+    const notesElement = this.shadowRoot.querySelector('#notes')
+    if (notesElement) notesElement.innerHTML = this._value
   }
 }
 
