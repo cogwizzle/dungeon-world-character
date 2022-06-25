@@ -244,6 +244,14 @@ class ChracterFormObservable extends Observable {
     this.notify()
   }
 
+  set notes(value) {
+    this._state = {
+      ...this._state,
+      notes: value,
+    }
+    this.notify()
+  }
+
   set characterClass(value) {
     this._state = {
       ...this._state,
