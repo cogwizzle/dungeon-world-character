@@ -880,12 +880,12 @@ hr {
   padding-left: 3rem;
 }
 
-.pl-8 {
-  padding-left: 2rem;
-}
-
 .pt-7 {
   padding-top: 1.75rem;
+}
+
+.pl-8 {
+  padding-left: 2rem;
 }
 
 .text-left {
@@ -937,11 +937,6 @@ hr {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.underline {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
 }
 
 .shadow-lg {
