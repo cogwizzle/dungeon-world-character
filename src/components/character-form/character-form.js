@@ -9,6 +9,7 @@ import './character-coin/character-coin'
 import './character-gear/character-gear'
 import './character-moves/character-moves'
 import './character-armor-hp-damage/character-armor-hp-damage'
+import './notes/notes'
 
 export class CharacterForm extends HTMLElement {
   constructor() {
@@ -31,15 +32,21 @@ export class CharacterForm extends HTMLElement {
     CharacterFormObservable.moves = event.detail
   }
 
+  onNotesChange = (event) => {
+    CharacterFormObservable.notes = event.detail
+  }
+
   hydrate = (state) => {
     const characterNameElement = this.querySelector('#character-name')
     const levelElement = this.querySelector('#level')
     const xpElement = this.querySelector('#xp')
     const characterMovesElement = this.querySelector('dw-character-moves')
+    const notes = this.querySelector('dw-notes')
     characterNameElement.value = state.characterName || ''
     levelElement.value = state.level || ''
     xpElement.value = state.xp || 0
     characterMovesElement.value = state.moves || {}
+    notes.setAttribute('value', state.notes || '')
   }
 
   connectedCallback() {
@@ -49,6 +56,7 @@ export class CharacterForm extends HTMLElement {
     const levelElement = this.querySelector('#level')
     const xpElement = this.querySelector('#xp')
     const characterMovesElement = this.querySelector('dw-character-moves')
+    const notes = this.querySelector('dw-notes')
     characterNameElement.addEventListener('change', this.onCharacterNameChange)
     levelElement.addEventListener('change', this.onLevelChange)
     xpElement.addEventListener('change', this.onXpChange)
@@ -56,6 +64,7 @@ export class CharacterForm extends HTMLElement {
       'dw-character-moves-change',
       this.onMovesChange
     )
+    notes.addEventListener('notes-changed', this.onNotesChange)
   }
 
   disconnectedCallback() {
@@ -63,6 +72,7 @@ export class CharacterForm extends HTMLElement {
     const characterNameElement = this.querySelector('#character-name')
     const levelElement = this.querySelector('#level')
     const characterMovesElement = this.querySelector('dw-character-moves')
+    const notes = this.querySelector('dw-notes')
     characterNameElement.removeEventListener(
       'change',
       this.onCharacterNameChange
@@ -73,6 +83,7 @@ export class CharacterForm extends HTMLElement {
       'dw-character-moves-change',
       this.onMovesChange
     )
+    notes.removeEventListener('notes-changed', this.onNotesChange)
   }
 
   render() {
