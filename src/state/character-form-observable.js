@@ -249,6 +249,7 @@ class ChracterFormObservable extends Observable {
       ...this._state,
       notes: value,
     }
+    this.notify()
   }
 
   set characterClass(value) {
