@@ -50,6 +50,7 @@ export class CharacterArmorHpDamage extends HTMLElement {
       case supportedClasses.Ranger:
         return 'D8'
       case supportedClasses.Bard:
+      case supportedClasses.Druid:
         return 'D6'
       default:
         return 'D?'
