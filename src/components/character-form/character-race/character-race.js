@@ -57,6 +57,21 @@ export class CharacterRace extends HTMLElement {
             'When you first enter a civilized settlement someone who respects the custom of hospitality to minstrels will take you in as their guest.'
           ),
         ]
+      case supportedClasses.Druid:
+        return [
+          createOption(
+            'elf',
+            'The sap of the elder trees flows within you. In addition to any other attunements, the Great Forest is always considered your land.'
+          ),
+          createOption(
+            'human',
+            'As your people learned to bind animals to field and farm, so too are you bound to them. You may always take the shape of any domesticated animal, in addition to your normal options.'
+          ),
+          createOption(
+            'halfling',
+            'You sing the healing songs of spring and brook. When you make camp, you and your allies heal +1d6.'
+          ),
+        ]
       default:
         return []
     }
