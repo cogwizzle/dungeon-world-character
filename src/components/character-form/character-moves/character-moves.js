@@ -52,6 +52,10 @@ export class CharacterMoves extends HTMLElement {
         await import('./bard-moves/bard-moves')
         this.innerHTML = '<dw-bard-moves></dw-bard-moves>'
         break
+      case supportedClasses.Druid:
+        await import('./druid-moves/druid-moves')
+        this.innerHTML = '<dw-druid-moves></dw-druid-moves>'
+        break
       default:
         this.innerHTML = ''
         break
