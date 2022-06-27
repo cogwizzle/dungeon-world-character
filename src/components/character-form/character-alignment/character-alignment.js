@@ -61,6 +61,11 @@ export class CharacterAlignment extends HTMLElement {
       case supportedClasses.Bard:
         const bardTemplate = await import('./bard-alignment.html')
         this.innerHTML = bardTemplate.default
+        break
+      case supportedClasses.Druid:
+        const druidTemplate = await import('./druid-alignment.html')
+        this.innerHTML = druidTemplate.default
+        break
       default:
         break
     }
