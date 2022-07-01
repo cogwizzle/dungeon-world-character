@@ -18,6 +18,10 @@ const inputs = [
   ['#spirit-tongue', 'spiritTongue'],
   ['#shapeshifter', 'shapeshifter'],
   ['#studied-essence', 'studiedEssence'],
+  ['#hunters-brother', 'huntersBrother'],
+  ['#thing-talker', 'thingTalker'],
+  ['#red-of-tooth-and-claw', 'redOfToothAndClaw'],
+  ['#communion-of-whispers', 'communionOfWhispers'],
 ]
 
 export class DruidMoves extends AbstractCharacterMoves {
