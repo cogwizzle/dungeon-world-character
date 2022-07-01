@@ -14,6 +14,10 @@ const inputs = [
   ['#the-towering-mountains', 'theToweringMountains'],
   ['#the-frozen-north', 'theFrozenNorth'],
   ['#the-blasted-wasteland', 'theBlastedWasteland'],
+  ['#by-nature-sustained', 'byNatureSustained'],
+  ['#spirit-tongue', 'spiritTongue'],
+  ['#shapeshifter', 'shapeshifter'],
+  ['#studied-essence', 'studiedEssence'],
 ]
 
 export class DruidMoves extends AbstractCharacterMoves {
