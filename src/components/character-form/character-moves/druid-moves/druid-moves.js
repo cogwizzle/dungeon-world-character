@@ -28,6 +28,16 @@ const inputs = [
   ['#eyes-of-the-tiger', 'eyesOfTheTiger'],
   ['#balance', 'balance'],
   ['#shed', 'shed'],
+  ['#embracing-no-form', 'embracingNoForm'],
+  ['#world-talker', 'worldTalker'],
+  ['#dopplegangers-dance', 'dopplegangersDance'],
+  ['#formshaper', 'formShaper'],
+  ['#blood-and-thunder', 'bloodAndThunder'],
+  ['#healthy-distrust', 'healthyDistrust'],
+  ['#the-druid-sleep', 'theDruidSleep'],
+  ['#chimera-form', 'chimeraForm'],
+  ['#weather-weaver', 'weatherWeaver'],
+  ['#stalkers-sister', 'stalkersSister'],
 ]
 
 export class DruidMoves extends AbstractCharacterMoves {
