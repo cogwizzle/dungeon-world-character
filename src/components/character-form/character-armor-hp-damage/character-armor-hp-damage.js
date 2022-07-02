@@ -46,6 +46,7 @@ export class CharacterArmorHpDamage extends HTMLElement {
   getDiceAmount() {
     switch (this._characterClass) {
       case supportedClasses.Fighter:
+      case supportedClasses.Paladin:
         return 'D10'
       case supportedClasses.Ranger:
         return 'D8'
