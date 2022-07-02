@@ -10,3 +10,5 @@ export class PaladinMoves extends AbstractCharacterMoves {
     super()
   }
 }
+
+customElements.define('dw-paladin-moves', PaladinMoves)
