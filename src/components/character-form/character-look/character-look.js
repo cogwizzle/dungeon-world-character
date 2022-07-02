@@ -18,6 +18,8 @@ export class CharacterLook extends HTMLElement {
         return ['body', 'eyes', 'hair', 'clothes']
       case supportedClasses.Druid:
         return ['hair', 'eyes', 'clothes']
+      case supportedClasses.Paladin:
+        return ['body', 'eyes', 'hair', 'holy-symbol']
       default:
         return []
     }
@@ -49,6 +51,13 @@ export class CharacterLook extends HTMLElement {
           clothes: this._clothes,
         }
         break
+      case supportedClasses.Paladin:
+        CharacterFormObservable.look = {
+          body: this._body,
+          eyes: this._eyes,
+          hair: this._hair,
+          'holy-symbol': this['_holy-symbol'],
+        }
       default:
         break
     }
@@ -137,6 +146,10 @@ export class CharacterLook extends HTMLElement {
       case supportedClasses.Druid:
         const druidTemplate = await import('./druid-look.html')
         this.innerHTML = druidTemplate.default
+        break
+      case supportedClasses.Paladin:
+        const paladinTemplate = await import('./paladin-look.html')
+        this.innerHTML = paladinTemplate.default
         break
       default:
         break
