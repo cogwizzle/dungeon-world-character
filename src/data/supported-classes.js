@@ -3,4 +3,5 @@ export const supportedClasses = {
   Ranger: 'Ranger',
   Bard: 'Bard',
   Druid: 'Druid',
+  Paladin: 'Paladin',
 }
