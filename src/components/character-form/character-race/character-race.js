@@ -72,6 +72,13 @@ export class CharacterRace extends HTMLElement {
             'You sing the healing songs of spring and brook. When you make camp, you and your allies heal +1d6.'
           ),
         ]
+      case supportedClasses.Paladin:
+        return [
+          createOption(
+            'human',
+            'When you pray for guidance, even for a moment and ask “what here is evil?” the GM will tell you, honestly.'
+          ),
+        ]
       default:
         return []
     }
