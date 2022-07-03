@@ -12,6 +12,16 @@ const inputs = [
   ['#lay-on-hands', 'layOnHands'],
   ['#i-am-the-law', 'iAmTheLaw'],
   ['#armored', 'armored'],
+  ['#divine-favor', 'divineFavor'],
+  ['#exterminatus', 'exterminatus'],
+  ['#hospitaller', 'hospitaller'],
+  ['#bloody-aegis', 'bloodyAegis'],
+  ['#charge', 'charge'],
+  ['#smite', 'smite'],
+  ['#staunch-defender', 'staunchDefender'],
+  ['#holy-protection', 'holyProtection'],
+  ['#setup-strike', 'setupStrike'],
+  ['#voice-of-authority', 'voiceOfAuthority'],
 ]
 
 export class PaladinMoves extends AbstractCharacterMoves {
