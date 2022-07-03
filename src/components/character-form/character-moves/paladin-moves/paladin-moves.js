@@ -9,6 +9,9 @@ const inputs = [
   ['#quest-discover', 'questDiscover'],
   ['#quest-direction', 'questDirection'],
   ['#quest-invulnerability', 'questInvulnerability'],
+  ['#lay-on-hands', 'layOnHands'],
+  ['#i-am-the-law', 'iAmTheLaw'],
+  ['#armored', 'armored'],
 ]
 
 export class PaladinMoves extends AbstractCharacterMoves {
