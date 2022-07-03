@@ -1,5 +1,6 @@
 import template from './druid-moves.html'
 import { AbstractCharacterMoves } from '../abstract-character-moves'
+import '../../../section-header/section-header'
 
 const inputs = [
   ['#born-of-the-soil', 'bornOfTheSoil'],
