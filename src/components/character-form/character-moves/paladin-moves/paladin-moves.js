@@ -22,6 +22,16 @@ const inputs = [
   ['#holy-protection', 'holyProtection'],
   ['#setup-strike', 'setupStrike'],
   ['#voice-of-authority', 'voiceOfAuthority'],
+  ['#evidence-of-faith', 'evidenceOfFaith'],
+  ['#tandem-strike', 'tandemStrike'],
+  ['#holy-smite', 'holySmite'],
+  ['#divine-protection', 'divineProtection'],
+  ['#ever-onward', 'everOnward'],
+  ['#divine-authority', 'divineAuthority'],
+  ['#impervious-defender', 'imperviousDefender'],
+  ['#perfect-hospitaller', 'perfectHospitaller'],
+  ['#perfect-knight', 'perfectKnight'],
+  ['#indomitable', 'indomitable'],
 ]
 
 export class PaladinMoves extends AbstractCharacterMoves {
