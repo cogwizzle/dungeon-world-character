@@ -70,6 +70,10 @@ export class CharacterAlignment extends HTMLElement {
         const paladinTemplate = await import('./paladin-alignment.html')
         this.innerHTML = paladinTemplate.default
         break
+      case supportedClasses.Thief:
+        const thiefTemplate = await import('./thief-alignment.html')
+        this.innerHTML = thiefTemplate.default
+        break
       default:
         break
     }
