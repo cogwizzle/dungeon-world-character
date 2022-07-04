@@ -79,6 +79,17 @@ export class CharacterRace extends HTMLElement {
             'When you pray for guidance, even for a moment and ask “what here is evil?” the GM will tell you, honestly.'
           ),
         ]
+      case supportedClasses.Thief:
+        return [
+          createOption(
+            'halfling',
+            'When you attack with a ranged weapon, deal +2 damage.'
+          ),
+          createOption(
+            'human',
+            'You are a professional. When you Spout Lore or Discern Realities about criminal activities, take +1.'
+          ),
+        ]
       default:
         return []
     }
