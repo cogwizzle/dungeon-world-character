@@ -60,6 +60,10 @@ export class CharacterMoves extends HTMLElement {
         await import('./paladin-moves/paladin-moves')
         this.innerHTML = '<dw-paladin-moves></dw-paladin-moves>'
         break
+      case supportedClasses.Thief:
+        await import('./thief-moves/thief-moves')
+        this.innerHTML = '<dw-thief-moves></dw-thief-moves>'
+        break
       default:
         this.innerHTML = ''
         break
