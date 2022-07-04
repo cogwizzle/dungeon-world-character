@@ -2,7 +2,13 @@ import template from './thief-moves.html'
 import { AbstractCharacterMoves } from '../abstract-character-moves'
 import '../../../section-header/section-header'
 
-const inputs = []
+const inputs = [
+  ['#trap-expert', 'trapExpert'],
+  ['#flexible-morals', 'flexibleMorals'],
+  ['#tricks-of-the-trade', 'tricksOfTheTrade'],
+  ['#poisoner', 'poisoner'],
+  ['#backstab', 'backstab'],
+]
 
 export class ThiefMoves extends AbstractCharacterMoves {
   _inputs = inputs
