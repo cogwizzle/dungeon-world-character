@@ -8,6 +8,15 @@ const inputs = [
   ['#tricks-of-the-trade', 'tricksOfTheTrade'],
   ['#poisoner', 'poisoner'],
   ['#backstab', 'backstab'],
+  ['#cheap-shot', 'cheapShot'],
+  ['#poison-master', 'poisonMaster'],
+  ['#cautious', 'cautious'],
+  ['#envenom', 'envenom'],
+  ['#wealth-and-taste', 'wealthAndTaste'],
+  ['#brewer', 'brewer'],
+  ['#shoot-first', 'shootFirst'],
+  ['#connections', 'connections'],
+  ['#underdog', 'underdog'],
 ]
 
 export class ThiefMoves extends AbstractCharacterMoves {
