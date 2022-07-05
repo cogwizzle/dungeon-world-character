@@ -17,6 +17,15 @@ const inputs = [
   ['#shoot-first', 'shootFirst'],
   ['#connections', 'connections'],
   ['#underdog', 'underdog'],
+  ['#dirty-fighter', 'dirtyFighter'],
+  ['#alchemist', 'alchemist'],
+  ['#extremely-cautious', 'extremelyCautious'],
+  ['#serious-underdog', 'seriousUnderdog'],
+  ['#escape-route', 'escapeRoute'],
+  ['#evasion', 'evasion'],
+  ['#disguise', 'disguise'],
+  ['#heist', 'heist'],
+  ['#strong-arm-true-aim', 'strongArmTrueAim'],
 ]
 
 export class ThiefMoves extends AbstractCharacterMoves {
