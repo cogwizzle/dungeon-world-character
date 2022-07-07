@@ -16,6 +16,7 @@ export class CharacterLook extends HTMLElement {
       case supportedClasses.Ranger:
       case supportedClasses.Bard:
       case supportedClasses.Thief:
+      case supportedClasses.Cleric:
         return ['body', 'eyes', 'hair', 'clothes']
       case supportedClasses.Druid:
         return ['hair', 'eyes', 'clothes']
@@ -39,6 +40,7 @@ export class CharacterLook extends HTMLElement {
       case supportedClasses.Ranger:
       case supportedClasses.Bard:
       case supportedClasses.Thief:
+      case supportedClasses.Cleric:
         CharacterFormObservable.look = {
           body: this._body,
           eyes: this._eyes,
@@ -156,6 +158,10 @@ export class CharacterLook extends HTMLElement {
       case supportedClasses.Thief:
         const thiefTemplate = await import('./thief-look.html')
         this.innerHTML = thiefTemplate.default
+        break
+      case supportedClasses.Cleric:
+        const clericTemplate = await import('./cleric-look.html')
+        this.innerHTML = clericTemplate.default
         break
       default:
         break
