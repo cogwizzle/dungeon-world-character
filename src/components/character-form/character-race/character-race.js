@@ -90,6 +90,17 @@ export class CharacterRace extends HTMLElement {
             'You are a professional. When you Spout Lore or Discern Realities about criminal activities, take +1.'
           ),
         ]
+      case supportedClasses.Cleric:
+        return [
+          createOption(
+            'dwarf',
+            'You are one with stone. When you commune you are also granted a special version of Words of the Unspeaking as a rote which only works on stone.'
+          ),
+          createOption(
+            'human',
+            'Your faith is diverse. Choose one wizard spell. You can cast and be granted that spell as if it was a cleric spell.'
+          ),
+        ]
       default:
         return []
     }
