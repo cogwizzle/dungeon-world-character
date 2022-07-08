@@ -74,6 +74,10 @@ export class CharacterAlignment extends HTMLElement {
         const thiefTemplate = await import('./thief-alignment.html')
         this.innerHTML = thiefTemplate.default
         break
+      case supportedClasses.Cleric:
+        const clericTemplate = await import('./cleric-alignment.html')
+        this.innerHTML = clericTemplate.default
+        break
       default:
         break
     }
