@@ -63,6 +63,12 @@ const inputs = [
   ['#divination', 'divination'],
   ['#contagion', 'contagion'],
   ['#words-of-the-unspeaking', 'wordsOfTheUnspeaking'],
+  ['#word-of-recall', 'wordOfRecall'],
+  ['#harm', 'harm'],
+  ['#mark-of-death', 'markOfDeath'],
+  ['#heal', 'heal'],
+  ['#sever', 'sever'],
+  ['#control', 'control'],
 ]
 
 export class ClericMoves extends AbstractCharacterMoves {
