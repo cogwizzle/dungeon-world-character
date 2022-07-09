@@ -41,6 +41,9 @@ const inputs = [
   ['#greater-first-aid', 'greaterFirstAid'],
   ['#divine-invincibility', 'divineInvincibility'],
   ['#multiclass-dabbler', 'multiclassDabbler'],
+  ['#light', 'light'],
+  ['#sanctify', 'sanctify'],
+  ['#guidance', 'guidance'],
 ]
 
 export class ClericMoves extends AbstractCharacterMoves {
