@@ -1,1 +1,131 @@
-<div>Cleric Moves</div>
+<div>
+  <dw-section-header>STARTING MOVES</dw-section-header>
+  <div class="grid grid-cols-2 gap-2">
+    <dw-detailed-checkbox key="diety" label="Diety">
+      <div>
+        You serve and worship some deity or power which grants you spells. Give
+        your god a name and choose your deity's domain:
+      </div>
+      <ul class="ml-5 text-sm">
+        <li>
+          <dw-labeled-checkbox
+            key="diety-healing-and-restoration"
+            label="Healing and Restoration"
+          ></dw-labeled-checkbox>
+        </li>
+        <li>
+          <dw-labeled-checkbox
+            key="diety-bloody-conquest"
+            label="Bloody Conquest"
+          ></dw-labeled-checkbox>
+        </li>
+        <li>
+          <dw-labeled-checkbox
+            key="diety-civilization"
+            label="Civilization"
+          ></dw-labeled-checkbox>
+        </li>
+        <li>
+          <dw-labeled-checkbox
+            key="diety-knowledge-and-hidden-things"
+            label="Knowledge and Hidden Things"
+          ></dw-labeled-checkbox>
+        </li>
+        <li>
+          <dw-labeled-checkbox
+            key="diety-the-downtrodden-and-forgotten"
+            label="The Downtrodden and Forgotten"
+          ></dw-labeled-checkbox>
+        </li>
+        <li>
+          <dw-labeled-checkbox
+            key="diety-what-lies-beneath"
+            label="What Lies Beneath"
+          ></dw-labeled-checkbox>
+        </li>
+      </ul>
+      <div class="text-sm italic">Choose one precept of your religion:</div>
+      <ul class="ml-5 text-sm">
+        <li>
+          <dw-labeled-checkbox
+            key="diety-petition-suffering"
+            label="It preaches the sanctity of suffering, add Petition: Suffering"
+          ></dw-labeled-checkbox>
+        </li>
+        <li>
+          <dw-labeled-checkbox
+            key="diety-petition-gaining-secrets"
+            label="It's clutish and insular, add Petition: Gaining Secrets"
+          ></dw-labeled-checkbox>
+        </li>
+        <li>
+          <dw-labeled-checkbox
+            key="diety-petition-offering"
+            label="It Observes important sacrificial rites, add Petition: Offering"
+          ></dw-labeled-checkbox>
+        </li>
+        <li>
+          <dw-labeled-checkbox
+            key="diety-petition-personal-victory"
+            label="It believes in trial by combat, add Petition: Personal Victory"
+          ></dw-labeled-checkbox>
+        </li>
+      </ul>
+    </dw-detailed-checkbox>
+    <dw-detailed-checkbox key="cast-a-spell" label="Cast a Spell (WIS)">
+      <div>
+        When you unleash a spell granted by your deity, roll+WIS. • On a 10+ the
+        the spell is successfully cast and your deity does not revoke the spell,
+        so you may cast it again. • On a 7-9 the spell is cast, but choose one:
+        • You draw unwelcome attention or put yourself in a spot. The GM will
+        tell you how.
+      </div>
+      <ul class="ml-5 text-sm list-disc">
+        <li>
+          Your casting distances you from your deity; take -1 ongoing to cast a
+          spell until the next time you commune.
+        </li>
+        <li>
+          After it is cast, the spell is revoked by your deity. You cannot cast
+          the spell again until you commune and have it granted to you.
+        </li>
+      </ul>
+      <div>
+        Note that maintaining spells with ongoing effects will sometimes cause a
+        penalty to your roll to cast a spell.
+      </div>
+    </dw-detailed-checkbox>
+    <dw-detailed-checkbox key="divine-guidance" label="Divine Guidance">
+      <div>
+        When you petition your deity according to the precept of your religion,
+        you are granted some useful knowledge or boon related to your deity's
+        domain. The GM will tell you what.
+      </div>
+    </dw-detailed-checkbox>
+    <dw-detailed-checkbox key="commune" label="Commune">
+      <div>
+        When you spend uninterrupted time (an hour or so) in quiet contemplation
+        with your deity, you:
+      </div>
+      <ul class="ml-5 text-sm list-disc">
+        <li>Lose any spells already granted to you</li>
+        <li>
+          Are granted new spells of your choice whose total levels don't exceed
+          your own level +1, and none of which is a higher level than your own
+          level
+        </li>
+        <li>Prepare all of your rotes, which never count against your limit</li>
+      </ul>
+    </dw-detailed-checkbox>
+    <dw-detailed-checkbox key="turn-undead" label="Turn Undead">
+      <div>
+        When you hold your holy symbol aloft and call on your deity for
+        protection, roll+Wis. • On a 7+, so long as you continue to pray and
+        brandish your holy symbol, no undead may come within reach of you. • On
+        a 10+, you also momentarily daze intelligent undead and cause mindless
+        undead to flee. Aggression breaks the effects and they are able to act
+        as normal.
+      </div>
+    </dw-detailed-checkbox>
+  </div>
+</div>
