@@ -69,6 +69,11 @@ const inputs = [
   ['#heal', 'heal'],
   ['#sever', 'sever'],
   ['#control', 'control'],
+  ['#storm-of-vengeance', 'stormOfVengeance'],
+  ['#consume-life', 'consumeLife'],
+  ['#divine-presence', 'divinePresence'],
+  ['#repair', 'repair'],
+  ['#plague', 'plague'],
 ]
 
 export class ClericMoves extends AbstractCharacterMoves {
