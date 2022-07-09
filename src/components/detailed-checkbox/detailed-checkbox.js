@@ -1,4 +1,6 @@
 import template from './detailed-checkbox.html'
+const templateEl = document.createElement('template')
+templateEl.innerHTML = template
 
 export class DetailedCheckbox extends HTMLElement {
   constructor() {
@@ -42,7 +44,8 @@ export class DetailedCheckbox extends HTMLElement {
 
   render() {
     const innerHTML = this.innerHTML
-    this.innerHTML = template
+    this.innerHTML = ''
+    this.appendChild(templateEl.content.cloneNode(true))
     this.querySelector('slot').innerHTML = innerHTML
   }
 }
