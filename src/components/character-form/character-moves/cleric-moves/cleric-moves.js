@@ -44,6 +44,13 @@ const inputs = [
   ['#light', 'light'],
   ['#sanctify', 'sanctify'],
   ['#guidance', 'guidance'],
+  ['#bless', 'bless'],
+  ['#cause-fear', 'causeFear'],
+  ['#sanctuary', 'sanctuary'],
+  ['#cure-light-wounds', 'cureLightWounds'],
+  ['#detect-alignment', 'detectAlignment'],
+  ['#magic-weapon', 'magicWeapon'],
+  ['#speak-with-death', 'speakWithDeath'],
 ]
 
 export class ClericMoves extends AbstractCharacterMoves {
