@@ -31,6 +31,16 @@ const inputs = [
   ['#empower', 'empower'],
   ['#divine-protection', 'divineProtection'],
   ['#devoted-healer', 'devotedHealer'],
+  ['#anoited', 'anoited'],
+  ['#martyr', 'martyr'],
+  ['#apotheosis', 'apotheosis'],
+  ['#divine-armor', 'divineArmor'],
+  ['#reaper', 'reaper'],
+  ['#greater-empower', 'greaterEmpower'],
+  ['#providence', 'providence'],
+  ['#greater-first-aid', 'greaterFirstAid'],
+  ['#divine-invincibility', 'divineInvincibility'],
+  ['#multiclass-dabbler', 'multiclassDabbler'],
 ]
 
 export class ClericMoves extends AbstractCharacterMoves {
