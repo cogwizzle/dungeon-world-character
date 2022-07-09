@@ -20,6 +20,17 @@ const inputs = [
   ['#divine-guidance', 'divineGuidance'],
   ['#commune', 'commune'],
   ['#turn-undead', 'turnUndead'],
+  ['#chosen-one', 'chosenOne'],
+  ['#divine-intervention', 'divineIntervention'],
+  ['#invigorate', 'invigorate'],
+  ['#the-scale-of-life-and-death', 'theScaleOfLifeAndDeath'],
+  ['#penitent', 'penitent'],
+  ['#serenity', 'serenity'],
+  ['#first-aid', 'firstAid'],
+  ['#orison-for-guidance', 'orisonForGuidance'],
+  ['#empower', 'empower'],
+  ['#divine-protection', 'divineProtection'],
+  ['#devoted-healer', 'devotedHealer'],
 ]
 
 export class ClericMoves extends AbstractCharacterMoves {
