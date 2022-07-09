@@ -56,6 +56,13 @@ const inputs = [
   ['#cure-moderate-wounds', 'cureModerateWounds'],
   ['#darkness', 'darkness'],
   ['#hold-person', 'holdPerson'],
+  ['#revelation', 'revelation'],
+  ['#true-seeing', 'trueSeeing'],
+  ['#trap-soul', 'trapSoul'],
+  ['#cure-critical-wounds', 'cureCriticalWounds'],
+  ['#divination', 'divination'],
+  ['#contagion', 'contagion'],
+  ['#words-of-the-unspeaking', 'wordsOfTheUnspeaking'],
 ]
 
 export class ClericMoves extends AbstractCharacterMoves {
