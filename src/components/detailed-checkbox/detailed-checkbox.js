@@ -8,13 +8,13 @@ export class DetailedCheckbox extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['name', 'label']
+    return ['key', 'label']
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue === newValue) return
     switch (name) {
-      case 'name':
+      case 'key':
       case 'label':
         this.onMount()
         break
@@ -24,17 +24,17 @@ export class DetailedCheckbox extends HTMLElement {
   }
 
   onMount() {
-    const name = this.getAttribute('name')
+    const key = this.getAttribute('key')
     const label = this.getAttribute('label')
     const input = this.querySelector('input')
     const labelEl = this.querySelector('label')
     if (labelEl) {
       labelEl.innerHTML = label
-      labelEl.setAttribute('for', name)
+      labelEl.setAttribute('for', key)
     }
     if (!input) return
-    input.setAttribute('name', name)
-    input.setAttribute('id', name)
+    input.setAttribute('name', key)
+    input.setAttribute('id', key)
   }
 
   connectedCallback() {
