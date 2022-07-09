@@ -16,6 +16,10 @@ const inputs = [
   ['#diety-petition-gaining-secrets', 'dietyPetitionGainingSecrets'],
   ['#diety-petition-offering', 'dietyPetitionOffering'],
   ['#diety-petition-personal-victory', 'dietyPetitionPersonalVictory'],
+  ['#cast-a-spell', 'castASpell'],
+  ['#divine-guidance', 'divineGuidance'],
+  ['#commune', 'commune'],
+  ['#turn-undead', 'turnUndead'],
 ]
 
 export class ClericMoves extends AbstractCharacterMoves {
