@@ -55,6 +55,8 @@ export class CharacterArmorHpDamage extends HTMLElement {
       case supportedClasses.Druid:
       case supportedClasses.Cleric:
         return 'D6'
+      case supportedClasses.Wizard:
+        return 'D4'
       default:
         return 'D?'
     }
