@@ -78,6 +78,10 @@ export class CharacterAlignment extends HTMLElement {
         const clericTemplate = await import('./cleric-alignment.html')
         this.innerHTML = clericTemplate.default
         break
+      case supportedClasses.Wizard:
+        const wizardTemplate = await import('./wizard-alignment.html')
+        this.innerHTML = wizardTemplate.default
+        break
       default:
         break
     }
