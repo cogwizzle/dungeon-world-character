@@ -22,6 +22,8 @@ export class CharacterLook extends HTMLElement {
         return ['hair', 'eyes', 'clothes']
       case supportedClasses.Paladin:
         return ['body', 'eyes', 'hair', 'holy-symbol']
+      case supportedClasses.Wizard:
+        return ['body', 'eyes', 'hair', 'robes']
       default:
         return []
     }
@@ -62,6 +64,15 @@ export class CharacterLook extends HTMLElement {
           hair: this._hair,
           'holy-symbol': this['_holy-symbol'],
         }
+        break
+      case supportedClasses.Wizard:
+        CharacterFormObservable.look = {
+          body: this._body,
+          eyes: this._eyes,
+          hair: this._hair,
+          robes: this._robes,
+        }
+        break
       default:
         break
     }
@@ -162,6 +173,10 @@ export class CharacterLook extends HTMLElement {
       case supportedClasses.Cleric:
         const clericTemplate = await import('./cleric-look.html')
         this.innerHTML = clericTemplate.default
+        break
+      case supportedClasses.Wizard:
+        const wizardTemplate = await import('./wizard-look.html')
+        this.innerHTML = wizardTemplate.default
         break
       default:
         break
