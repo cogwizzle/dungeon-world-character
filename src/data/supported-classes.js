@@ -6,4 +6,5 @@ export const supportedClasses = {
   Paladin: 'Paladin',
   Thief: 'Thief',
   Cleric: 'Cleric',
+  Wizard: 'Wizard',
 }
