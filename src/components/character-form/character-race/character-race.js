@@ -101,6 +101,17 @@ export class CharacterRace extends HTMLElement {
             'Your faith is diverse. Choose one wizard spell. You can cast and be granted that spell as if it was a cleric spell.'
           ),
         ]
+      case supportedClasses.Wizard:
+        return [
+          createOption(
+            'elf',
+            'Magic is as natural as breath to you. Detect Magic is a cantrip for you.'
+          ),
+          createOption(
+            'human',
+            'Choose one cleric spell. You can cast it as if it was a wizard spell.'
+          ),
+        ]
       default:
         return []
     }
