@@ -28,6 +28,9 @@ const inputs = [
   ['#spell-augmentation', 'spellAugmentation'],
   ['#mystical-puppet-strings', 'mysticalPuppetStrings'],
   ['#spell-powered', 'spellPowered'],
+  ['#light', 'light'],
+  ['#unseen-servant', 'unseenServant'],
+  ['#prestidigitation', 'prestidigitation'],
 ]
 
 export class WizardMoves extends AbstractCharacterMoves {
