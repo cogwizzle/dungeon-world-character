@@ -1,1 +1,79 @@
-<div>Wizard Moves</div>
+<div>
+  <dw-section-header>STARTING MOVES</dw-section-header>
+  <div class="grid grid-cols-2 gap-2">
+    <dw-detailed-checkbox
+      class="col-span-2 lg:col-span-1"
+      key="cast-a-spell"
+      label="Cast A Spell (INT)"
+    >
+      <div>
+        When you release a spell you've prepared, roll+INT. • On a 10+ the the
+        spell is successfully cast and you may cast the spell again later. • On
+        a 7-9 the spell is cast, but choose one:
+      </div>
+      <ul class="ml-5 text-sm list-disc">
+        <li>
+          You draw unwelcome attention or put yourself in a spot. The GM will
+          tell you how.
+        </li>
+        <li>
+          The spell disturbs the fabric of reality as it is cast; take -1
+          ongoing to cast a spell until the next time you Prepare Spells.
+        </li>
+        <li>
+          After it is cast, the spell is forgotten. You cannot cast the spell
+          again until you prepare spells.
+        </li>
+      </ul>
+      <div>
+        Note that maintaining spells with ongoing effects will sometimes cause a
+        penalty to your roll to cast a spell.
+      </div>
+    </dw-detailed-checkbox>
+    <dw-detailed-checkbox key="spellbook" label="Spellbook">
+      <div>
+        You have mastered several spells and inscribed them in your spellbook.
+        You start out with three first level spells, as well as all your
+        cantrips. Whenever you gain a level, you inscribe a new spell of your
+        level or lower. Your spellbook is 1 weight.
+      </div>
+    </dw-detailed-checkbox>
+    <dw-detailed-checkbox key="spell-defense" label="Spell Defense">
+      <div>
+        You may end any ongoing spell immediately and use the energy of its
+        dissipation to deflect an oncoming attack. The spell ends and you
+        subtract its level from the damage done to you.
+      </div>
+    </dw-detailed-checkbox>
+    <dw-detailed-checkbox key="prepare-spells" label="Prepare Spells">
+      <div>
+        When you spend uninterrupted time (an hour or so) in quiet contemplation
+        of your spellbook, you:
+      </div>
+      <ul class="ml-5 text-sm list-disc">
+        <li>Lose any spells you already prepared</li>
+        <li>
+          Prepare new spells chosen from your spellbook whose total levels don't
+          exceed your own level +1
+        </li>
+        <li>Prepare your cantrips which never count against your limit</li>
+      </ul>
+    </dw-detailed-checkbox>
+    <dw-detailed-checkbox key="ritual" label="Ritual">
+      <div>
+        When you draw on a place of power to create a magical effect, tell the
+        GM what you're trying to achieve. Ritual effects are always possible,
+        but the GM will give you one to four of the following conditions:
+      </div>
+      <ul class="ml-5 text-sm list-disc">
+        <li>It's going to take days/weeks/months</li>
+        <li>First you must ____</li>
+        <li>You'll need help from ____</li>
+        <li>It will require a lot of money</li>
+        <li>The best you can do is a lesser version, unreliable and limited</li>
+        <li>You and your allies will risk danger from ____</li>
+        <li>You'll have to disenchant ____ to do it</li>
+      </ul>
+    </dw-detailed-checkbox>
+  </div>
+</div>
