@@ -30,7 +30,11 @@
         penalty to your roll to cast a spell.
       </div>
     </dw-detailed-checkbox>
-    <dw-detailed-checkbox key="spellbook" label="Spellbook">
+    <dw-detailed-checkbox
+      class="col-span-2 lg:col-span-1"
+      key="spellbook"
+      label="Spellbook"
+    >
       <div>
         You have mastered several spells and inscribed them in your spellbook.
         You start out with three first level spells, as well as all your
@@ -38,14 +42,22 @@
         level or lower. Your spellbook is 1 weight.
       </div>
     </dw-detailed-checkbox>
-    <dw-detailed-checkbox key="spell-defense" label="Spell Defense">
+    <dw-detailed-checkbox
+      class="col-span-2 lg:col-span-1"
+      key="spell-defense"
+      label="Spell Defense"
+    >
       <div>
         You may end any ongoing spell immediately and use the energy of its
         dissipation to deflect an oncoming attack. The spell ends and you
         subtract its level from the damage done to you.
       </div>
     </dw-detailed-checkbox>
-    <dw-detailed-checkbox key="prepare-spells" label="Prepare Spells">
+    <dw-detailed-checkbox
+      class="col-span-2 lg:col-span-1"
+      key="prepare-spells"
+      label="Prepare Spells"
+    >
       <div>
         When you spend uninterrupted time (an hour or so) in quiet contemplation
         of your spellbook, you:
@@ -59,7 +71,11 @@
         <li>Prepare your cantrips which never count against your limit</li>
       </ul>
     </dw-detailed-checkbox>
-    <dw-detailed-checkbox key="ritual" label="Ritual">
+    <dw-detailed-checkbox
+      class="col-span-2 lg:col-span-1"
+      key="ritual"
+      label="Ritual"
+    >
       <div>
         When you draw on a place of power to create a magical effect, tell the
         GM what you're trying to achieve. Ritual effects are always possible,
@@ -74,6 +90,120 @@
         <li>You and your allies will risk danger from ____</li>
         <li>You'll have to disenchant ____ to do it</li>
       </ul>
+    </dw-detailed-checkbox>
+  </div>
+  <dw-section-header>ADVANCED MOVES</dw-section-header>
+  <div class="text-sm italic">
+    When you gain a level from 2-10, you may choose from these moves.
+  </div>
+  <div class="grid grid-cols-2 gap-2">
+    <dw-detailed-checkbox
+      class="col-span-2 lg:col-span-1"
+      key="prodigy"
+      label="Prodigy"
+    >
+      <div>
+        Choose a spell. You prepare that spell as if it were one level lower.
+      </div>
+    </dw-detailed-checkbox>
+    <dw-detailed-checkbox
+      class="col-span-2 lg:col-span-1"
+      key="logical"
+      label="Logical"
+    >
+      <div>
+        When you use strict deduction to analyse your surroundings, you can
+        Discern Realities with INT instead of WIS.
+      </div>
+    </dw-detailed-checkbox>
+    <dw-detailed-checkbox
+      class="col-span-2 lg:col-span-1"
+      key="empower-magic"
+      label="Empower Magic"
+    >
+      <div>
+        When you cast a spell, on a 10+ you have the option of choosing from the
+        7-9 list. If you do, you may additionally choose one of the following
+        effects:
+      </div>
+      <ul class="ml-5 text-sm list-disc">
+        <li>The spell's effects are maximized</li>
+        <li>The spell's targets are doubled</li>
+      </ul>
+    </dw-detailed-checkbox>
+    <dw-detailed-checkbox
+      class="col-span-2 lg:col-span-1"
+      key="arcane-ward"
+      label="Arcane Ward"
+    >
+      <div>
+        As long as you have at least one prepared spell of first level or
+        higher, you have +2 armor.
+      </div>
+    </dw-detailed-checkbox>
+    <dw-detailed-checkbox
+      class="col-span-2 lg:col-span-1"
+      key="fount-of-knowledge"
+      label="Fount Of Knowledge"
+    >
+      <div>
+        When you spout lore about something no one else has any clue about, take
+        +1.
+      </div>
+    </dw-detailed-checkbox>
+    <dw-detailed-checkbox
+      class="col-span-2 lg:col-span-1"
+      key="counterspell"
+      label="Counterspell"
+    >
+      <div>
+        When you attempt to counter an arcane spell that will otherwise affect
+        you, stake one of your prepared spells on the defense and roll+INT. On a
+        10+, the spell is countered and has no effect on you. On a 7-9, the
+        spell is countered and you forget the spell that you staked. Your
+        counterspell protects you alone; if the countered spell has other
+        targets they are affected as normal.
+      </div>
+    </dw-detailed-checkbox>
+    <dw-detailed-checkbox
+      class="col-span-2 lg:col-span-1"
+      key="know-it-all"
+      label="Know-It-All"
+    >
+      <div>
+        When another player's character comes to you for advice and you tell
+        them what you think is best, they get +1 forward when following your
+        advice and you mark experience if they do.
+      </div>
+    </dw-detailed-checkbox>
+    <dw-detailed-checkbox
+      class="col-span-2 lg:col-span-1"
+      key="expanded-spellbook"
+      label="Expanded Spellbook"
+    >
+      <div>
+        Add a new spell from the spell list of any class to your spellbook.
+      </div>
+    </dw-detailed-checkbox>
+    <dw-detailed-checkbox
+      class="col-span-2 lg:col-span-1"
+      key="quick-study"
+      label="Quick Study"
+    >
+      <div>
+        When you see the effects of an arcane spell, ask the GM the name of the
+        spell and its effects. You take +1 when acting on the answers.
+      </div>
+    </dw-detailed-checkbox>
+    <dw-detailed-checkbox
+      class="col-span-2 lg:col-span-1"
+      key="enchanter"
+      label="Enchanter"
+    >
+      <div>
+        When you have time and safety with a magic item you may ask the GM what
+        it does. The GM will answer truthfully.
+      </div>
     </dw-detailed-checkbox>
   </div>
 </div>

@@ -9,6 +9,16 @@ const inputs = [
   ['#spell-defense', 'spellDefense'],
   ['#prepare-spells', 'prepareSpells'],
   ['#ritual', 'ritual'],
+  ['#prodigy', 'prodigy'],
+  ['#logical', 'logical'],
+  ['#empower-magic', 'empowerMagic'],
+  ['#arcane-ward', 'arcaneWard'],
+  ['#fount-of-knowledge', 'fountOfKnowledge'],
+  ['#counterspell', 'counterspell'],
+  ['#know-it-all', 'knowItAll'],
+  ['#expanded-spellbook', 'expandedSpellbook'],
+  ['#quick-study', 'quickStudy'],
+  ['#enchanter', 'enchanter'],
 ]
 
 export class WizardMoves extends AbstractCharacterMoves {
