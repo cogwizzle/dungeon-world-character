@@ -28,5 +28,17 @@
       "</dw-detailed-checkbox>"
     ],
     "description": "Detailed checkbox spell"
+  },
+  "dw-detailed-checkbox": {
+    "scope": "html",
+    "prefix": "dw-detailed-checkbox",
+    "body": [
+      "<dw-detailed-checkbox key=\"${1:spell-name}\" label=\"${2:Spell Name}\">",
+      "  <div>",
+      "    $3",
+      "  </div>",
+      "</dw-detailed-checkbox>"
+    ],
+    "description": "Detailed checkbox move"
   }
 }
