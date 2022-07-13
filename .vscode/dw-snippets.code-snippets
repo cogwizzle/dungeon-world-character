@@ -33,7 +33,7 @@
     "scope": "html",
     "prefix": "dw-detailed-checkbox",
     "body": [
-      "<dw-detailed-checkbox key=\"${1:spell-name}\" label=\"${2:Spell Name}\">",
+      "<dw-detailed-checkbox class=\"col-span-2 lg:col-span-1\" key=\"${1:spell-name}\" label=\"${2:Spell Name}\">",
       "  <div>",
       "    $3",
       "  </div>",
