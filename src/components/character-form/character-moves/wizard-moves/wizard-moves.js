@@ -19,6 +19,15 @@ const inputs = [
   ['#expanded-spellbook', 'expandedSpellbook'],
   ['#quick-study', 'quickStudy'],
   ['#enchanter', 'enchanter'],
+  ['#master', 'master'],
+  ['#greater-empower-magic', 'greaterEmpowerMagic'],
+  ['#protective-counter', 'protectiveCounter'],
+  ['#enchanters-soul', 'enchantersSoul'],
+  ['#ethereal-tether', 'etherealTether'],
+  ['#highly-logical', 'highlyLogical'],
+  ['#spell-augmentation', 'spellAugmentation'],
+  ['#mystical-puppet-strings', 'mysticalPuppetStrings'],
+  ['#spell-powered', 'spellPowered'],
 ]
 
 export class WizardMoves extends AbstractCharacterMoves {
