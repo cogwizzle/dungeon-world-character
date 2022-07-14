@@ -43,6 +43,10 @@ const inputs = [
   ['#vision-through-time', 'visionThroughTime'],
   ['#mimic', 'mimic'],
   ['#sleep', 'sleep'],
+  ['#cage', 'cage'],
+  ['#summon-monster', 'summonMonster'],
+  ['#polymorph', 'polymorph'],
+  ['#contact-other-plane', 'contactOtherPlane'],
 ]
 
 export class WizardMoves extends AbstractCharacterMoves {
