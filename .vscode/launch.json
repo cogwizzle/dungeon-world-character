@@ -6,7 +6,7 @@
       "request": "launch",
       "name": "Launch Dev",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\scripts\\dev.js",
+      "program": "${workspaceFolder}/scripts/dev.js",
       "console": "integratedTerminal"
     }
   ]
