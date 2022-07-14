@@ -40,5 +40,11 @@
       "</dw-detailed-checkbox>"
     ],
     "description": "Detailed checkbox move"
+  },
+  "spell-move-section": {
+    "scope": "html",
+    "prefix": "spell-move-section",
+    "body": ["<div class=\"grid grid-cols-2 gap-2\">$1</div>"],
+    "description": "Spell move group"
   }
 }
