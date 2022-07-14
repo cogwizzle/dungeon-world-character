@@ -37,6 +37,12 @@ const inputs = [
   ['#detect-magic', 'detectMagic'],
   ['#invisibility', 'invisibility'],
   ['#alarm', 'alarm'],
+  ['#dispel-magic', 'dispelMagic'],
+  ['#fireball', 'fireball'],
+  ['#mirror-image', 'mirrorImage'],
+  ['#vision-through-time', 'visionThroughTime'],
+  ['#mimic', 'mimic'],
+  ['#sleep', 'sleep'],
 ]
 
 export class WizardMoves extends AbstractCharacterMoves {
