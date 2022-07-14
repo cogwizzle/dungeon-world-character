@@ -47,6 +47,11 @@ const inputs = [
   ['#summon-monster', 'summonMonster'],
   ['#polymorph', 'polymorph'],
   ['#contact-other-plane', 'contactOtherPlane'],
+  ['#contingency', 'contingency'],
+  ['#shadow-walk', 'shadowWalk'],
+  ['#dominate', 'dominate'],
+  ['#true-seeing', 'trueSeeing'],
+  ['#cloudkill', 'cloudkill'],
 ]
 
 export class WizardMoves extends AbstractCharacterMoves {
