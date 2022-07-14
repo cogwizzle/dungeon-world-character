@@ -21,7 +21,7 @@ esbuild
   .serve(
     {
       servedir: 'www',
-      port: 3000,
+      port: 3001,
     },
     {
       entryPoints: ['src/index.js'],

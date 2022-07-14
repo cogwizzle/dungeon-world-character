@@ -31,6 +31,12 @@ const inputs = [
   ['#light', 'light'],
   ['#unseen-servant', 'unseenServant'],
   ['#prestidigitation', 'prestidigitation'],
+  ['#contact-spirits', 'contactSpirits'],
+  ['#charm-person', 'charmPerson'],
+  ['#telepathy', 'telepathy'],
+  ['#detect-magic', 'detectMagic'],
+  ['#invisibility', 'invisibility'],
+  ['#alarm', 'alarm'],
 ]
 
 export class WizardMoves extends AbstractCharacterMoves {
