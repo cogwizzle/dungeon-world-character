@@ -52,6 +52,11 @@ const inputs = [
   ['#dominate', 'dominate'],
   ['#true-seeing', 'trueSeeing'],
   ['#cloudkill', 'cloudkill'],
+  ['#alert', 'alert'],
+  ['#shelter', 'shelter'],
+  ['#antipathy', 'antipathy'],
+  ['#soul-gem', 'soulGem'],
+  ['#perfect-summons', 'perfectSummons'],
 ]
 
 export class WizardMoves extends AbstractCharacterMoves {
