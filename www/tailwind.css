@@ -977,15 +977,14 @@ hr {
 }
 
 .heart::before {
-  content: '❥';
-  font-family: 'Times New Roman', Times, serif;
-  font-family: monospace;
-  transform: rotate(90deg);
+  content: url(assets/heart.svg);
   position: absolute;
-  font-size: 110px;
-  right: 23px;
-  top: -63px;
+  font-size: 100px;
+  right: 25px;
+  top: -50px;
   text-shadow: -1px -1px 4px #64748b;
+  height: 75px;
+  width: 75px;
 }
 
 .damage-dice::before {
