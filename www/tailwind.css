@@ -967,13 +967,14 @@ hr {
 }
 
 .shield::before {
-  content: '☗';
+  content: url(assets/armor.svg);
   position: absolute;
   font-size: 100px;
-  transform: scale(-1);
-  right: 23px;
-  top: -50px;
+  right: 36px;
+  top: -68px;
   text-shadow: -1px -1px 4px #64748b;
+  height: 50px;
+  width: 50px;
 }
 
 .heart::before {
