@@ -12,6 +12,7 @@ export class CharacterRace extends HTMLElement {
   _characterClass
   constructor() {
     super()
+    this.attachShadow({ mode: 'open' })
   }
 
   get options() {
@@ -124,7 +125,8 @@ export class CharacterRace extends HTMLElement {
   hydrate = (state) => {
     if (this._characterClass !== state.characterClass)
       this._characterClass = state.characterClass
-    const race = this.querySelector('#race')
+    const race = this.shadowRoot.querySelector('#race')
+    if (race.getAttribute('value') === state.race) return
     race?.setAttribute('value', state.race)
     this.updateOptions()
   }
@@ -132,23 +134,26 @@ export class CharacterRace extends HTMLElement {
   connectedCallback() {
     this.render()
     CharacterFormObservable.subscribe(this.hydrate)
-    this.querySelector('#race').addEventListener('dw-change', this.onChange)
+    this.shadowRoot
+      .querySelector('#race')
+      .addEventListener('dw-change', this.onChange)
   }
 
   disconnectedCallback() {
     CharacterFormObservable.unsubscribe(this.hydrate)
-    this.querySelector('#race').addEventListener('dw-change', this.onChange)
+    this.shadowRoot
+      .querySelector('#race')
+      .addEventListener('dw-change', this.onChange)
   }
 
   updateOptions() {
-    this.querySelector('#race').setAttribute(
-      'options',
-      JSON.stringify(this.options)
-    )
+    this.shadowRoot
+      .querySelector('#race')
+      .setAttribute('options', JSON.stringify(this.options))
   }
 
   render() {
-    this.innerHTML = template
+    this.shadowRoot.innerHTML = template
     this.updateOptions()
   }
 }
