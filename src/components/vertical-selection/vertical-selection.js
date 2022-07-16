@@ -42,6 +42,10 @@ export class VerticalSelection extends HTMLElement {
     this.attachShadow({ mode: 'open' })
   }
 
+  get value() {
+    return this._value
+  }
+
   static get observedAttributes() {
     return ['options', 'title', 'value']
   }
