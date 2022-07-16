@@ -126,14 +126,11 @@ export class CharacterRace extends HTMLElement {
     const raceValue = state.race || ''
     if (this._characterClass !== state.characterClass) {
       this._characterClass = state.characterClass
-      this.beforeUnmount()
-      this.render()
-      this.onMount()
+      this.updateOptions()
     }
     const race = this.shadowRoot.querySelector('#race')
     if (race.value === raceValue) return
     race?.setAttribute('value', raceValue)
-    this.updateOptions()
   }
 
   onMount() {

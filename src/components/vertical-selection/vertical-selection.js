@@ -1,27 +1,34 @@
 import { initCap } from '../../utility/init-cap'
 import { html } from '../../utility/html-template'
 
+const generateOptions = (options, title) =>
+  options
+    .map(
+      (option) => html`<div class="flex flex-row items-center">
+        <input
+          type="radio"
+          name="${title}"
+          id="${title}-${option.name}"
+          class="mx-2"
+          value="${option.name}"
+        />
+        <label for="${title}-${option.name}" class="flex flex-col">
+          <div>${initCap(option.name)}</div>
+          <div class="text-xs italic">${option.description}</div>
+        </label>
+      </div>`
+    )
+    .join('\n')
+
 const template = ({ title, options }) => html`<div class="flex flex-col">
-    <label for="${title}" class="bg-black text-white flex flex-row relative">
+    <label
+      id="title"
+      for="${title}"
+      class="bg-black text-white flex flex-row relative"
+    >
       ${title.toUpperCase()}
     </label>
-    ${options
-      .map(
-        (option) => html`<div class="flex flex-row items-center">
-          <input
-            type="radio"
-            name="${title}"
-            id="${title}-${option.name}"
-            class="mx-2"
-            value="${option.name}"
-          />
-          <label for="${title}-${option.name}" class="flex flex-col">
-            <div>${initCap(option.name)}</div>
-            <div class="text-xs italic">${option.description}</div>
-          </label>
-        </div>`
-      )
-      .join('\n')}
+    <div id="options">${generateOptions(options, title)}</div>
     <div class="flex flex-row items-center">
       <input
         type="text"
@@ -109,7 +116,17 @@ export class VerticalSelection extends HTMLElement {
 
   rerender() {
     this.beforeUnmount()
-    this.render()
+    const title = this.shadowRoot.querySelector('#title')
+    title?.setAttribute('for', this._title)
+    if (title)
+      this.shadowRoot.querySelector('#title').innerHTML =
+        this._title.toUpperCase()
+    const options = this.shadowRoot.querySelector('#options')
+    if (options)
+      this.shadowRoot.querySelector('#options').innerHTML = generateOptions(
+        this._options,
+        this._title
+      )
     this.onMount()
   }
 
