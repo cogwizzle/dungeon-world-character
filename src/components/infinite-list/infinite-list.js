@@ -82,8 +82,10 @@ export class InfiniteList extends HTMLElement {
   }
 
   onAdd = (newValue) => {
-    const index = this._value.length
-    this._value = [...this._value, newValue]
+    if (newValue === '') return
+    const existingValue = this._value || []
+    const index = existingValue.length
+    this._value = [...existingValue, newValue]
     this.shadowRoot.querySelector('#new').value = ''
     const newInput = createNewInput(newValue, index)
     newInput.setAttribute('value', newValue)
