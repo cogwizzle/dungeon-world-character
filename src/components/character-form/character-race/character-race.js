@@ -122,9 +122,10 @@ export class CharacterRace extends HTMLElement {
   }
 
   hydrate = (state) => {
-    if (this._characterClass === state.characterClass) return
-    this._characterClass = state.characterClass
-    this.querySelector('#race').setAttribute('value', state.race)
+    if (this._characterClass !== state.characterClass)
+      this._characterClass = state.characterClass
+    const race = this.querySelector('#race')
+    race?.setAttribute('value', state.race)
     this.updateOptions()
   }
 
