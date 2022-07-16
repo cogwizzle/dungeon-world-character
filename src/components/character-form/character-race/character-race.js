@@ -123,27 +123,40 @@ export class CharacterRace extends HTMLElement {
   }
 
   hydrate = (state) => {
-    if (this._characterClass !== state.characterClass)
+    const raceValue = state.race || ''
+    if (this._characterClass !== state.characterClass) {
       this._characterClass = state.characterClass
+      this.beforeUnmount()
+      this.render()
+      this.onMount()
+    }
     const race = this.shadowRoot.querySelector('#race')
-    if (race.getAttribute('value') === state.race) return
-    race?.setAttribute('value', state.race)
+    if (race.value === raceValue) return
+    race?.setAttribute('value', raceValue)
     this.updateOptions()
+  }
+
+  onMount() {
+    CharacterFormObservable.subscribe(this.hydrate)
+    this.shadowRoot
+      .querySelector('#race')
+      ?.addEventListener('dw-change', this.onChange)
+  }
+
+  beforeUnmount() {
+    CharacterFormObservable.unsubscribe(this.hydrate)
+    this.shadowRoot
+      .querySelector('#race')
+      .removeEventListener('dw-change', this.onChange)
   }
 
   connectedCallback() {
     this.render()
-    CharacterFormObservable.subscribe(this.hydrate)
-    this.shadowRoot
-      .querySelector('#race')
-      .addEventListener('dw-change', this.onChange)
+    this.onMount()
   }
 
   disconnectedCallback() {
-    CharacterFormObservable.unsubscribe(this.hydrate)
-    this.shadowRoot
-      .querySelector('#race')
-      .addEventListener('dw-change', this.onChange)
+    this.beforeUnmount()
   }
 
   updateOptions() {
