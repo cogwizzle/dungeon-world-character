@@ -26,7 +26,7 @@ esbuild
     bundle: true,
     minify: true,
     target: ['es2020'],
-    watch: true,
+    watch: false,
     splitting: true,
     outdir: 'www',
   })
