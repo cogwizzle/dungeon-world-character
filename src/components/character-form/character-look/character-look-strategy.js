@@ -18,7 +18,6 @@ class CharacterLookStrategy extends HTMLElement {
     const isSupportedClass = Object.values(supportedClasses).some(
       (className) => state.characterClass === className
     )
-    console.log('isSupportedClass', isSupportedClass)
     if (isSupportedClass) {
       // Supported Class
       switch (this._currentStrategy) {
