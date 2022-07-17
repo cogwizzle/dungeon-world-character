@@ -674,6 +674,22 @@ hr {
   min-height: 10.125rem;
 }
 
+.min-h-\[rem\] {
+  min-height: rem;
+}
+
+.min-h-\[28rem\] {
+  min-height: 28rem;
+}
+
+.min-h-\[25rem\] {
+  min-height: 25rem;
+}
+
+.min-h-\[26rem\] {
+  min-height: 26rem;
+}
+
 .w-7 {
   width: 1.75rem;
 }
@@ -1124,6 +1140,18 @@ hr {
 
   .xl\:min-h-\[16\.5rem\] {
     min-height: 16.5rem;
+  }
+
+  .xl\:min-h-\[15\.5rem\] {
+    min-height: 15.5rem;
+  }
+
+  .xl\:min-h-\[14\.5rem\] {
+    min-height: 14.5rem;
+  }
+
+  .xl\:min-h-\[1\.5rem\] {
+    min-height: 1.5rem;
   }
 
   .xl\:grid-cols-5 {
