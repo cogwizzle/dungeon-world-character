@@ -83,6 +83,8 @@ export class CharacterAlignment extends HTMLElement {
         this.innerHTML = wizardTemplate.default
         break
       default:
+        const otherTemplate = await import('./other-alignment.html')
+        this.innerHTML = otherTemplate.default
         break
     }
   }
