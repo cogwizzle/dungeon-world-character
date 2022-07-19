@@ -2,6 +2,7 @@ import template from './character-armor-hp-damage.html'
 import CharacterFormObservable from '../../../state/character-form-observable'
 import { supportedClasses } from '../../../data/supported-classes'
 import './labeled-decorated-input/labeled-decorated-input'
+import './other-dice/other-dice'
 
 export class CharacterArmorHpDamage extends HTMLElement {
   _characterClass
@@ -58,7 +59,7 @@ export class CharacterArmorHpDamage extends HTMLElement {
       case supportedClasses.Wizard:
         return 'D4'
       default:
-        return 'D?'
+        return '<dw-other-dice></dw-other-dice>'
     }
   }
 
