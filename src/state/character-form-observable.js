@@ -252,6 +252,14 @@ class ChracterFormObservable extends Observable {
     this.notify()
   }
 
+  set otherDice(value) {
+    this._state = {
+      ...this._state,
+      otherDice: value,
+    }
+    this.notify()
+  }
+
   set characterClass(value) {
     this._state = {
       ...this._state,
@@ -260,7 +268,7 @@ class ChracterFormObservable extends Observable {
       moves: undefined,
       race: undefined,
       alignment: undefined,
-      // spells: undefined,
+      otherDice: undefined,
     }
     this.notify()
   }
