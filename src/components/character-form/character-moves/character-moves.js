@@ -73,7 +73,8 @@ export class CharacterMoves extends HTMLElement {
         this.innerHTML = '<dw-wizard-moves></dw-wizard-moves>'
         break
       default:
-        this.innerHTML = ''
+        await import('./other-moves/other-moves')
+        this.innerHTML = '<dw-other-moves></dw-other-moves>'
         break
     }
     this.updateDom()
