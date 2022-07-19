@@ -41,6 +41,13 @@ export class AbstractCharacterMoves extends HTMLElement {
         })
         break
       default:
+        if (element instanceof HTMLTextAreaElement) {
+          element.addEventListener('change', () => {
+            this._value[key] = element.value || ''
+            this.emit()
+          })
+          return
+        }
         throw new Error(`Unknown element type ${element.type}`)
     }
   }
@@ -62,6 +69,13 @@ export class AbstractCharacterMoves extends HTMLElement {
         })
         break
       default:
+        if (element instanceof HTMLTextAreaElement) {
+          element.addEventListener('change', () => {
+            this._value[key] = element.value || ''
+            this.emit()
+          })
+          return
+        }
         throw new Error(`Unknown element type ${element.type}`)
     }
   }
@@ -80,6 +94,13 @@ export class AbstractCharacterMoves extends HTMLElement {
             : ''
         break
       default:
+        if (element instanceof HTMLTextAreaElement) {
+          element.value =
+            this._value[key] && this._value[key] !== 'undefined'
+              ? this._value[key]
+              : ''
+          return
+        }
         throw new Error(`Unknown element type ${element.type}`)
     }
   }
