@@ -30,4 +30,7 @@ esbuild
     splitting: true,
     outdir: 'www',
   })
+  .then(() => {
+    exec('workbox generateSW')
+  })
   .catch(() => process.exit(1))
