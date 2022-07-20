@@ -1,5 +1,5 @@
 const esbuild = require('esbuild')
-const { exec } = require('child_process')
+const { exec, execSync } = require('child_process')
 
 exec(
   'npx tailwindcss -i ./src/tailwind.css -o ./www/tailwind.css --watch',
@@ -31,6 +31,10 @@ esbuild
     outdir: 'www',
   })
   .then(() => {
-    exec('workbox generateSW')
+    execSync('workbox generateSW')
+    execSync('surge', {
+      cwd: 'www',
+    })
+    process.exit(0)
   })
   .catch(() => process.exit(1))
