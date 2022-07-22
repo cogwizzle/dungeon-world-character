@@ -18,4 +18,8 @@ it("Given I call the save file utility when I pass content as a string, a string
   }
   saveFile(content, fileName, contentType)
   expect(isClicked).to.be.true
+  expect(createElementResponse.download).to.be.eq(fileName)
+  expect(createElementResponse.href.size).to.be.eq(
+    URL.createObjectURL(new Blob([content], { type: contentType })).size
+  )
 })
