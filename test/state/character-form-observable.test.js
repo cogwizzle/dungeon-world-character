@@ -185,3 +185,18 @@ it('Given I have an instance of the character-form-observable when I set the wea
     weak,
   })
 })
+
+it('Given I have an instance of the character-form-observable when I set the dexterity property then the state should be updated with the dexterity and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const dexterity = 1
+  CharacterFormObservable.dexterity = dexterity
+  expect(CharacterFormObservable._state).to.deep.equal({
+    dexterity,
+  })
+  expect(result).to.deep.equal({
+    dexterity,
+  })
+})
