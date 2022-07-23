@@ -130,7 +130,7 @@ it('Given I have an instance of the character-form-observable when I set the max
   let result
   CharacterFormObservable.subscribe((state) => {
     result = state
-  }).toString()
+  })
   const maxHitPoints = 1
   CharacterFormObservable.maxHitPoints = maxHitPoints
   expect(CharacterFormObservable._state).to.deep.equal({
@@ -138,5 +138,20 @@ it('Given I have an instance of the character-form-observable when I set the max
   })
   expect(result).to.deep.equal({
     maxHitPoints,
+  })
+})
+
+it('Given I have an instance of the character-form-observable when I set the alignment property then the state should be updated with the alignment and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const alignment = 'good'
+  CharacterFormObservable.alignment = alignment
+  expect(CharacterFormObservable._state).to.deep.equal({
+    alignment,
+  })
+  expect(result).to.deep.equal({
+    alignment,
   })
 })
