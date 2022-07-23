@@ -155,3 +155,19 @@ it('Given I have an instance of the character-form-observable when I set the ali
     alignment,
   })
 })
+
+// Adding single test for strength property which is a number
+it('Given I have an instance of the character-form-observable when I set the strength property then the state should be updated with the strength and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const strength = 1
+  CharacterFormObservable.strength = strength
+  expect(CharacterFormObservable._state).to.deep.equal({
+    strength,
+  })
+  expect(result).to.deep.equal({
+    strength,
+  })
+})
