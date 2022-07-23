@@ -6,6 +6,11 @@ export class Observable {
     this._state = undefined
   }
 
+  reset() {
+    this._observers = []
+    this._state = undefined
+  }
+
   subscribe(observer) {
     this._observers.push(observer)
   }
