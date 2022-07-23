@@ -66,3 +66,17 @@ it('Given I have an instance of the character-form-observable when I set the lev
     level: 1,
   })
 })
+
+it('Given I have an instance of the character-form-observable when I set the xp property then the state should be updated with the xp and the notify function should be called.', () => {
+  let result
+  ChracterFormObservable.subscribe((state) => {
+    result = state
+  })
+  ChracterFormObservable.xp = 0
+  expect(ChracterFormObservable._state).to.deep.equal({
+    xp: 0,
+  })
+  expect(result).to.deep.equal({
+    xp: 0,
+  })
+})
