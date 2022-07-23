@@ -80,3 +80,18 @@ it('Given I have an instance of the character-form-observable when I set the xp 
     xp: 0,
   })
 })
+
+it('Given I have an instance of the character-form-observable when I set the look property then the state should be updated with the look and the notify function should be called.', () => {
+  let result
+  ChracterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const look = { eyes: 'wild', body: 'lithe', hair: 'bald' }
+  ChracterFormObservable.look = look
+  expect(ChracterFormObservable._state).to.deep.equal({
+    look
+  })
+  expect(result).to.deep.equal({
+    look
+  })
+})
