@@ -110,3 +110,18 @@ it('Given I have an instance of the character-form-observable when I set the arm
     armor,
   })
 })
+
+it('Given I have an instance of the character-form-observable when I set the hitPoints property then the state should be updated with the hitPoints and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const hitPoints = 1
+  CharacterFormObservable.hitPoints = hitPoints
+  expect(CharacterFormObservable._state).to.deep.equal({
+    hitPoints,
+  })
+  expect(result).to.deep.equal({
+    hitPoints,
+  })
+})
