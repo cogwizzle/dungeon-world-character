@@ -125,3 +125,18 @@ it('Given I have an instance of the character-form-observable when I set the hit
     hitPoints,
   })
 })
+
+it('Given I have an instance of the character-form-observable when I set the maxHitPoints property then the state should be updated with the maxHitPoints and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  }).toString()
+  const maxHitPoints = 1
+  CharacterFormObservable.maxHitPoints = maxHitPoints
+  expect(CharacterFormObservable._state).to.deep.equal({
+    maxHitPoints,
+  })
+  expect(result).to.deep.equal({
+    maxHitPoints,
+  })
+})
