@@ -395,3 +395,18 @@ it('Given I have an instance of the character-form-observable when I set the gea
     gear,
   })
 })
+
+it('Given I have an instance of the character-form-observable when I set the load property then the state should be updated with the load value and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const load = 10
+  CharacterFormObservable.load = load
+  expect(CharacterFormObservable._state).to.deep.equal({
+    load,
+  })
+  expect(result).to.deep.equal({
+    load,
+  })
+})
