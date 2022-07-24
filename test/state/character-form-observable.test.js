@@ -455,3 +455,18 @@ it('Given I have an instance of the character-form-observable when I set the mov
     moves,
   })
 })
+
+it('Given I have an instance of the character-form-observable when I set the notes property then the state should be updated with the notes value and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const notes = "Hello World!"
+  CharacterFormObservable.notes = notes
+  expect(CharacterFormObservable._state).to.deep.equal({
+    notes,
+  })
+  expect(result).to.deep.equal({
+    notes,
+  })
+})
