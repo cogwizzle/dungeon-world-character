@@ -410,3 +410,18 @@ it('Given I have an instance of the character-form-observable when I set the loa
     load,
   })
 })
+
+it('Given I have an instance of the character-form-observable when I set the maxLoad property then the state should be updated with the maxLoad value and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const maxLoad = 11
+  CharacterFormObservable.maxLoad = maxLoad
+  expect(CharacterFormObservable._state).to.deep.equal({
+    maxLoad,
+  })
+  expect(result).to.deep.equal({
+    maxLoad,
+  })
+})
