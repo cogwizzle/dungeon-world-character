@@ -335,3 +335,18 @@ it('Given I have an instance of the character-form-observable when I set the sca
     scarred,
   })
 })
+
+it('Given I have an instance of the character-form-observable when I set the bonds property then the state should be updated with the bonds value and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const bonds = ['value']
+  CharacterFormObservable.bonds = bonds
+  expect(CharacterFormObservable._state).to.deep.equal({
+    bonds,
+  })
+  expect(result).to.deep.equal({
+    bonds,
+  })
+})
