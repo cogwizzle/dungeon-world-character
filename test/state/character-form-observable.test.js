@@ -200,3 +200,18 @@ it('Given I have an instance of the character-form-observable when I set the dex
     dexterity,
   })
 })
+
+it('Given I have an instance of the character-form-observable when I set the shaky property then the state should be updated with the shaky value and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const shaky = true
+  CharacterFormObservable.shaky = shaky
+  expect(CharacterFormObservable._state).to.deep.equal({
+    shaky,
+  })
+  expect(result).to.deep.equal({
+    shaky,
+  })
+})
