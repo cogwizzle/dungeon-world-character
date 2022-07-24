@@ -461,12 +461,27 @@ it('Given I have an instance of the character-form-observable when I set the not
   CharacterFormObservable.subscribe((state) => {
     result = state
   })
-  const notes = "Hello World!"
+  const notes = 'Hello World!'
   CharacterFormObservable.notes = notes
   expect(CharacterFormObservable._state).to.deep.equal({
     notes,
   })
   expect(result).to.deep.equal({
     notes,
+  })
+})
+
+it('Given I have an instance of the character-form-observable when I set the otherDice property then the state should be updated with the otherDice value and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const otherDice = '11'
+  CharacterFormObservable.otherDice = otherDice
+  expect(CharacterFormObservable._state).to.deep.equal({
+    otherDice,
+  })
+  expect(result).to.deep.equal({
+    otherDice,
   })
 })
