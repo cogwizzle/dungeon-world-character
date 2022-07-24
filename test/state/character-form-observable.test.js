@@ -485,3 +485,28 @@ it('Given I have an instance of the character-form-observable when I set the oth
     otherDice,
   })
 })
+
+it('Given I have an instance of the character-form-observable when I set the characterClass property then the state should be updated with the characterClass value and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const characterClass = 'Cleric'
+  CharacterFormObservable.characterClass = characterClass
+  expect(CharacterFormObservable._state).to.deep.equal({
+    alignment: undefined,
+    characterClass,
+    look: undefined,
+    moves: undefined,
+    otherDice: undefined,
+    race: undefined,
+  })
+  expect(result).to.deep.equal({
+    alignment: undefined,
+    characterClass,
+    look: undefined,
+    moves: undefined,
+    otherDice: undefined,
+    race: undefined,
+  })
+})
