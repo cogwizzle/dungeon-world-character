@@ -46,5 +46,25 @@
     "prefix": "spell-move-section",
     "body": ["<div class=\"grid grid-cols-2 gap-2\">$1</div>"],
     "description": "Spell move group"
+  },
+  "character-form-observable-test": {
+    "scope": "javascript",
+    "prefix": "character-form-observable-test",
+    "body": [
+      "it('Given I have an instance of the character-form-observable when I set the ${1:property} property then the state should be updated with the $1 value and the notify function should be called.', () => {",
+      "  let result",
+      "  CharacterFormObservable.subscribe((state) => {",
+      "    result = state",
+      "  })",
+      "  const $1 = ${2:\"value\"}",
+      "  CharacterFormObservable.$1 = $1",
+      "  expect(CharacterFormObservable._state).to.deep.equal({",
+      "    $1,",
+      "  })",
+      "  expect(result).to.deep.equal({",
+      "    $1,",
+      "  })",
+      "})"
+    ]
   }
 }
