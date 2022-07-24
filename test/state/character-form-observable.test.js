@@ -380,3 +380,18 @@ it('Given I have an instance of the character-form-observable when I set the coi
     coin,
   })
 })
+
+it('Given I have an instance of the character-form-observable when I set the gear property then the state should be updated with the gear value and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const gear = ['Woody The Axe']
+  CharacterFormObservable.gear = gear
+  expect(CharacterFormObservable._state).to.deep.equal({
+    gear,
+  })
+  expect(result).to.deep.equal({
+    gear,
+  })
+})
