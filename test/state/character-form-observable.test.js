@@ -215,3 +215,18 @@ it('Given I have an instance of the character-form-observable when I set the sha
     shaky,
   })
 })
+
+it('Given I have an instance of the character-form-observable when I set the constitution property then the state should be updated with the constitution value and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const constitution = 1
+  CharacterFormObservable.constitution = constitution
+  expect(CharacterFormObservable._state).to.deep.equal({
+    constitution,
+  })
+  expect(result).to.deep.equal({
+    constitution,
+  })
+})
