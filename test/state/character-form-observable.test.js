@@ -245,3 +245,18 @@ it('Given I have an instance of the character-form-observable when I set the sic
     sick,
   })
 })
+
+it('Given I have an instance of the character-form-observable when I set the intelligence property then the state should be updated with the intelligence value and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const intelligence = 1
+  CharacterFormObservable.intelligence = intelligence
+  expect(CharacterFormObservable._state).to.deep.equal({
+    intelligence,
+  })
+  expect(result).to.deep.equal({
+    intelligence,
+  })
+})
