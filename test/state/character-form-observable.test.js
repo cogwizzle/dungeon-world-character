@@ -425,3 +425,18 @@ it('Given I have an instance of the character-form-observable when I set the max
     maxLoad,
   })
 })
+
+it('Given I have an instance of the character-form-observable when I set the moves property then the state should be updated with the moves value and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const moves = { forTheBloodGod: true }
+  CharacterFormObservable.moves = moves
+  expect(CharacterFormObservable._state).to.deep.equal({
+    moves,
+  })
+  expect(result).to.deep.equal({
+    moves,
+  })
+})
