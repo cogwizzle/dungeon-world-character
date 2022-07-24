@@ -305,3 +305,18 @@ it('Given I have an instance of the character-form-observable when I set the con
     confused,
   })
 })
+
+it('Given I have an instance of the character-form-observable when I set the charisma property then the state should be updated with the charisma value and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const charisma = 1
+  CharacterFormObservable.charisma = charisma
+  expect(CharacterFormObservable._state).to.deep.equal({
+    charisma,
+  })
+  expect(result).to.deep.equal({
+    charisma,
+  })
+})
