@@ -57,6 +57,7 @@
       "    result = state",
       "  })",
       "  const $1 = ${2:\"value\"}",
+      "  CharacterFormObservable.$1 = $1",
       "  expect(CharacterFormObservable._state).to.deep.equal({",
       "    $1,",
       "  })",
