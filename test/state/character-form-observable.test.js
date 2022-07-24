@@ -365,3 +365,18 @@ it('Given I have an instance of the character-form-observable when I set the rac
     race,
   })
 })
+
+it('Given I have an instance of the character-form-observable when I set the coin property then the state should be updated with the coin value and the notify function should be called.', () => {
+  let result
+  CharacterFormObservable.subscribe((state) => {
+    result = state
+  })
+  const coin = 0
+  CharacterFormObservable.coin = coin
+  expect(CharacterFormObservable._state).to.deep.equal({
+    coin,
+  })
+  expect(result).to.deep.equal({
+    coin,
+  })
+})
