@@ -28,10 +28,13 @@ esbuild
     target: ['es2020'],
     splitting: true,
     outdir: 'client/www',
-    watch: true,
+    watch: {
+      onRebuild(err, result) {
+        generateSW(workboxConfig)
+      },
+    },
   })
   .then(() => {
-    generateSW(workboxConfig)
     exec('nodemon server/app.js', (err, stdout, stderr) => {
       if (err) {
         console.log(`error: ${err.message}`)
