@@ -25,10 +25,10 @@ esbuild
     outdir: 'client/www',
   })
   .then(() => {
-    // generateSW(workboxConfig)
-    // execSync('surge', {
-    //   cwd: 'client/www',
-    // })
+    generateSW(workboxConfig)
+    execSync('surge', {
+      cwd: 'client/www',
+    })
     process.exit(0)
   })
   .catch(() => process.exit(1))
