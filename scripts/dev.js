@@ -1,42 +1,46 @@
 const esbuild = require('esbuild')
-const { exec } = require('child_process')
-const http = require('http')
+const { exec, execSync } = require('child_process')
 
 exec(
-  'npx tailwindcss -i ./src/tailwind.css -o ./www/tailwind.css --watch',
+  'npx tailwindcss -i ./client/src/tailwind.css -o ./client/www/tailwind.css --watch',
   (err, stdout, stderr) => {
-    if (error) {
-      console.log(`error: ${error.message}`)
-      return
+    if (err) {
+      console.error(err)
+      process.exit(1)
     }
-    if (stderr) {
-      console.log(`stderr: ${stderr}`)
-      return
-    }
-    console.log(`stdout: ${stdout}`)
+    console.log(stdout)
+    console.error(stderr)
   }
 )
 
 esbuild
-  .build(
-    {
-      servedir: 'www',
-      port: 3001,
+  .build({
+    entryPoints: ['client/src/index.js'],
+    format: 'esm',
+    loader: {
+      '.html': 'text',
     },
-    {
-      entryPoints: ['src/index.js'],
-      format: 'esm',
-      loader: {
-        '.html': 'text',
-      },
-      bundle: true,
-      minify: true,
-      sourcemap: true,
-      target: ['es2020'],
-      splitting: true,
-      outdir: 'www',
-    }
-  )
+    bundle: true,
+    minify: true,
+    sourcemap: true,
+    target: ['es2020'],
+    splitting: true,
+    outdir: 'client/www/scripts',
+    watch: true,
+  })
+  .then(() => {
+    exec('nodemon server/app.js', (err, stdout, stderr) => {
+      if (err) {
+        console.log(`error: ${err.message}`)
+        return
+      }
+      if (stderr) {
+        console.log(`stderr: ${stderr}`)
+        return
+      }
+      console.log(`stdout: ${stdout}`)
+    })
+  })
   .catch((error) => {
-    console.error(error)
+    if (error) console.error(error)
   })

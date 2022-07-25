@@ -1,24 +1,16 @@
 const esbuild = require('esbuild')
-const { exec, execSync } = require('child_process')
+const { execSync } = require('child_process')
 
-exec(
-  'npx tailwindcss -i ./src/tailwind.css -o ./www/tailwind.css --watch',
-  (err, stdout, stderr) => {
-    if (error) {
-      console.log(`error: ${error.message}`)
-      return
-    }
-    if (stderr) {
-      console.log(`stderr: ${stderr}`)
-      return
-    }
-    console.log(`stdout: ${stdout}`)
-  }
+execSync('rm *.js')
+execSync('rm *.map')
+
+execSync(
+  'npx tailwindcss -i ./client/src/tailwind.css -o ./client/www/tailwind.css'
 )
 
 esbuild
   .build({
-    entryPoints: ['src/index.js'],
+    entryPoints: ['client/src/index.js'],
     format: 'esm',
     loader: {
       '.html': 'text',
@@ -28,12 +20,12 @@ esbuild
     target: ['es2020'],
     watch: false,
     splitting: true,
-    outdir: 'www',
+    outdir: 'client/www',
   })
   .then(() => {
     execSync('workbox generateSW')
     execSync('surge', {
-      cwd: 'www',
+      cwd: 'client/www',
     })
     process.exit(0)
   })
