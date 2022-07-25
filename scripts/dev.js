@@ -1,5 +1,7 @@
 const esbuild = require('esbuild')
-const { exec, execSync } = require('child_process')
+const { exec } = require('child_process')
+const { generateSW } = require('workbox-build')
+const workboxConfig = require('../workbox-config')
 
 exec(
   'npx tailwindcss -i ./client/src/tailwind.css -o ./client/www/tailwind.css --watch',
@@ -25,10 +27,11 @@ esbuild
     sourcemap: true,
     target: ['es2020'],
     splitting: true,
-    outdir: 'client/www/scripts',
+    outdir: 'client/www',
     watch: true,
   })
   .then(() => {
+    generateSW(workboxConfig)
     exec('nodemon server/app.js', (err, stdout, stderr) => {
       if (err) {
         console.log(`error: ${err.message}`)

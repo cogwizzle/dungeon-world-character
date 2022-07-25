@@ -11,7 +11,8 @@
     "nodemon": "^2.0.19",
     "sinon": "^14.0.0",
     "spell-file": "github:cogwizzle/spell-file",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.0.24",
+    "workbox-build": "^6.5.3"
   },
   "scripts": {
     "build": "node ./scripts/build.js",
