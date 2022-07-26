@@ -1,6 +1,7 @@
 const esbuild = require('esbuild')
-const { exec } = require('child_process')
+const { exec, execSync } = require('child_process')
 const http = require('http')
+const fs = require('fs')
 
 exec(
   'npx tailwindcss -i ./src/tailwind.css -o ./www/tailwind.css --watch',
@@ -38,6 +39,8 @@ esbuild
     }
   )
   .then((result) => {
+    if (fs.existsSync('www/sw.js')) execSync('rm www/sw.js')
+    if (fs.existsSync('www/sw.js.map')) execSync('rm www/sw.js.map')
     // The result tells us where esbuild's local server is
     const { host, port } = result
 

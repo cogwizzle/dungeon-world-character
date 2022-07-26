@@ -51,4 +51,9 @@
   hr {
     @apply border-b-2 border-b-slate-500 my-2;
   }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    accent-color: #000;
+  }
 }
