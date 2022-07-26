@@ -492,6 +492,11 @@ hr {
   border-bottom-color: rgb(100 116 139 / var(--tw-border-opacity));
 }
 
+input[type="radio"],
+  input[type="checkbox"] {
+  accent-color: #000;
+}
+
 .visible {
   visibility: visible;
 }
