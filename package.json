@@ -11,12 +11,14 @@
     "sinon": "^14.0.0",
     "spell-file": "github:cogwizzle/spell-file",
     "tailwindcss": "^3.0.24",
-    "workbox-build": "^6.5.3"
+    "workbox-build": "^6.5.3",
+    "workbox-cli": "^6.5.3"
   },
   "scripts": {
     "build": "node ./scripts/build.js",
     "start": "node ./scripts/dev.js",
-    "test": "web-test-runner \"test/**/*.test.js\" --node-resolve"
+    "test": "web-test-runner \"test/**/*.test.js\" --node-resolve",
+    "service-worker": "workbox generateSW"
   },
   "repository": {
     "type": "git",
