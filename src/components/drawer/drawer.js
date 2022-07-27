@@ -94,6 +94,12 @@ export class Drawer extends HTMLElement {
     }
   }
 
+  onResetClick = () => {
+    if (confirm('Are you sure you want to reset your character?')) {
+      CharacterFormObservable.reset()
+    }
+  }
+
   onMount() {
     CharacterFormObservable.subscribe(this.hydrate)
     this.shadowRoot
@@ -108,6 +114,9 @@ export class Drawer extends HTMLElement {
     this.shadowRoot
       .querySelector('#save')
       .addEventListener('click', this.onSaveClick)
+    this.shadowRoot
+      .querySelector('#reset')
+      .addEventListener('click', this.onResetClick)
     this.shadowRoot
       .querySelector('#load-character-file')
       .addEventListener('change', this.onLoadFileChange)
@@ -127,6 +136,9 @@ export class Drawer extends HTMLElement {
     this.shadowRoot
       .querySelector('#save')
       .removeEventListener('click', this.onSaveClick)
+    this.shadowRoot
+      .querySelector('#reset')
+      .removeEventListener('click', this.onResetClick)
     this.shadowRoot
       .querySelector('#load-character-file')
       .removeEventListener('change', this.onLoadFileChange)
