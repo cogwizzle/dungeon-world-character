@@ -13,6 +13,7 @@ class ChracterFormObservable extends Observable {
     super.reset()
     this._state = {}
     localStorage.removeItem('character')
+    window.location.reload()
   }
 
   save() {
