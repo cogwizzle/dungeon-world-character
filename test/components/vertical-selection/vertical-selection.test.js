@@ -20,3 +20,45 @@ it('Given I have a vertical selection component when the vertical selection comp
   expect(el.shadowRoot.querySelector('#options').children.length).to.be.eq(2)
   expect(el.shadowRoot.querySelector('#test-other')).to.exist
 })
+
+it('Given I have a vertical selection component when I select the radio button then other radio buttons should be deselected', async () => {
+  const el = await fixture(html`<dw-vertical-selection
+    id="test"
+    title="test"
+    options='[
+      { "name": "one", "description": "One" },
+      { "name": "two", "description": "Two" }
+    ]'
+  ></dw-vertical-selection>`)
+
+  await waitUntil(() => el.shadowRoot != null, 'shadowRoot was not created.')
+  await waitUntil(
+    () => !!el.shadowRoot.querySelector('#options'),
+    'Options was not rendered.'
+  )
+  let updateValue
+  el.addEventListener('dw-change', (event) => {
+    updateValue = event.detail.value
+  })
+  const one = el.shadowRoot.querySelector('#test-one')
+  one.click()
+  await waitUntil(
+    () => updateValue === one.value,
+    'Event listener never was not fired.'
+  )
+  await waitUntil(
+    () => one.checked,
+    'Radio button for first child was not checked.'
+  )
+  const two = el.shadowRoot.querySelector('#test-two')
+  two.click()
+  await waitUntil(
+    () => updateValue === two.value,
+    'Event listener never was not fired.'
+  )
+  await waitUntil(
+    () => !one.checked && two.checked,
+    'Radio button one was not unchecked or two was not checked.'
+  )
+  expect(updateValue).to.be.eq(two.value)
+})
