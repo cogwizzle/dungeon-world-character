@@ -62,3 +62,39 @@ it('Given I have a vertical selection component when I select the radio button t
   )
   expect(updateValue).to.be.eq(two.value)
 })
+
+it('Given I have a vertical selection component when I select a radio button then the text input value should be cleared', async () => {
+  const el = await fixture(html`<dw-vertical-selection
+    id="test"
+    title="test"
+    options='[
+      { "name": "one", "description": "One" },
+      { "name": "two", "description": "Two" }
+    ]'
+  ></dw-vertical-selection>`)
+
+  await waitUntil(() => el.shadowRoot != null, 'shadowRoot was not created.')
+  await waitUntil(
+    () => !!el.shadowRoot.querySelector('#options'),
+    'Options was not rendered.'
+  )
+  let updateValue
+  el.addEventListener('dw-change', (event) => {
+    updateValue = event.detail.value
+  })
+  const other = el.shadowRoot.querySelector('#test-other')
+  other.value = 'test'
+  other.dispatchEvent(new Event('change'))
+  expect(updateValue).to.be.eq('test')
+  const one = el.shadowRoot.querySelector('#test-one')
+  one.click()
+  await waitUntil(
+    () => updateValue === one.value,
+    'Event listener never was not fired.'
+  )
+  await waitUntil(
+    () => one.checked,
+    'Radio button for first child was not checked.'
+  )
+  expect(updateValue).to.be.eq(one.value)
+})
