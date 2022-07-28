@@ -78,6 +78,8 @@ export class VerticalSelection extends HTMLElement {
 
   onChange(event) {
     const value = event.composedPath()[0].value
+    this._value = value
+    this.updateValues()
     this.dispatchEvent(
       new CustomEvent('dw-change', {
         detail: {
@@ -130,7 +132,7 @@ export class VerticalSelection extends HTMLElement {
     this.onMount()
   }
 
-  updateValues = () => {
+  updateValues() {
     const radioElements = [
       ...this.shadowRoot.querySelectorAll(
         `[name="${this._title}"][type="radio"]`

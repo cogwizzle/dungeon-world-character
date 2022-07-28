@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "devDependencies": {
     "@esm-bundle/chai": "^4.3.4-fix.0",
+    "@open-wc/testing": "^3.1.6",
     "@web/test-runner": "^0.13.31",
     "black-magic": "github:cogwizzle/black-magic",
     "esbuild": "^0.14.42",
