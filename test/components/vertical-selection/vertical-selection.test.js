@@ -1,5 +1,5 @@
 import { expect } from '@esm-bundle/chai'
-import { fixture, html, waitUntil } from '@open-wc/testing'
+import { elementUpdated, fixture, html, waitUntil } from '@open-wc/testing'
 import '../../../src/components/vertical-selection/vertical-selection'
 
 it('Given I have a vertical selection component when the vertical selection component has options then a list of the options should be rendered with a radio button to select an option and an input field to put an other value in.', async () => {
@@ -88,6 +88,40 @@ it('Given I have a vertical selection component when I select a radio button the
   expect(updateValue).to.be.eq('test')
   const one = el.shadowRoot.querySelector('#test-one')
   one.click()
+
+  await waitUntil(
+    () => updateValue === one.value,
+    'Event listener never was not fired.'
+  )
+  await waitUntil(
+    () => one.checked,
+    'Radio button for first child was not checked.'
+  )
+  await waitUntil(() => other.value === '', 'Text input value was not cleared.')
+  expect(updateValue).to.be.eq(one.value)
+})
+
+it('Given I have a vertical selection component when change the other input textbox and change focus then the radio buttons should be deselected', async () => {
+  const el = await fixture(html`<dw-vertical-selection
+    id="test"
+    title="test"
+    options='[
+      { "name": "one", "description": "One" },
+      { "name": "two", "description": "Two" }
+    ]'
+  ></dw-vertical-selection>`)
+
+  await waitUntil(() => el.shadowRoot != null, 'shadowRoot was not created.')
+  await waitUntil(
+    () => !!el.shadowRoot.querySelector('#options'),
+    'Options was not rendered.'
+  )
+  let updateValue
+  el.addEventListener('dw-change', (event) => {
+    updateValue = event.detail.value
+  })
+  const one = el.shadowRoot.querySelector('#test-one')
+  one.click()
   await waitUntil(
     () => updateValue === one.value,
     'Event listener never was not fired.'
@@ -97,4 +131,14 @@ it('Given I have a vertical selection component when I select a radio button the
     'Radio button for first child was not checked.'
   )
   expect(updateValue).to.be.eq(one.value)
+  const other = el.shadowRoot.querySelector('#test-other')
+  other.value = 'test'
+  other.dispatchEvent(new Event('change'))
+  other.dispatchEvent(new Event('blur'))
+  await waitUntil(
+    () => updateValue === 'test',
+    'Event listener never was not fired.'
+  )
+
+  expect(updateValue).to.be.eq('test')
 })
