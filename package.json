@@ -19,7 +19,8 @@
     "build": "node ./scripts/build.js",
     "start": "node ./scripts/dev.js",
     "test": "web-test-runner \"test/**/*.test.js\" --node-resolve",
-    "service-worker": "workbox generateSW"
+    "service-worker": "workbox generateSW",
+    "black-magic": "black-magic"
   },
   "repository": {
     "type": "git",
