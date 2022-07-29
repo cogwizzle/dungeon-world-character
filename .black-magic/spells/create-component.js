@@ -45,4 +45,12 @@ export class ${componentName} extends HTMLElement {
       `${directory}/${componentFile}/${componentFile}.js, ${directory}/${componentFile}/${componentFile}.html`
     )
   }
+  spellbook.createComponent.help = () => {
+    console.group('Create component')
+    console.log('Description: Creates a new component.')
+    console.log('Params:')
+    console.log('  - name: The name of the component.')
+    console.log('  - directory: The directory to create the component in.')
+    console.groupEnd()
+  }
 }
