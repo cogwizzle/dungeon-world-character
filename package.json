@@ -19,7 +19,7 @@
   "scripts": {
     "build": "node ./scripts/build.js",
     "start": "node ./scripts/dev.js",
-    "test": "wtr test/**/*.test.js --node-resolve --esbuild-target auto",
+    "test": "wtr \"test/**/*.test.js\" --node-resolve  --esbuild-target auto",
     "service-worker": "workbox generateSW",
     "black-magic": "black-magic"
   },
