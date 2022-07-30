@@ -1,5 +1,5 @@
 import { expect } from '@esm-bundle/chai'
-import { elementUpdated, fixture, html, waitUntil } from '@open-wc/testing'
+import { fixture, html, waitUntil } from '@open-wc/testing'
 import '../../../src/components/vertical-selection/vertical-selection'
 
 it('Given I have a vertical selection component when the vertical selection component has options then a list of the options should be rendered with a radio button to select an option and an input field to put an other value in.', async () => {
