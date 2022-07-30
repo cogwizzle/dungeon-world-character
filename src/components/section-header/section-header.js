@@ -3,6 +3,7 @@ import template from './section-header.html'
 export class SectionHeader extends HTMLElement {
   constructor() {
     super()
+    this.attachShadow({ mode: 'open' })
   }
 
   connectedCallback() {
@@ -10,9 +11,7 @@ export class SectionHeader extends HTMLElement {
   }
 
   render() {
-    const originalContent = this.innerHTML
-    this.innerHTML = template
-    this.querySelector('slot').innerHTML = originalContent
+    this.shadowRoot.innerHTML = template
   }
 }
 

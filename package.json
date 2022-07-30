@@ -6,6 +6,7 @@
   "devDependencies": {
     "@esm-bundle/chai": "^4.3.4-fix.0",
     "@open-wc/testing": "^3.1.6",
+    "@web/dev-server-esbuild": "^0.3.1",
     "@web/test-runner": "^0.13.31",
     "black-magic": "github:cogwizzle/black-magic",
     "esbuild": "^0.14.42",
@@ -18,7 +19,7 @@
   "scripts": {
     "build": "node ./scripts/build.js",
     "start": "node ./scripts/dev.js",
-    "test": "web-test-runner \"test/**/*.test.js\" --node-resolve",
+    "test": "wtr \"test/**/*.test.js\" --node-resolve  --esbuild-target auto",
     "service-worker": "workbox generateSW",
     "black-magic": "black-magic"
   },
