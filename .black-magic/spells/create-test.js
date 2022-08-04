@@ -1,3 +1,4 @@
+const { createSpell } = require('black-magic')
 const fs = require('fs')
 const path = require('path')
 
@@ -16,15 +17,21 @@ function writeFileSyncRecursive(filename, content = '') {
 }
 
 module.exports = (spellbook) => {
-  spellbook.createTest = (filepath) => {
-    const newFilepath = filepath.replace('src', 'test').replace('js', 'test.js')
-    writeFileSyncRecursive(newFilepath, newFileContent)
-  }
-  spellbook.createTest.help = () => {
-    console.group('Create test')
-    console.log('Description: Creates a new test.')
-    console.log('Params:')
-    console.log('  - filepath: The filepath of the file to be tested.')
-    console.groupEnd()
-  }
+  createSpell({
+    spellbook,
+    spellPath: 'create.test',
+    spell: (filepath) => {
+      const newFilepath = filepath
+        .replace('src', 'test')
+        .replace('js', 'test.js')
+      writeFileSyncRecursive(newFilepath, newFileContent)
+    },
+    help: () => {
+      console.group('Create test')
+      console.log('Description: Creates a new test.')
+      console.log('Params:')
+      console.log('  - filepath: The filepath of the file to be tested.')
+      console.groupEnd()
+    },
+  })
 }
