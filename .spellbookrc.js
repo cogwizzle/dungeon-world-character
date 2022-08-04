@@ -4,4 +4,5 @@ module.exports = {
     require('./.black-magic/spells/create-component.js'),
     require('./.black-magic/spells/create-test.js'),
   ],
+  spellbookName: '$',
 }
