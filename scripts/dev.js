@@ -5,7 +5,7 @@ const fs = require('fs')
 
 exec(
   'npx tailwindcss -i ./src/tailwind.css -o ./www/tailwind.css --watch',
-  (err, stdout, stderr) => {
+  (error, stdout, stderr) => {
     if (error) {
       console.log(`error: ${error.message}`)
       return
