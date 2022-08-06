@@ -20,12 +20,21 @@ module.exports = (spellbook) => {
   createSpell({
     spellbook,
     spellPath: 'create.test',
+    /**
+     * Create a new test file by file path.
+     * @param {string} filepath Filepath to test.
+     * @returns {void}
+     */
     spell: (filepath) => {
       const newFilepath = filepath
         .replace('src', 'test')
         .replace('js', 'test.js')
       writeFileSyncRecursive(newFilepath, newFileContent)
     },
+    /**
+     * Log help message for create.test spell.
+     * @returns {void}
+     */
     help: () => {
       console.group('Create test')
       console.log('Description: Creates a new test.')

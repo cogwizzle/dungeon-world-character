@@ -6,6 +6,12 @@ module.exports = (spellbook) => {
   createSpell({
     spellbook,
     spellPath: 'create.component',
+    /**
+     * Create a new component file by name, and file path.
+     * @param {string} name Component name.
+     * @param {string} directory Component directory.
+     * @returns {void}
+     */
     spell: (name, directory) => {
       const componentFile = paramCase(name)
       const componentName = pascalCase(name)
@@ -49,6 +55,10 @@ module.exports = (spellbook) => {
         `${directory}/${componentFile}/${componentFile}.js, ${directory}/${componentFile}/${componentFile}.html`
       )
     },
+    /**
+     * Log help message for create.component spell.
+     * @returns {void}
+     */
     help: () => {
       console.group('Create component')
       console.log('Description: Creates a new component.')
