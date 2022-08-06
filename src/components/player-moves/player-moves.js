@@ -35,7 +35,7 @@ export class PlayerMoves extends HTMLElement {
   }
 
   render() {
-    this.shadowRoot.innerHTML = template
+    if (this.shadowRoot) this.shadowRoot.innerHTML = template
   }
 }
 
