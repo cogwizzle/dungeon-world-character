@@ -1,4 +1,4 @@
-import template from './character-race.html'
+import template from './character-race.template.js'
 import '../../section-header/section-header'
 import CharacterFormObservable from '../../../state/character-form-observable'
 import { supportedClasses } from '../../../data/supported-classes'

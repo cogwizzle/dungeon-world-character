@@ -1,4 +1,4 @@
-import template from './other-look.html'
+import template from './other-look.template.js'
 import CharacterFormObservable from '../../../state/character-form-observable'
 
 class OtherLook extends HTMLElement {

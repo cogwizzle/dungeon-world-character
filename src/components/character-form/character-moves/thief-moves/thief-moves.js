@@ -1,4 +1,4 @@
-import template from './thief-moves.html'
+import template from './thief-moves.template.js'
 import { AbstractCharacterMoves } from '../abstract-character-moves'
 import '../../../section-header/section-header'
 

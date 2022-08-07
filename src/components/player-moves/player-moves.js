@@ -1,13 +1,17 @@
 import CharacterFormObservable from '../../state/character-form-observable'
-import template from './player-moves.html'
+import template from './player-moves.template.js'
 
 export class PlayerMoves extends HTMLElement {
-  _characterClass
   constructor() {
     super()
     this.attachShadow({ mode: 'open' })
+    /** @type {string|undefined} */
+    this._characterClass
   }
 
+  /**
+   * @param {{characterClass: string|undefined}} state
+   */
   hydrate(state) {
     this._characterClass = state.characterClass
     if (this._characterClass && this._characterClass !== '') {

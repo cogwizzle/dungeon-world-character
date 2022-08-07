@@ -1,4 +1,4 @@
-import template from './notes.html'
+import template from './notes.template.js'
 
 export class Notes extends HTMLElement {
   _value = ''

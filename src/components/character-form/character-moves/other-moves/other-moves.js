@@ -1,4 +1,4 @@
-import template from './other-moves.html'
+import template from './other-moves.template.js'
 import { AbstractCharacterMoves } from '../abstract-character-moves'
 import '../../../section-header/section-header'
 

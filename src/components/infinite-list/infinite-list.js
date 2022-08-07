@@ -1,4 +1,4 @@
-import template from './infinite-list.html'
+import template from './infinite-list.template.js'
 
 const createNewInput = (value, index) => {
   const templateElement = document.createElement('template')

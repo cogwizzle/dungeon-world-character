@@ -1,4 +1,4 @@
-import template from './fighter-moves.html'
+import template from './fighter-moves.template.js'
 import '../../../section-header/section-header'
 import { AbstractCharacterMoves } from '../abstract-character-moves'
 

@@ -1,4 +1,4 @@
-import template from './drawer.html'
+import template from './drawer.template.js'
 import CharacterFormObservable from '../../state/character-form-observable'
 import saveFile from '../../utility/save-file'
 import { supportedClasses } from '../../data/supported-classes'

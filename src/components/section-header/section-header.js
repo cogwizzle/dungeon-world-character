@@ -1,4 +1,4 @@
-import template from './section-header.html'
+import template from './section-header.template.js'
 
 export class SectionHeader extends HTMLElement {
   constructor() {
