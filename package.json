@@ -11,6 +11,7 @@
     "black-magic": "github:cogwizzle/black-magic",
     "esbuild": "^0.14.42",
     "esbuild-loader": "^2.19.0",
+    "jsdoc": "^3.6.11",
     "sinon": "^14.0.0",
     "spell-file": "github:cogwizzle/spell-file",
     "tailwindcss": "^3.0.24",
