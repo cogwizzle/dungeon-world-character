@@ -1,4 +1,4 @@
-import template from './paladin-moves.html'
+import template from './paladin-moves.template.js'
 import { AbstractCharacterMoves } from '../abstract-character-moves'
 import '../../../section-header/section-header'
 

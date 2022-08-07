@@ -1,5 +1,5 @@
 import CharacterFormObservable from '../../../../state/character-form-observable'
-import template from './other-dice.html'
+import template from './other-dice.template.js'
 
 class OtherDice extends HTMLElement {
   constructor() {

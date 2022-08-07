@@ -1,4 +1,4 @@
-import template from './character-form.html'
+import template from './character-form.template.js'
 import CharacterFormObservable from '../../state/character-form-observable'
 import './character-look/character-look-strategy'
 import './character-alignment/character-alignment'

@@ -147,35 +147,35 @@ export class CharacterLook extends HTMLElement {
   async render() {
     switch (this._characterClass) {
       case supportedClasses.Fighter:
-        const fighterTemplate = await import('./fighter-look.html')
+        const fighterTemplate = await import('./fighter-look.template.js')
         this.innerHTML = fighterTemplate.default
         break
       case supportedClasses.Ranger:
-        const rangerTemplate = await import('./ranger-look.html')
+        const rangerTemplate = await import('./ranger-look.template.js')
         this.innerHTML = rangerTemplate.default
         break
       case supportedClasses.Bard:
-        const bardTemplate = await import('./bard-look.html')
+        const bardTemplate = await import('./bard-look.template.js')
         this.innerHTML = bardTemplate.default
         break
       case supportedClasses.Druid:
-        const druidTemplate = await import('./druid-look.html')
+        const druidTemplate = await import('./druid-look.template.js')
         this.innerHTML = druidTemplate.default
         break
       case supportedClasses.Paladin:
-        const paladinTemplate = await import('./paladin-look.html')
+        const paladinTemplate = await import('./paladin-look.template.js')
         this.innerHTML = paladinTemplate.default
         break
       case supportedClasses.Thief:
-        const thiefTemplate = await import('./thief-look.html')
+        const thiefTemplate = await import('./thief-look.template.js')
         this.innerHTML = thiefTemplate.default
         break
       case supportedClasses.Cleric:
-        const clericTemplate = await import('./cleric-look.html')
+        const clericTemplate = await import('./cleric-look.template.js')
         this.innerHTML = clericTemplate.default
         break
       case supportedClasses.Wizard:
-        const wizardTemplate = await import('./wizard-look.html')
+        const wizardTemplate = await import('./wizard-look.template.js')
         this.innerHTML = wizardTemplate.default
         break
       default:

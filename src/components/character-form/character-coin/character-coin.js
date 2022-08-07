@@ -1,4 +1,4 @@
-import template from './character-coin.html'
+import template from './character-coin.template.js'
 import '../../section-header/section-header'
 import CharacterFormObservable from '../../../state/character-form-observable'
 

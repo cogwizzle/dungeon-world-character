@@ -1,4 +1,4 @@
-import template from './character-attributes.html'
+import template from './character-attributes.template.js'
 import './character-attribute/character-attribute'
 import CharacterFormObservable from '../../../state/character-form-observable'
 

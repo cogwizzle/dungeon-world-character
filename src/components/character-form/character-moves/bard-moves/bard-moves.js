@@ -1,4 +1,4 @@
-import template from './bard-moves.html'
+import template from './bard-moves.template.js'
 import '../../../section-header/section-header'
 import { AbstractCharacterMoves } from '../abstract-character-moves'
 

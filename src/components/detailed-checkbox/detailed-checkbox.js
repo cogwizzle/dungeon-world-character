@@ -1,4 +1,4 @@
-import template from './detailed-checkbox.html'
+import template from './detailed-checkbox.template.js'
 const templateEl = document.createElement('template')
 templateEl.innerHTML = template
 

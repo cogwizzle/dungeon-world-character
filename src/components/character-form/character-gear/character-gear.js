@@ -1,4 +1,4 @@
-import template from './character-gear.html'
+import template from './character-gear.template.js'
 import CharacterFormObservable from '../../../state/character-form-observable'
 import '../../section-header/section-header'
 

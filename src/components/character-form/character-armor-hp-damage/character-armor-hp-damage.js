@@ -1,4 +1,4 @@
-import template from './character-armor-hp-damage.html'
+import template from './character-armor-hp-damage.template.js'
 import CharacterFormObservable from '../../../state/character-form-observable'
 import { supportedClasses } from '../../../data/supported-classes'
 import './labeled-decorated-input/labeled-decorated-input'

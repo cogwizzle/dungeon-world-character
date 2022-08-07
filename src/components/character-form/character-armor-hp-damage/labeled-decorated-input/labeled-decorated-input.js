@@ -1,4 +1,4 @@
-import template from './labeled-decorated-input.html'
+import template from './labeled-decorated-input.template.js'
 
 export class LabeledDecoratedInput extends HTMLElement {
   constructor() {

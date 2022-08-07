@@ -1,4 +1,4 @@
-import template from './druid-moves.html'
+import template from './druid-moves.template.js'
 import { AbstractCharacterMoves } from '../abstract-character-moves'
 import '../../../section-header/section-header'
 

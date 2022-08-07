@@ -1,4 +1,4 @@
-import template from './wizard-moves.html'
+import template from './wizard-moves.template.js'
 import { AbstractCharacterMoves } from '../abstract-character-moves'
 import '../../../section-header/section-header'
 import '../../../detailed-checkbox/detailed-checkbox'

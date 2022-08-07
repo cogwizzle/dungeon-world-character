@@ -1,4 +1,4 @@
-import template from './character-attribute.html'
+import template from './character-attribute.template.js'
 
 export class CharacterAttribute extends HTMLElement {
   _id

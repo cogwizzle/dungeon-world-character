@@ -1,4 +1,4 @@
-import template from './character-bonds.html'
+import template from './character-bonds.template.js'
 import '../../section-header/section-header'
 import '../../infinite-list/infinite-list'
 import CharacterFormObservable from '../../../state/character-form-observable'

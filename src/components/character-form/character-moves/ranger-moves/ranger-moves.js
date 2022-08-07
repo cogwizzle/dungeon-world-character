@@ -1,5 +1,5 @@
 import { AbstractCharacterMoves } from '../abstract-character-moves'
-import template from './ranger-moves.html'
+import template from './ranger-moves.template.js'
 
 const inputs = [
   ['#animal-companion', 'animalCompanion'],
