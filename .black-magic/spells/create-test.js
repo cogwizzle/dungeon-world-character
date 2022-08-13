@@ -2,19 +2,47 @@ const { createSpell } = require('black-magic')
 const fs = require('fs')
 const path = require('path')
 
-const newFileContent = `import { expect } from '@esm-bundle/chai'
+/**
+ * Create file content for a new test.
+ * @param {string} [testedModuleName] The name of the module to be tested.
+ * @param {string[]} [requirementDescriptions] The descriptions of the requirements.
+ * @returns {string} The file content.
+ */
+const createNewTestFileTemplate = (
+  testedModuleName = 'Module being tested placeholder.',
+  requirementDescriptions = ['Given x when y then z.']
+) => `import { expect } from '@esm-bundle/chai'
 import { fixture, html, waitUntil } from '@open-wc/testing'
 // Add import here for tested file.
 
-it('Given x when y then z', async () => {
-
-})
+describe('${testedModuleName}', () => {
+  ${requirementDescriptions
+    .map(
+      (description) => `
+  it('${description}', async () => {
+    // Add test code here.
+  })`
+    )
+    .join('\n')}
 `
 
+/**
+ * Write a file to the filesystem creating directories if necessary.
+ * @param {string} filename Name of the file.
+ * @param {string} [content] Content of the file.
+ * @returns {void}
+ */
 function writeFileSyncRecursive(filename, content = '') {
   fs.mkdirSync(path.dirname(filename), { recursive: true })
   fs.writeFileSync(filename, content)
 }
+
+/**
+ * @typedef CreateTestSpellArgs
+ * @property {string} filepath The filepath of the file to be tested.
+ * @property {string} [testedModuleName] Name of the tested module.
+ * @property {string[]} [requirementDescriptions] Descriptions of the requirements.
+ */
 
 module.exports = (spellbook) => {
   createSpell({
@@ -22,14 +50,17 @@ module.exports = (spellbook) => {
     spellPath: 'create.test',
     /**
      * Create a new test file by file path.
-     * @param {string} filepath Filepath to test.
+     * @param {CreateTestSpellArgs} args
      * @returns {void}
      */
-    spell: (filepath) => {
+    spell: ({ filepath, testedModuleName, requirementDescriptions }) => {
       const newFilepath = filepath
         .replace('src', 'test')
         .replace('js', 'test.js')
-      writeFileSyncRecursive(newFilepath, newFileContent)
+      writeFileSyncRecursive(
+        newFilepath,
+        createNewTestFileTemplate(testedModuleName, requirementDescriptions)
+      )
     },
     /**
      * Log help message for create.test spell.
