@@ -26,6 +26,12 @@ describe('${testedModuleName}', () => {
     .join('\n')}
 `
 
+/**
+ * Write a file to the filesystem creating directories if necessary.
+ * @param {string} filename Name of the file.
+ * @param {string} [content] Content of the file.
+ * @returns {void}
+ */
 function writeFileSyncRecursive(filename, content = '') {
   fs.mkdirSync(path.dirname(filename), { recursive: true })
   fs.writeFileSync(filename, content)
