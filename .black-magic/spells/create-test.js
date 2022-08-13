@@ -8,7 +8,7 @@ const path = require('path')
  * @param {string[]} [requirementDescriptions] The descriptions of the requirements.
  * @returns {string} The file content.
  */
-const newFileContent = (
+const createNewTestFileTemplate = (
   testedModuleName = 'Module being tested placeholder.',
   requirementDescriptions = ['Given x when y then z.']
 ) => `import { expect } from '@esm-bundle/chai'
@@ -53,7 +53,7 @@ module.exports = (spellbook) => {
         .replace('js', 'test.js')
       writeFileSyncRecursive(
         newFilepath,
-        newFileContent(testedModuleName, requirementDescriptions)
+        createNewTestFileTemplate(testedModuleName, requirementDescriptions)
       )
     },
     /**
