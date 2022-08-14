@@ -23,7 +23,7 @@ export class Observable {
   }
 
   /**
-   * Add a new observable tot he list of observers.
+   * Add a new observable to the list of observers.
    * @param {<T>(state: T) => void} observer
    */
   subscribe(observer) {
