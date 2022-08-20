@@ -409,7 +409,7 @@ class ChracterFormObservable extends Observable {
   }
 
   /**
-   * Set the characters current moves.
+   * Set the character's current moves.
    * @param {Object|string} value The current moves of the character.
    */
   set moves(value) {
@@ -446,6 +446,12 @@ class ChracterFormObservable extends Observable {
 
   /**
    * Set the character's current class value.
+   * It also clears the following properties:
+   *  - look
+   *  - moves
+   *  - race
+   *  - alignment
+   *  - otherDice
    * @param {string} value The current class value of the character.
    */
   set characterClass(value) {
