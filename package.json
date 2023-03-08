@@ -23,7 +23,8 @@
     "start": "node ./scripts/dev.js",
     "test": "wtr \"test/**/*.test.js\" --node-resolve  --esbuild-target auto",
     "service-worker": "workbox generateSW",
-    "black-magic": "black-magic"
+    "black-magic": "black-magic",
+    "surge": "bash ./scripts/publish.sh"
   },
   "repository": {
     "type": "git",
