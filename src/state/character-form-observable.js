@@ -44,7 +44,7 @@ class ChracterFormObservable extends Observable {
    */
   constructor() {
     super()
-    const value = JSON.parse(localStorage.getItem('character') || '') || {}
+    const value = JSON.parse(localStorage.getItem('character') || '{}')
     this._state = {
       ...value,
     }

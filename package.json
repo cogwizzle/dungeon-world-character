@@ -10,6 +10,7 @@
     "@web/test-runner": "^0.13.31",
     "black-magic": "github:cogwizzle/black-magic",
     "esbuild": "^0.14.42",
+    "eslint": "^8.35.0",
     "jsdoc": "^3.6.11",
     "sinon": "^14.0.0",
     "spell-file": "github:cogwizzle/spell-file",

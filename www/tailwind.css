@@ -687,12 +687,12 @@ input[type="radio"],
   width: 2.5rem;
 }
 
-.w-full {
-  width: 100%;
-}
-
 .w-64 {
   width: 16rem;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .w-6 {
@@ -940,6 +940,10 @@ input[type="radio"],
 
 .font-bold {
   font-weight: 700;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 .italic {
