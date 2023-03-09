@@ -40,11 +40,11 @@ import { Observable } from './observable'
 class ChracterFormObservable extends Observable {
   /**
    * Create the character form observable instance.
-   * If the state is in local storage load it into the observable state.
+   *
+   * @param {CharacterFormObservableState} [value] The initial state of the observable.
    */
-  constructor() {
+  constructor(value) {
     super()
-    const value = JSON.parse(localStorage.getItem('character') || '{}')
     this._state = {
       ...value,
     }
@@ -57,8 +57,6 @@ class ChracterFormObservable extends Observable {
     super.reset()
     /** @type {CharacterFormObservableState} */
     this._state = {}
-    localStorage.removeItem('character')
-    window.location.reload()
   }
 
   /**
@@ -80,11 +78,9 @@ class ChracterFormObservable extends Observable {
 
   /**
    * Notify all observers of the updated state.
-   * Writes the state to local storage.
    */
   notify() {
     super.notify()
-    localStorage.setItem('character', JSON.stringify(this._state))
   }
 
   /**
@@ -468,6 +464,7 @@ class ChracterFormObservable extends Observable {
   }
 }
 
-const SingletonCharacterFormObservable = new ChracterFormObservable()
+const defaultValue = JSON.parse(localStorage.getItem('character') || '{}')
+const SingletonCharacterFormObservable = new ChracterFormObservable(defaultValue)
 
 export default SingletonCharacterFormObservable
