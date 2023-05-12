@@ -235,7 +235,7 @@ export default html`<div id="player-moves">
         <li>The local constabulary has a warrant out for your arrest</li>
         <li>Someone has put a price on your head</li>
         <li>
-          Someon important to you has been put in a bad spot as a result of your
+          Someone important to you has been put in a bad spot as a result of your
           actions
         </li>
       </ul>
