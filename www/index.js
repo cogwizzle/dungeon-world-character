@@ -1,4 +1,4 @@
-import"./chunk-DBN7N77M.js";import{a as o,b as c}from"./chunk-2DL6MCQC.js";var N=c`<form
+import"./chunk-LU7DNXH4.js";import{a as o,b as c}from"./chunk-2DL6MCQC.js";var z=c`<form
   id="character-form"
   class="my-4 overflow-x-hidden lg:overflow-x-auto"
 >
@@ -19,7 +19,7 @@ import"./chunk-DBN7N77M.js";import{a as o,b as c}from"./chunk-2DL6MCQC.js";var N
     >
       <label for="level">LEVEL</label>
       <input
-        class="text-input bg-white rounded-full pl-1.5 mr-1 w-7 h-7 grow-0"
+        class="text-input bg-white w-10 grow-0 mx-2 text-right px-2"
         id="level"
         name="level"
         type="text"
@@ -104,7 +104,7 @@ import"./chunk-DBN7N77M.js";import{a as o,b as c}from"./chunk-2DL6MCQC.js";var N
     <label
       id="title"
       for="${l}"
-      class="bg-black text-white flex flex-row relative"
+      class="bg-black text-white flex flex-row relative py-1"
     >
       ${l.toUpperCase()}
     </label>
@@ -239,42 +239,43 @@ import"./chunk-DBN7N77M.js";import{a as o,b as c}from"./chunk-2DL6MCQC.js";var N
     </div>
   </dw-section-header>
   <dw-infinite-list id="gear-list"></dw-infinite-list>
-</div> `;var O=class extends HTMLElement{constructor(){super();o(this,"hydrate",e=>{this.querySelector("#gear-list").value=e.gear||[],this.querySelector("#load").value=e.load||0,this.querySelector("#max-load").value=e.maxLoad||0})}onUpdate(e){s.gear=e.detail}connectedCallback(){this.render(),s.subscribe(this.hydrate),this.querySelector("#gear-list").addEventListener("dw-infinite-list-change",this.onUpdate),this.querySelector("#load").addEventListener("change",e=>{s.load=e.target.value}),this.querySelector("#max-load").addEventListener("change",e=>{s.maxLoad=e.target.value})}disconnectedCallback(){s.unsubscribe(this.hydrate),this.querySelector("#gear-list").removeEventListener("dw-infinite-list-change",this.onUpdate),this.querySelector("#load").removeEventListener("change",e=>{s.load=e.target.value}),this.querySelector("#max-load").removeEventListener("change",e=>{s.maxLoad=e.target.value})}render(){this.innerHTML=Z}};customElements.define("dw-character-gear",O);var A=class extends HTMLElement{constructor(){super();o(this,"_characterClass");o(this,"_value",{})}get value(){return this._value}set value(e){this._value=e,this.updateDom()}updateDom(){let e=this.firstChild;!e||(e.value=this._value)}async hydrate(e){e.characterClass!==this._characterClass&&(this._characterClass=e.characterClass,await this.render())}connectedCallback(){this.render().then(()=>s.subscribe(this.hydrate.bind(this)))}disconnectedCallback(){s.unsubscribe(this.hydrate.bind(this))}async render(){if(!!this._characterClass)return new Promise(e=>{setTimeout(async()=>{switch(this._characterClass){case i.Fighter:await import("./fighter-moves-WO6WVO45.js"),this.innerHTML="<dw-fighter-moves></dw-fighter-moves>";break;case i.Ranger:await import("./ranger-moves-DKY2AL47.js"),this.innerHTML="<dw-ranger-moves></dw-ranger-moves>";break;case i.Bard:await import("./bard-moves-QFG6M2WQ.js"),this.innerHTML="<dw-bard-moves></dw-bard-moves>";break;case i.Druid:await import("./druid-moves-RSKB3HVI.js"),this.innerHTML="<dw-druid-moves></dw-druid-moves>";break;case i.Paladin:await import("./paladin-moves-V5ASLXSF.js"),this.innerHTML="<dw-paladin-moves></dw-paladin-moves>";break;case i.Thief:await import("./thief-moves-QYZMBOXU.js"),this.innerHTML="<dw-thief-moves></dw-thief-moves>";break;case i.Cleric:await import("./cleric-moves-4SXMZOXY.js"),this.innerHTML="<dw-cleric-moves></dw-cleric-moves>";break;case i.Wizard:await import("./wizard-moves-5QWDE2EA.js"),this.innerHTML="<dw-wizard-moves></dw-wizard-moves>";break;default:await import("./other-moves-SFQPV6K6.js"),this.innerHTML="<dw-other-moves></dw-other-moves>";break}this.updateDom(),e()})})}};customElements.define("dw-character-moves",A);var V=c`<div class="flex flex-col">
+</div> `;var O=class extends HTMLElement{constructor(){super();o(this,"hydrate",e=>{this.querySelector("#gear-list").value=e.gear||[],this.querySelector("#load").value=e.load||0,this.querySelector("#max-load").value=e.maxLoad||0})}onUpdate(e){s.gear=e.detail}connectedCallback(){this.render(),s.subscribe(this.hydrate),this.querySelector("#gear-list").addEventListener("dw-infinite-list-change",this.onUpdate),this.querySelector("#load").addEventListener("change",e=>{s.load=e.target.value}),this.querySelector("#max-load").addEventListener("change",e=>{s.maxLoad=e.target.value})}disconnectedCallback(){s.unsubscribe(this.hydrate),this.querySelector("#gear-list").removeEventListener("dw-infinite-list-change",this.onUpdate),this.querySelector("#load").removeEventListener("change",e=>{s.load=e.target.value}),this.querySelector("#max-load").removeEventListener("change",e=>{s.maxLoad=e.target.value})}render(){this.innerHTML=Z}};customElements.define("dw-character-gear",O);var A=class extends HTMLElement{constructor(){super();o(this,"_characterClass");o(this,"_value",{})}get value(){return this._value}set value(e){this._value=e,this.updateDom()}updateDom(){let e=this.firstChild;!e||(e.value=this._value)}async hydrate(e){e.characterClass!==this._characterClass&&(this._characterClass=e.characterClass,await this.render())}connectedCallback(){this.render().then(()=>s.subscribe(this.hydrate.bind(this)))}disconnectedCallback(){s.unsubscribe(this.hydrate.bind(this))}async render(){if(!!this._characterClass)return new Promise(e=>{setTimeout(async()=>{switch(this._characterClass){case i.Fighter:await import("./fighter-moves-Y72LEB2L.js"),this.innerHTML="<dw-fighter-moves></dw-fighter-moves>";break;case i.Ranger:await import("./ranger-moves-DKY2AL47.js"),this.innerHTML="<dw-ranger-moves></dw-ranger-moves>";break;case i.Bard:await import("./bard-moves-UP7N2CWF.js"),this.innerHTML="<dw-bard-moves></dw-bard-moves>";break;case i.Druid:await import("./druid-moves-OGNFT542.js"),this.innerHTML="<dw-druid-moves></dw-druid-moves>";break;case i.Paladin:await import("./paladin-moves-OOZJ5UH4.js"),this.innerHTML="<dw-paladin-moves></dw-paladin-moves>";break;case i.Thief:await import("./thief-moves-UC74YZHZ.js"),this.innerHTML="<dw-thief-moves></dw-thief-moves>";break;case i.Cleric:await import("./cleric-moves-RHRVCHMC.js"),this.innerHTML="<dw-cleric-moves></dw-cleric-moves>";break;case i.Wizard:await import("./wizard-moves-PID3NTOF.js"),this.innerHTML="<dw-wizard-moves></dw-wizard-moves>";break;default:await import("./other-moves-P7NOW65T.js"),this.innerHTML="<dw-other-moves></dw-other-moves>";break}this.updateDom(),e()})})}};customElements.define("dw-character-moves",A);var V=c`<div class="flex flex-col">
   <dw-labeled-decorated-input for="armor" icon-class="shield">
-    ARMOR
+    ARMOR ⛨
     <input
       slot="input"
       type="text"
       id="armor"
       name="armor"
-      class="text-black bg-white w-7 z-10 mr-10 outline-none text-center disabled:overflow-visible"
+      class="text-black w-10 text-right ontline-none px-2"
     />
   </dw-labeled-decorated-input>
   <dw-labeled-decorated-input for="hp" icon-class="heart">
-    HP
-    <span slot="input" class="z-10">
+    HP 🤍
+    <span slot="input" class="z-10 flex flex-row bg-white text-black">
       <input
         type="text"
         id="hit-points"
         name="hit-points"
-        class="text-black bg-white w-6 outline-none text-center border-r-2 border-black"
+        class="text-black w-10 text-right text-input"
       />
+      /
       <input
         type="text"
         id="max-hit-points"
         name="max-hit-points"
-        class="text-black bg-white w-6 mr-7 outline-none text-center"
+        class="text-black w-10 text-left text-input"
       />
     </span>
   </dw-labeled-decorated-input>
   <dw-labeled-decorated-input for="damage" icon-class="damage-dice">
-    DAMAGE
-    <span id="damage-input" slot="input" class="z-10 mr-10 text-black"></span>
+    DAMAGE ⚔
+    <span id="damage-input" slot="input" class="text-black bg-white px-2"></span>
   </dw-labeled-decorated-input>
-</div> `;var ee=c`<label
+</div>`;var ee=c`<label
     id="labeled-decorate-input__label"
     for="labeled-decorate-input__input"
-    class="bg-black text-white flex flex-row relative mb-16"
+    class="bg-black text-white flex flex-row relative mb-16 py-1"
   >
     <slot></slot>
     <div
@@ -296,7 +297,7 @@ import"./chunk-DBN7N77M.js";import{a as o,b as c}from"./chunk-2DL6MCQC.js";var N
     <label class="absolute t-2 font-bold" for="notes">NOTES</label>
     <textarea id="notes" class="px-2 pt-7 flex-1" rows="20"></textarea>
   </div>
-  <link rel="stylesheet" href="tailwind.css" /> `;var P=class extends HTMLElement{constructor(){super();o(this,"_value","");this.attachShadow({mode:"open"})}static get observedAttributes(){return["value"]}attributeChangedCallback(e,t,r){if(e==="value"&&t!==r){this._value=r;let n=this.shadowRoot.querySelector("#notes");n&&(n.innerHTML=r)}}onMount(){this.shadowRoot.querySelector("#notes")?.addEventListener("keyup",this.onChange.bind(this))}beforeUnmount(){this.shadowRoot.querySelector("#notes")?.removeEventListener("keyup",this.onChange.bind(this))}onChange(e){this._value=e.target.value,this.dispatchEvent(new CustomEvent("notes-changed",{detail:e.target.value}))}connectedCallback(){this._value=this.getAttribute("value")||"",this.render(),this.onMount()}disconnectedCallback(){this.beforeUnmount()}render(){this.shadowRoot.innerHTML=ae;let e=this.shadowRoot.querySelector("#notes");e&&(e.innerHTML=this._value)}};customElements.define("dw-notes",P);var $=class extends HTMLElement{constructor(){super();o(this,"onCharacterNameChange",e=>{s.characterName=e.target.value});o(this,"onLevelChange",e=>{s.level=e.target.value});o(this,"onXpChange",e=>{s.xp=e.target.value});o(this,"onMovesChange",e=>{s.moves=e.detail});o(this,"onNotesChange",e=>{s.notes=e.detail});o(this,"hydrate",e=>{let t=this.querySelector("#character-name"),r=this.querySelector("#level"),n=this.querySelector("#xp"),h=this.querySelector("dw-character-moves"),u=this.querySelector("dw-notes");t.value=e.characterName||"",r.value=e.level||"",n.value=e.xp||0,h.value=e.moves||{},u.setAttribute("value",e.notes||"")})}connectedCallback(){this.render(),s.subscribe(this.hydrate);let e=this.querySelector("#character-name"),t=this.querySelector("#level"),r=this.querySelector("#xp"),n=this.querySelector("dw-character-moves"),h=this.querySelector("dw-notes");e.addEventListener("change",this.onCharacterNameChange),t.addEventListener("change",this.onLevelChange),r.addEventListener("change",this.onXpChange),n.addEventListener("dw-character-moves-change",this.onMovesChange),h.addEventListener("notes-changed",this.onNotesChange)}disconnectedCallback(){s.unsubscribe(this.hydrate);let e=this.querySelector("#character-name"),t=this.querySelector("#level"),r=this.querySelector("dw-character-moves"),n=this.querySelector("dw-notes");e.removeEventListener("change",this.onCharacterNameChange),t.removeEventListener("change",this.onLevelChange),xpElement.removeEventListener("change",this.onXpChange),r.removeEventListener("dw-character-moves-change",this.onMovesChange),n.removeEventListener("notes-changed",this.onNotesChange)}render(){this.innerHTML=N}};customElements.define("dw-character-form",$);var se=c`<style>
+  <link rel="stylesheet" href="tailwind.css" /> `;var P=class extends HTMLElement{constructor(){super();o(this,"_value","");this.attachShadow({mode:"open"})}static get observedAttributes(){return["value"]}attributeChangedCallback(e,t,r){if(e==="value"&&t!==r){this._value=r;let n=this.shadowRoot.querySelector("#notes");n&&(n.innerHTML=r)}}onMount(){this.shadowRoot.querySelector("#notes")?.addEventListener("keyup",this.onChange.bind(this))}beforeUnmount(){this.shadowRoot.querySelector("#notes")?.removeEventListener("keyup",this.onChange.bind(this))}onChange(e){this._value=e.target.value,this.dispatchEvent(new CustomEvent("notes-changed",{detail:e.target.value}))}connectedCallback(){this._value=this.getAttribute("value")||"",this.render(),this.onMount()}disconnectedCallback(){this.beforeUnmount()}render(){this.shadowRoot.innerHTML=ae;let e=this.shadowRoot.querySelector("#notes");e&&(e.innerHTML=this._value)}};customElements.define("dw-notes",P);var $=class extends HTMLElement{constructor(){super();o(this,"onCharacterNameChange",e=>{s.characterName=e.target.value});o(this,"onLevelChange",e=>{s.level=e.target.value});o(this,"onXpChange",e=>{s.xp=e.target.value});o(this,"onMovesChange",e=>{s.moves=e.detail});o(this,"onNotesChange",e=>{s.notes=e.detail});o(this,"hydrate",e=>{let t=this.querySelector("#character-name"),r=this.querySelector("#level"),n=this.querySelector("#xp"),h=this.querySelector("dw-character-moves"),u=this.querySelector("dw-notes");t.value=e.characterName||"",r.value=e.level||"",n.value=e.xp||0,h.value=e.moves||{},u.setAttribute("value",e.notes||"")})}connectedCallback(){this.render(),s.subscribe(this.hydrate);let e=this.querySelector("#character-name"),t=this.querySelector("#level"),r=this.querySelector("#xp"),n=this.querySelector("dw-character-moves"),h=this.querySelector("dw-notes");e.addEventListener("change",this.onCharacterNameChange),t.addEventListener("change",this.onLevelChange),r.addEventListener("change",this.onXpChange),n.addEventListener("dw-character-moves-change",this.onMovesChange),h.addEventListener("notes-changed",this.onNotesChange)}disconnectedCallback(){s.unsubscribe(this.hydrate);let e=this.querySelector("#character-name"),t=this.querySelector("#level"),r=this.querySelector("dw-character-moves"),n=this.querySelector("dw-notes");e.removeEventListener("change",this.onCharacterNameChange),t.removeEventListener("change",this.onLevelChange),xpElement.removeEventListener("change",this.onXpChange),r.removeEventListener("dw-character-moves-change",this.onMovesChange),n.removeEventListener("notes-changed",this.onNotesChange)}render(){this.innerHTML=z}};customElements.define("dw-character-form",$);var se=c`<style>
     .banner .arrow-up {
       width: 100%;
       height: 20px;
@@ -675,4 +676,4 @@ import"./chunk-DBN7N77M.js";import{a as o,b as c}from"./chunk-2DL6MCQC.js";var N
   </div>
 </div>
 <link rel="stylesheet" href="tailwind.css" />
-`;var z=class extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"}),this._characterClass}hydrate(a){this._characterClass=a.characterClass,this._characterClass&&this._characterClass!==""?this.classList.remove("hidden"):this.classList.contains("hidden")||this.classList.add("hidden")}onMount(){s.subscribe(this.hydrate.bind(this))}beforeUnmount(){s.unsubscribe(this.hydrate.bind(this))}connectedCallback(){this.render(),this.onMount()}disconnectedCallback(){this.beforeUnmount()}render(){this.shadowRoot&&(this.shadowRoot.innerHTML=re)}};customElements.define("dw-player-moves",z);
+`;var N=class extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"}),this._characterClass}hydrate(a){this._characterClass=a.characterClass,this._characterClass&&this._characterClass!==""?this.classList.remove("hidden"):this.classList.contains("hidden")||this.classList.add("hidden")}onMount(){s.subscribe(this.hydrate.bind(this))}beforeUnmount(){s.unsubscribe(this.hydrate.bind(this))}connectedCallback(){this.render(),this.onMount()}disconnectedCallback(){this.beforeUnmount()}render(){this.shadowRoot&&(this.shadowRoot.innerHTML=re)}};customElements.define("dw-player-moves",N);
