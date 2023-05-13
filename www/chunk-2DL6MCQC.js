@@ -1,0 +1,1 @@
+var h=Object.defineProperty;var l=(e,t,r)=>t in e?h(e,t,{enumerable:!0,configurable:!0,writable:!0,value:r}):e[t]=r;var n=(e,t,r)=>(l(e,typeof t!="symbol"?t+"":t,r),r);var a=(e,...t)=>{let r="";return e.forEach((o,c)=>{r+=o+(t[c]||"")}),r};export{n as a,a as b};

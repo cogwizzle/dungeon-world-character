@@ -21,7 +21,7 @@ export default html`<form
     >
       <label for="level">LEVEL</label>
       <input
-        class="text-input bg-white rounded-full pl-1.5 mr-1 w-7 h-7 grow-0"
+        class="text-input bg-white w-10 grow-0 mx-2 text-right px-2"
         id="level"
         name="level"
         type="text"

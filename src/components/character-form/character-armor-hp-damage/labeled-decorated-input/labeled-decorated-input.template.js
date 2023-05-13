@@ -3,7 +3,7 @@ import { html } from '../../../../utility/html-template'
 export default html`<label
     id="labeled-decorate-input__label"
     for="labeled-decorate-input__input"
-    class="bg-black text-white flex flex-row relative mb-16"
+    class="bg-black text-white flex flex-row relative mb-16 py-1"
   >
     <slot></slot>
     <div

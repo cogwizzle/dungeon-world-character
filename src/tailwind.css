@@ -2,39 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.shield::before {
-  content: url(assets/armor.svg);
-  position: absolute;
-  font-size: 100px;
-  right: 36px;
-  top: -68px;
-  text-shadow: -1px -1px 4px #64748b;
-  height: 50px;
-  width: 50px;
-}
-
-.heart::before {
-  content: url(assets/heart.svg);
-  position: absolute;
-  font-size: 100px;
-  right: 25px;
-  top: -50px;
-  text-shadow: -1px -1px 4px #64748b;
-  height: 75px;
-  width: 75px;
-}
-
-.damage-dice::before {
-  content: url(assets/dice.svg);
-  position: absolute;
-  font-size: 100px;
-  right: 32px;
-  top: -72px;
-  text-shadow: -1px -1px 4px #64748b;
-  height: 50px;
-  width: 50px;
-}
-
 @layer components {
   .text-input {
     @apply outline-none grow;
