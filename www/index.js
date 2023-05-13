@@ -78,7 +78,7 @@ import"./chunk-LU7DNXH4.js";import{a as o,b as c}from"./chunk-2DL6MCQC.js";var z
     <div class="flex-row ml-2 xl:ml-0">
       <input
         type="text"
-        name="body"
+        name="${l}"
         id="${l}-other"
         value=""
         class="bg-transparent border-b-2 border-b-black outline-none w-14"
