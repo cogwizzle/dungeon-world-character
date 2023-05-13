@@ -583,10 +583,6 @@ input[type="radio"],
   margin-right: 0.5rem;
 }
 
-.mr-1 {
-  margin-right: 0.25rem;
-}
-
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -643,10 +639,6 @@ input[type="radio"],
   height: 100vh;
 }
 
-.h-7 {
-  height: 1.75rem;
-}
-
 .h-full {
   height: 100%;
 }
@@ -669,10 +661,6 @@ input[type="radio"],
 
 .min-h-\[10\.125rem\] {
   min-height: 10.125rem;
-}
-
-.w-7 {
-  width: 1.75rem;
 }
 
 .w-10 {
@@ -868,14 +856,6 @@ input[type="radio"],
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.pl-1\.5 {
-  padding-left: 0.375rem;
-}
-
-.pl-1 {
-  padding-left: 0.25rem;
 }
 
 .pt-4 {
