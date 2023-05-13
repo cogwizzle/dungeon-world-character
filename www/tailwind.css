@@ -554,10 +554,6 @@ input[type="radio"],
   grid-column: 1 / -1;
 }
 
-.m-2 {
-  margin: 0.5rem;
-}
-
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
