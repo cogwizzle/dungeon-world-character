@@ -24,7 +24,7 @@ const template = ({ title, options }) => html`<div class="flex flex-col">
     <label
       id="title"
       for="${title}"
-      class="bg-black text-white flex flex-row relative"
+      class="bg-black text-white flex flex-row relative py-1"
     >
       ${title.toUpperCase()}
     </label>
