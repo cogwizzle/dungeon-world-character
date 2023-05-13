@@ -23,7 +23,7 @@ const template = ({ title, options }) =>
     <div class="flex-row ml-2 xl:ml-0">
       <input
         type="text"
-        name="body"
+        name="${title}"
         id="${title}-other"
         value=""
         class="bg-transparent border-b-2 border-b-black outline-none w-14"
