@@ -5,4 +5,4 @@
 npm run build
 
 # Publish
-surge www/ -d dw-fighter.surge.sh
+surge www/ -d dungeonworldcharacter.com
