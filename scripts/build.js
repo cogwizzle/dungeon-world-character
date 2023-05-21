@@ -1,13 +1,13 @@
 const esbuild = require('esbuild')
-const { exec, execSync } = require('child_process')
+const { exec } = require('child_process')
 const { generateSW } = require('workbox-build')
 const workboxConfig = require('../workbox-config')
 
 exec(
   'npx tailwindcss -i ./src/tailwind.css -o ./www/tailwind.css',
   (err, stdout, stderr) => {
-    if (error) {
-      console.log(`error: ${error.message}`)
+    if (err) {
+      console.log(`error: ${err.message}`)
       return
     }
     if (stderr) {
@@ -34,9 +34,6 @@ esbuild
   })
   .then(() => {
     generateSW(workboxConfig)
-    execSync('surge', {
-      cwd: 'www',
-    })
     process.exit(0)
   })
   .catch(() => process.exit(1))
