@@ -181,7 +181,7 @@ export default html`<div>
       </div>
       <div class="flex flex-col">
         <div>
-          When you speak aloud your promise to defat an enemy, you deal +2d4
+          When you speak aloud your promise to defeat an enemy, you deal +2d4
           damage against that enemy and -4 damage against anyone else. This
           effect lasts until the enemy is defeated. If you fail to defeat the
           enemy or give up the fight, you can admit your failure, but the effect
