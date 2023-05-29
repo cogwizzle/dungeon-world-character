@@ -4,7 +4,7 @@ const createNewInput = (value, index) => {
   const templateElement = document.createElement('template')
   const className =
     'bg-transparent border-b-2 border-b-black outline-none w-full'
-  templateElement.innerHTML = `<input type="text" value="${value}" id="item-${index}" class="${className}" />`
+  templateElement.innerHTML = `<textarea rows="1" type="text" id="item-${index}" class="${className}">${value}</textarea>`
   return templateElement.content.firstChild
 }
 
