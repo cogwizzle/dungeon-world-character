@@ -84,10 +84,10 @@ export default html`<div>
             <li>
               <input
                 type="checkbox"
-                id="the-saphire-islands"
-                name="the-saphire-islands"
+                id="the-sapphire-islands"
+                name="the-sapphire-islands"
               />
-              <label for="the-saphire-islands">The Saphire Islands</label>
+              <label for="the-sapphire-islands">The Sapphire Islands</label>
             </li>
           </div>
           <div class="flex flex-row">
@@ -360,10 +360,10 @@ export default html`<div>
       <div class="flex flex-row">
         <input
           type="checkbox"
-          id="dopplegangers-dance"
-          name="dopplegangers-dance"
+          id="doppelgangers-dance"
+          name="doppelgangers-dance"
         />
-        <label for="dopplegangers-dance">Doppleganger's Dance</label>
+        <label for="doppelgangers-dance">Doppelganger's Dance</label>
       </div>
       <div>
         You are able to study the essence of specific individuals to take their
