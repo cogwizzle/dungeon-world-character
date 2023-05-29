@@ -1,6 +1,4 @@
-import { html } from '../../../../utility/html-template'
-
-export default html`<div>
+import{a}from"./chunk-6TNH6BCR.js";import"./chunk-LU7DNXH4.js";import{a as e,b as i}from"./chunk-2DL6MCQC.js";var o=i`<div>
   <dw-section-header>STARTING MOVES</dw-section-header>
   <div class="grid grid-cols-2 gap-2">
     <div class="flex flex-col col-span-2 lg:col-span-1">
@@ -417,4 +415,4 @@ export default html`<div>
       </div>
     </div>
   </div>
-</div> `
+</div> `;var s=[["#quest","quest"],["#quest-slay","questSlay"],["#quest-defend","questDefend"],["#quest-discover","questDiscover"],["#quest-direction","questDirection"],["#quest-invulnerability","questInvulnerability"],["#lay-on-hands","layOnHands"],["#i-am-the-law","iAmTheLaw"],["#armored","armored"],["#divine-favor","divineFavor"],["#exterminatus","exterminatus"],["#hospitaller","hospitaller"],["#bloody-aegis","bloodyAegis"],["#charge","charge"],["#smite","smite"],["#staunch-defender","staunchDefender"],["#holy-protection","holyProtection"],["#setup-strike","setupStrike"],["#voice-of-authority","voiceOfAuthority"],["#evidence-of-faith","evidenceOfFaith"],["#tandem-strike","tandemStrike"],["#holy-smite","holySmite"],["#divine-protection","divineProtection"],["#ever-onward","everOnward"],["#divine-authority","divineAuthority"],["#impervious-defender","imperviousDefender"],["#perfect-hospitaller","perfectHospitaller"],["#perfect-knight","perfectKnight"],["#indomitable","indomitable"]],l=class extends a{constructor(){super();e(this,"_inputs",s);e(this,"_template",o)}};customElements.define("dw-paladin-moves",l);export{l as PaladinMoves};
