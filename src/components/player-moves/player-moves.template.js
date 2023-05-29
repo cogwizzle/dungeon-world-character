@@ -221,7 +221,7 @@ export default html`<div id="player-moves">
         <li>You befriend a useful NPC</li>
         <li>You hear rumors of an opportunity</li>
         <li>You gain useful information</li>
-        <li>You are not entagngled, enscorcelled, or tricked</li>
+        <li>You are not entangled, ensorcelled, or tricked</li>
       </ul>
     </div>
     <div class="col-span-full md:col-span-1">

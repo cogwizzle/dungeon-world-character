@@ -5,8 +5,8 @@ export default html`<div>
   <div class="grid grid-cols-2 gap-2">
     <dw-detailed-checkbox
       class="col-span-2 lg:col-span-1"
-      key="diety"
-      label="Diety"
+      key="deity"
+      label="Deity"
     >
       <div>
         You serve and worship some deity or power which grants you spells. Give
@@ -15,37 +15,37 @@ export default html`<div>
       <ul class="ml-5 text-sm">
         <li>
           <dw-labeled-checkbox
-            key="diety-healing-and-restoration"
+            key="deity-healing-and-restoration"
             label="Healing and Restoration"
           ></dw-labeled-checkbox>
         </li>
         <li>
           <dw-labeled-checkbox
-            key="diety-bloody-conquest"
+            key="deity-bloody-conquest"
             label="Bloody Conquest"
           ></dw-labeled-checkbox>
         </li>
         <li>
           <dw-labeled-checkbox
-            key="diety-civilization"
+            key="deity-civilization"
             label="Civilization"
           ></dw-labeled-checkbox>
         </li>
         <li>
           <dw-labeled-checkbox
-            key="diety-knowledge-and-hidden-things"
+            key="deity-knowledge-and-hidden-things"
             label="Knowledge and Hidden Things"
           ></dw-labeled-checkbox>
         </li>
         <li>
           <dw-labeled-checkbox
-            key="diety-the-downtrodden-and-forgotten"
+            key="deity-the-downtrodden-and-forgotten"
             label="The Downtrodden and Forgotten"
           ></dw-labeled-checkbox>
         </li>
         <li>
           <dw-labeled-checkbox
-            key="diety-what-lies-beneath"
+            key="deity-what-lies-beneath"
             label="What Lies Beneath"
           ></dw-labeled-checkbox>
         </li>
@@ -54,25 +54,25 @@ export default html`<div>
       <ul class="ml-5 text-sm">
         <li>
           <dw-labeled-checkbox
-            key="diety-petition-suffering"
+            key="deity-petition-suffering"
             label="It preaches the sanctity of suffering, add Petition: Suffering"
           ></dw-labeled-checkbox>
         </li>
         <li>
           <dw-labeled-checkbox
-            key="diety-petition-gaining-secrets"
+            key="deity-petition-gaining-secrets"
             label="It's cultish and insular, add Petition: Gaining Secrets"
           ></dw-labeled-checkbox>
         </li>
         <li>
           <dw-labeled-checkbox
-            key="diety-petition-offering"
+            key="deity-petition-offering"
             label="It Observes important sacrificial rites, add Petition: Offering"
           ></dw-labeled-checkbox>
         </li>
         <li>
           <dw-labeled-checkbox
-            key="diety-petition-personal-victory"
+            key="deity-petition-personal-victory"
             label="It believes in trial by combat, add Petition: Personal Victory"
           ></dw-labeled-checkbox>
         </li>
@@ -802,7 +802,7 @@ export default html`<div>
     <dw-detailed-checkbox
       class="col-span-2 lg:col-span-1"
       key="divine-presence"
-      label="Divine Precence"
+      label="Divine Presence"
     >
       <div class="text-sm italic">9th Level</div>
       <div>
