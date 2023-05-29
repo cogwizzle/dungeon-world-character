@@ -114,7 +114,7 @@ export default html`<div>
       label="Logical"
     >
       <div>
-        When you use strict deduction to analyse your surroundings, you can
+        When you use strict deduction to analyze your surroundings, you can
         Discern Realities with INT instead of WIS.
       </div>
     </dw-detailed-checkbox>
@@ -284,7 +284,7 @@ export default html`<div>
     >
       <div class="text-sm italic">Replaces: Logical</div>
       <div>
-        When you use strict deduction to analyse your surroundings, you can
+        When you use strict deduction to analyze your surroundings, you can
         Discern Realities with INT instead of WIS. On a 12+ you get to ask the
         GM any three questions, not limited by the list.
       </div>
