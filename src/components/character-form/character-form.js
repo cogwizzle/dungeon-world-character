@@ -71,6 +71,7 @@ export class CharacterForm extends HTMLElement {
     CharacterFormObservable.unsubscribe(this.hydrate)
     const characterNameElement = this.querySelector('#character-name')
     const levelElement = this.querySelector('#level')
+    const xpElement = this.querySelector('#xp')
     const characterMovesElement = this.querySelector('dw-character-moves')
     const notes = this.querySelector('dw-notes')
     characterNameElement.removeEventListener(
