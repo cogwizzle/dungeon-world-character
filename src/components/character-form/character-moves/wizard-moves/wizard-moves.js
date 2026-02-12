@@ -32,6 +32,7 @@ const inputs = [
   ['#unseen-servant', 'unseenServant'],
   ['#prestidigitation', 'prestidigitation'],
   ['#contact-spirits', 'contactSpirits'],
+  ['#magic-missile', 'magicMissile'],
   ['#charm-person', 'charmPerson'],
   ['#telepathy', 'telepathy'],
   ['#detect-magic', 'detectMagic'],

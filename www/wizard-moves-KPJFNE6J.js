@@ -1,6 +1,4 @@
-import { html } from '../../../../utility/html-template'
-
-export default html`<div>
+import"./chunk-IW2CRQTQ.js";import{a as l}from"./chunk-6TNH6BCR.js";import"./chunk-LU7DNXH4.js";import{a as e,b as a}from"./chunk-2DL6MCQC.js";var i=a`<div>
   <dw-section-header>STARTING MOVES</dw-section-header>
   <div class="grid grid-cols-2 gap-2">
     <dw-detailed-checkbox
@@ -678,4 +676,4 @@ export default html`<div>
       </div>
     </dw-detailed-checkbox>
   </div>
-</div> `
+</div> `;var o=[["#cast-a-spell","castASpell"],["#spellbook","spellbook"],["#spell-defense","spellDefense"],["#prepare-spells","prepareSpells"],["#ritual","ritual"],["#prodigy","prodigy"],["#logical","logical"],["#empower-magic","empowerMagic"],["#arcane-ward","arcaneWard"],["#fount-of-knowledge","fountOfKnowledge"],["#counterspell","counterspell"],["#know-it-all","knowItAll"],["#expanded-spellbook","expandedSpellbook"],["#quick-study","quickStudy"],["#enchanter","enchanter"],["#master","master"],["#greater-empower-magic","greaterEmpowerMagic"],["#protective-counter","protectiveCounter"],["#enchanters-soul","enchantersSoul"],["#ethereal-tether","etherealTether"],["#highly-logical","highlyLogical"],["#spell-augmentation","spellAugmentation"],["#mystical-puppet-strings","mysticalPuppetStrings"],["#spell-powered","spellPowered"],["#light","light"],["#unseen-servant","unseenServant"],["#prestidigitation","prestidigitation"],["#contact-spirits","contactSpirits"],["#magic-missile","magicMissile"],["#charm-person","charmPerson"],["#telepathy","telepathy"],["#detect-magic","detectMagic"],["#invisibility","invisibility"],["#alarm","alarm"],["#dispel-magic","dispelMagic"],["#fireball","fireball"],["#mirror-image","mirrorImage"],["#vision-through-time","visionThroughTime"],["#mimic","mimic"],["#sleep","sleep"],["#cage","cage"],["#summon-monster","summonMonster"],["#polymorph","polymorph"],["#contact-other-plane","contactOtherPlane"],["#contingency","contingency"],["#shadow-walk","shadowWalk"],["#dominate","dominate"],["#true-seeing","trueSeeing"],["#cloudkill","cloudkill"],["#alert","alert"],["#shelter","shelter"],["#antipathy","antipathy"],["#soul-gem","soulGem"],["#perfect-summons","perfectSummons"]],t=class extends l{constructor(){super();e(this,"_inputs",o);e(this,"_template",i)}};customElements.define("dw-wizard-moves",t);export{t as WizardMoves};
