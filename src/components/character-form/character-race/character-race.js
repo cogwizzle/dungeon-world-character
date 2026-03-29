@@ -29,11 +29,11 @@ export class CharacterRace extends HTMLElement {
           ),
           createOption(
             'halfling',
-            'Choose one weapon-you can always treat weapons of that type as if they had the precise tag.'
+            'When you Defy Danger and use your small size to your advantage, take +1.'
           ),
           createOption(
             'human',
-            "Once per battle you may reroll a single damage roll (yours or someone else's"
+            "Once per battle you may reroll a single damage roll (yours or someone else's)."
           ),
         ]
       case supportedClasses.Ranger:
